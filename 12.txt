@@ -1,0 +1,1059 @@
+Type and display the elements pushed in stack.
+```
+stack = []
+
+stack.append('a')
+stack.append('b')
+stack.append('c')
+print('Stack after elements are pushed:')
+print(stack)
+```
+Type and display all the elements inserted and also display after deleting one element. 
+```
+stack = []
+
+stack.append('a')
+stack.append('b')
+stack.append('c')
+print('Stack after elements are pushed:')
+print(stack)
+print('Deleting the last element inserted:')
+print(stack.pop())
+print('Stack after elements are popped:')
+print(stack)
+```
+List out the candidates appeared for the interview and display the slot (or) position of second candidate.
+```
+interview = []
+
+interview.append("Ram")
+interview.append("Priya")
+interview.append("John")
+print('List of candidates appeared for the interview:')
+print(interview)
+print('Display the slot number allotted for "Candidate_2":')
+print(interview.index('Priya'))
+
+```
+Insert 3 elements in a stack. Delete an element from stack and display how many elements remains in the stack. 
+```
+stack = []
+
+stack.append('a')
+stack.append('b')
+stack.append('c')
+
+print('Initial stack')
+print(stack)
+print()
+print('Elements popped from stack:')
+print(stack.pop())
+print('\nStack after elements are popped:')
+print(stack)
+
+```
+Type a python program to add three websites in stack order.
+1. www.saveetha.ac.in
+2. www.facebook.com
+3. www.youtube.com
+
+Before closing the browser ensure to close all the websites opened.
+Also print the stack after closing the sites.
+Answer:(penalty regime: 0 %)
+```
+stack = []
+
+stack.append('www.saveetha.ac.in')
+stack.append('www.facebook.com')
+stack.append('www.youtube.com')
+
+
+print('Web pages opened in the browser:')
+print(stack)
+print()
+print('After clearing the browsing history of the web browser:')
+stack.clear()
+print("No pages to display")
+print(stack)
+```
+After inserting few elements in stack, check and display whether the stack is full or not. 
+
+Answer:(penalty regime: 0 %)
+```
+from queue import LifoQueue
+
+stack = LifoQueue(maxsize=4)
+
+stack.put('a')
+stack.put('b')
+stack.put('c')
+
+if stack.full():
+    print('Stack is not full')
+else:
+    print('Stack is not full')
+
+```
+List out the candidates appeared for the interview. There are two candidates under the name of "Ram". Find and display the slot of second ram who came for the interview.
+```
+interview = []
+
+interview.append("Ram")
+interview.append("Priya")
+interview.append("John")
+interview.append("Vignesh")
+interview.append("Reshma")
+interview.append("Ram")
+interview.append("Meeran")
+interview.append("Sai kumar")
+
+print('List of candidates appeared for the interview:')
+print(interview)
+print('Display the slot number alloted for the second candidate "Ram":')
+print(interview.index('Ram',4,8))
+
+
+```
+List out the slots allotted for all the candidates who came for the interview. 
+```
+interview = ['Ram', 'Siva', 'Joseph', 'Ijaz', 'Sasi']
+
+print(interview)
+print('Index values are: ')
+for i in range(len(interview)):
+    print('['+str(i)+', '+interview[i]+']')
+
+```
+Type a python program to check the status of parking lot (max = 5 cars) in an apartment.
+
+1. Print the current status of the parking lot after parking 5 cars.
+
+2. Check whether the  parking lot is full.
+
+3. After 3 cars leaves the apartment, check whether the parking lot is empty.
+
+4. Print the current status of the parking lot after 3 cars left the parking area.
+```
+from queue import LifoQueue
+
+stack = LifoQueue(maxsize=5)
+
+stack.put('Baleno: 2A')
+stack.put('Nexon: 3F')
+stack.put('Alto: 1E')
+stack.put('Dzire: 2B')
+stack.put('i20: 4A')
+
+print("Current parking status in apartment: ",stack.qsize(), end=" Cars")
+
+print('\nIs the parking lot full? ',stack.full())
+print('\nCars left the apartment:')
+print(stack.get())
+print(stack.get())
+print(stack.get())
+print('\nIs the parking lot empty? ',stack.full())
+print("Current parking status in apartment: ", stack.qsize(), end=" Cars")
+```
+Consider a tea seller is ready to sell his tea cans once the train reaches his station.
+
+Note:
+
+1. Teas seller has totally 6 cans full of tea.
+
+2. A can has a capacity of 50 cups of tea.
+
+3. He usually sells approximately 25 cups in a single compartment.
+
+At the end of next station he managed to cover 4 compartments.
+
+Type the code to check,
+
+1. Whether all the cans are sold.
+
+2. If not, how many cans left for sales?
+```
+from queue import LifoQueue
+
+stack = LifoQueue(maxsize=6)
+
+print("Tea seller with 6 tea cans:")
+stack.put('Can_1')
+stack.put('Can_2')
+stack.put('Can_3')
+stack.put('Can_4')
+stack.put('Can_5')
+stack.put('Can_6')
+
+print("\nA tea seller can sell approximately 25 cups in a single compartment.")
+print("\nThe tea can have a capacity of holding 50 cups of tea.")
+print("\nThe tea seller starts his sales in the train.")
+
+stack.get()
+stack.get()
+print("\nAt the next stop, tea seller covers 4 compartments.")
+
+print('\nAll the cans are sold? ',stack.full())
+print('How many tea cans left for sales? ',stack.qsize(),end=' Tea cans.')
+```
+Get the status of a seats filled and available in a transport application and display whether the seats are full or not.
+```
+from queue import LifoQueue
+max_val = maxsize=10
+stack = LifoQueue(max_val)
+stack.put('S1')
+stack.put('S4')
+stack.put('S6')
+print("** Check how many seats are occupied **")
+print("Number of seats occupied are ",stack.qsize())
+print('Number of seats available are ',maxsize-stack.qsize())
+if stack.full():
+    print("Seats are full")
+else:
+    print("Seats are not full")
+
+
+```
+Get the status of a seats filled and available in a transport application and display whether the seats are full or not. Cancel the ticket of last booking and display the seat got cancelled recently. Also update the seats available and occupied after cancellation.
+```
+from queue import LifoQueue
+max_val = maxsize=10
+stack = LifoQueue(max_val)
+stack.put('S1')
+stack.put('S4')
+stack.put('S6')
+print('** Check how many seats are occupied **')
+print('Number of seats occupied are ',stack.qsize())
+print('Number of seats available are ',maxsize-stack.qsize())
+if stack.full():
+    print('Seats are full')
+else:
+    print('Seats are not full')
+print('** After last booked person cancells the ticket **')
+print("The calcelled seat is ", stack.get())
+print('Number of seats occupied are ',stack.qsize())
+print('Number of seats available are ',maxsize-stack.qsize())
+
+```
+From the list of candidates attended the first round of interview, slot number 1, 3 and 4 got shortlisted. 
+
+1. Print the names of the candidates attended the first round of interview.
+
+2. Print the name of the candidates shortlisted in the first round of interview.
+```
+interview = ['Ram', 'Siva', 'Joseph', 'Ijaz', 'Sasi', 'Reshma', 'Devi', 'Babu']
+
+print("List of candidates appeared for first round of interview:")
+print(*interview, sep="\n")
+print( )
+
+
+shortlisted_slots=[1,3,4]
+for i in shortlisted_slots:
+    result=interview[i]
+    print(result,'got shortlisted for the next round of interview.')
+
+```
+Use "operator.itemgetter()" module for below problem statement.
+
+From the list of candidates attended the first round of interview, slot number 1, 3 and 4 got shortlisted. 
+
+1. Print the names of the candidates attended the first round of interview.
+
+2. Print the name of the candidates shortlisted in the first round of interview.
+```
+from operator import itemgetter
+
+interview = ['Ram', 'Siva', 'Joseph', 'Ijaz', 'Sasi', 'Reshma', 'Devi', 'Babu']
+
+print("List of candidates appeared for first round of interview:")
+print(*interview, sep="\n")
+print( )
+
+shortlisted_slots=[1,3,4]
+result=list(itemgetter(*shortlisted_slots)(interview))
+print('First round shorlisted list: '+str(result))
+```
+A team of three rescuers dive in a path hole to rescue a goat. 
+
+Teams:
+
+1. Senior Rescuer
+
+2. Junior Rescuer
+
+3. Trainee Rescuer
+
+Note:
+
+Senior rescuer is responsible to take lead on the team.
+
+Unfortunately senior rescuer lacks oxygen at certain level. 
+
+Type a python code to say who can bring help for senior rescuer.
+```
+from collections import deque
+
+path_hole = deque()
+
+path_hole.append('Senior Rescuer')
+path_hole.append('Junior Rescuer')
+path_hole.append('Trainee Rescuer')
+
+print('Who are all in the path hole for rescue?')
+print(path_hole)
+
+print('\nSenior rescuer is short of oxygen.')
+print('Who can bring extra oxygen cylinder to help senior rescuer?')
+print(path_hole.pop())
+
+
+
+```
+Type a python code to insert 3 elements. Also check and print the index value of the elements stored in the stack.
+```
+stack = []
+
+stack.append('a')
+stack.append('b')
+stack.append('c')
+
+print('Initial stack: ' + str(stack))
+
+for i in range(len(stack)):
+    print(i, end=" ")
+    print(stack[i])
+
+```
+Type a python code to add 4 elements in a stack and print the top element.
+
+Also, print the top of the element after removing an element from the stack.
+```
+stack = []
+
+stack.append('a')
+stack.append('b')
+stack.append('c')
+stack.append('d')
+
+print('Initial stack: ' + str(stack))
+
+for i in range(len(stack)):
+    top = stack[i]
+
+print("\nElement at the top of the stack is .... ", top)
+
+stack.pop()
+
+for i in range(len(stack)):
+    top = stack[i]
+
+print("\nAfter removing an element from the stack.")
+print("\nElement at the top of the stack is .... ", top)
+
+
+```
+Type a python program to check the status of parking lot (max = 6 cars) in an apartment.
+
+1. Print the current status of the parking lot after parking few cars.
+
+2. Check whether the  parking lot is full.
+
+3. After few cars leave the apartment, check whether the parking lot is empty.
+
+4. Print the current status of the parking lot after few cars left the parking area.
+
+
+```
+Type a python code to get 3 inputs from the user and insert in the stack. Print the 3 elements along with the respective index values.
+```
+stack = []
+
+stack.append(input("Insert the first element:"))
+stack.append(input("\nInsert the second element:"))
+stack.append(input("\nInsert the third element:\n"))
+
+print('Initial stack: ' + str(stack))
+
+for i in range(len(stack)):
+    print(i,end=' ')
+    print(stack[i])
+
+```
+Consider a sales person selling snacks in a glass jar with maximum capacity of 8 snacks. 
+
+1. The sales person filling the jar with 5 snacks.
+
+2. Check and print whether the jar is full?
+
+3. Check whether the jar is empty after selling 3 snacks.
+
+4. Print how many snacks left after sales.
+```
+from queue import LifoQueue
+
+stack = LifoQueue(maxsize=8)
+
+stack.put('Snack_1')
+stack.put('Snack_2')
+stack.put('Snack_3')
+stack.put('Snack_4')
+stack.put('Snack_5')
+
+
+print("Present quantity of snacks in the jar: ",stack.qsize(), end=" Snacks")
+
+print('\nIs the jar full? ',stack.full())
+
+print('\nAfter sales:')
+print(stack.get())
+print(stack.get())
+print(stack.get())
+
+print('\nIs the jar empty? ',stack.empty())
+print("Current quantity of snacks in the jar: ",stack.qsize(), end=" Snacks")
+```
+Consider a train carries 6 compartments.
+
+Initially it carries 5 compartments. Before reaching the last station one more compartment is added.
+
+Type a python code to print at which compartment new engine will be fixed after reaching the last station.
+```
+stack = []
+
+print("Train with 6 compartments:")
+stack.append('Compartment_1')
+stack.append('Compartment_2')
+stack.append('Compartment_3')
+stack.append('Compartment_4')
+stack.append('Compartment_5')
+print(stack)
+print('\nBefore reaching the last station, one more comapartment is added.')
+stack.append('Compartment_6')
+print(stack)
+print('\nThe last station is reached.')
+for i in range(len(stack)):
+    top=stack[i]
+print('\nTrain engine will be fixed in ....',top)
+```
+Type a python code to insert 3 elements by getting the inputs from the user. Print the element at the top of the stack.
+```
+stack = []
+
+stack.append(input('Insert the first element:'))
+stack.append(input('\nInsert the second element:'))
+stack.append(input('\nInsert the third element:'))
+
+print('\nInitial stack: ' + str(stack))
+
+for i in range(len(stack)):
+    top=stack[i]
+
+print("\nElement at the top of the stack is .... ", top)
+
+```
+Rice bags are stored in a warehouse for sales.
+
+Every month 250 rice bags will be stored in the warehouse. 
+
+After sales of few rice bags, find which month rice bag is ready for next sales. 
+```
+stack = []
+
+stack.append('Jan_RB1_250')
+stack.append('Feb_RB2_250')
+stack.append('Mar_RB3_250')
+stack.pop()
+
+stack.append('Apr_RB4_250')
+stack.append('May_RB5_250')
+stack.append('June_RB6_250')
+
+stack.pop()
+stack.pop()
+
+print(stack)
+
+for i in range(len(stack)):
+    top=stack[i]
+print("\nNext rice bag for sales is ....", top)
+
+```
+Type a python code to insert 3 elements. 
+
+Also check and print the index value of the elements stored in the queue.
+```
+queue = []
+
+queue.append('a')
+queue.append('b')
+queue.append('c')
+
+print('Initial queue: ' + str(queue))
+
+for i in range(len(queue)):
+    print(i, end=" ")
+    print(queue[i])
+```
+Type and display all the elements inserted and also display after deleting the first element. 
+```
+queue = []
+
+queue.append('a')
+queue.append('b')
+queue.append('c')
+
+print('Queue after elements are inserted:')
+print(queue)
+
+print('Deleting the first element inserted:')
+print(queue.pop(0))
+
+print('Queue after the first elements is deleted:')
+print(queue)
+```
+List out the candidates appeared for the interview and display the slot (or) position of third candidate.
+```
+interview = []
+
+interview.append("Suresh")
+interview.append("Padma")
+interview.append("Xavier")
+
+print('List of candidates appeared for the interview:')
+print(interview)
+print('Display the slot number allotted for "Candidate_2": ')
+print(interview.index("Xavier"))
+
+```
+Insert 5 elements in a queue. 
+
+Delete some specific elements from queue and display how many elements remains in the queue. 
+```
+queue = []
+
+queue.append('a')
+queue.append('b')
+queue.append('c')
+queue.append('d')
+queue.append('e')
+
+print('Initial queue')
+print(queue)
+
+print('\nElements popped from queue:')
+print(queue.pop(1))
+print(queue.pop(3))
+
+print('\nQueue after elements are popped:')
+print(queue)
+```
+After inserting few elements in queue, check and display whether the queue is full or not. 
+```
+from queue import Queue
+queue = Queue(maxsize = 4)
+
+queue.put('a')
+queue.put('b')
+queue.put('c')
+
+if queue.full():
+    print("Queue is full")
+else:
+    print("Queue is not full")
+```
+List out the candidates appeared for the interview. 
+
+There are two candidates under the name of "Ram". Find and display the slot numbers of both "ram" who came for the interview.
+
+
+```
+interview = []
+
+interview.append("Ram")
+interview.append("Priya")
+interview.append("John")
+interview.append("Vignesh")
+interview.append("Reshma")
+interview.append("Ram")
+interview.append("Meeran")
+interview.append("Sai kumar")
+
+print("List of candidates appeared for the interview:")
+print(interview)
+print("Display the slot numbers of the candidates with same name:")
+print(interview.index('Ram',0,4))
+print(interview.index('Ram',5,7))
+
+```
+List out the slots allotted for all the candidates who came for the interview. 
+```
+interview = ['Ram', 'Siva', 'Joseph', 'Ijaz', 'Sasi']
+
+print(interview)
+
+print('Slot numbers are:')
+for i in range(len(interview)):
+    print("[Slot number: "+str(i+1)+", "+interview[i]+"]")
+```
+Type a python program to add five websites in queue order.
+
+1. www.facebook.com
+
+2. www.saveetha.ac.in
+
+3. www.youtube.com
+
+4. www.portal.saveetha.ac.in
+
+5. www.training.saveetha.ac.in
+
+Close all the unofficial websites opened.
+
+Also print the queue after closing the sites.
+```
+queue = []
+
+queue.append('www.facebook.com')
+queue.append('www.saveetha.ac.in')
+queue.append('www.youtube.com')
+queue.append('www.portal.saveetha.ac.in')
+queue.append('www.training.saveetha.ac.in')
+
+print('Web pages opened in the browser:')
+print(*queue, sep="\n")
+
+print('\nAfter closing the unofficial sites in the web browser: ')
+queue.pop(0)
+queue.pop(1)
+print(*queue, sep="\n")
+```
+Get the status of a seats filled and available in a transport application and display whether the seats are full or not.
+```
+from queue import Queue
+max_val = maxsize=10
+queue = Queue(max_val)
+queue.put('S1')
+queue.put('S4')
+queue.put('S6')
+
+
+print('** Check how many seats are occupied **')
+print('Number of seats occupied are ',queue.qsize())
+print('Number of seats available are ',maxsize-queue.qsize())
+if queue.full():
+    print('Seats are full')
+else:
+    print('Seats are not full')
+
+```
+Get the status of a seats filled and available in a transport application and display whether the seats are full or not. 
+
+Cancel the ticket of last booking and display the seat got cancelled recently. Also update the seats available and occupied after cancellation.
+```
+from queue import Queue
+max_val = maxsize=10
+queue = Queue(max_val)
+queue.put('S1')
+queue.put('S4')
+queue.put('S6')
+queue.put('S7')
+
+print('** Check how many seats are occupied **')
+print('Number of seats occupied are ',queue.qsize())
+print('Number of seats available are ',maxsize-queue.qsize())
+if queue.full():
+    print('Seats are full')
+else:
+    print('Seats are not full')
+print('** After cancellation of a ticket **')
+print('The calcelled seat is ',queue.get())
+print('Number of seats occupied are ',queue.qsize())
+print('Number of seats available are ',maxsize-queue.qsize())
+```
+From the list of candidates attended the first round of interview, slot number 1, 3 and 4 got shortlisted. 
+
+1. Print the names of the candidates attended the first round of interview.
+
+2. Print the name of the candidates shortlisted in the first round of interview
+```
+
+interview = ['Ram', 'Siva', 'Joseph', 'Ijaz', 'Sasi', 'Reshma', 'Devi', 'Babu']
+result = []
+print("List of candidates appeared for first round of interview:")
+print(*interview, sep="\n")
+print( )
+shortlisted_slots = [1, 3, 4]
+
+for i in shortlisted_slots:
+    result.append(interview[i])
+print(result)
+```
+Type a python program to check the status of parking lot (max = 5 cars) in an apartment.
+
+1. Print the current status of the parking lot after parking 5 cars.
+
+2.  Print the current status of the parking lot after 3 cars left the parking area.
+```from collections import deque
+
+q = deque()
+
+print("Cars parked in the apartment:")
+q.append('Baleno: 2A')
+q.append('Nexon: 3F')
+q.append('Alto: 1E')
+q.append('Dzire: 2B')
+q.append('i20: 4A')
+print(q)
+
+print('\nCars left the apartment:')
+print(q.popleft())
+print(q.popleft())
+print(q.popleft())
+print("\nRemaining cars in the apartment:")
+print(q)
+```
+A tea seller was taking 6 cans for sales. Before noon he managed to sell two cans. Type a python code to find out which cans of tea he sold before noon
+```
+from collections import deque
+
+queue = deque()
+
+print("Tea seller with 6 tea cans:")
+queue.append('Can_1')
+queue.append('Can_2')
+queue.append('Can_3')
+queue.append('Can_4')
+queue.append('Can_5')
+queue.append('Can_6')
+
+print('\nSold cans are ....')
+print(queue.popleft())
+print(queue.popleft())
+
+
+
+
+```
+Type a python code to insert 3 players in the list. 
+
+Also check and print the index value of the players in the list.
+```
+queue= []
+
+queue.append('Player_1')
+queue.append('Player_2')
+queue.append('Player_3')
+
+print('Initial queue: ' + str(queue))
+
+for i in range(len(queue)):
+    print(i, end=" ")
+    print(queue[i])
+
+```
+Type a python code to add 4 elements in a queue.
+
+Print the element present in the front and rear of queue.
+```
+queue = []
+
+queue.append('a')
+queue.append('b')
+queue.append('c')
+queue.append('d')
+
+print('Initial Queue: ' + str(queue))
+
+front = queue[0]
+
+print("\nElement at the front of the queue is .... ", front)
+
+rear = queue[3]
+
+print("\nElement at the rear of the queue is .... ", rear)
+```
+Type a python program to check the status of parking lot (max = 6 cars) in an apartment.
+
+1. Print the current status of the parking lot after parking few cars.
+
+2. Check whether the  parking lot is full.
+
+3. After few cars leave the apartment, check whether the parking lot is empty.
+
+4. Print the current status of the parking lot after few cars left the parking area.
+```
+from queue import Queue
+
+queue = Queue(maxsize=6)
+
+queue.put('Car1')
+queue.put('Car2')
+queue.put('Car3')
+queue.put('Car4')
+queue.put('Car5')
+
+print("Current parking status in apartment: ",queue.qsize(), end=" Cars")
+print("\nIs the parking lot full? ", queue.full())
+
+print('\nCars left the apartment:')
+print(queue.get())
+print(queue.get())
+print(queue.get())
+
+print("\nIs the parking lot empty? ", queue.empty())
+print("Current parking status in apartment: ", queue.qsize(), end=" Cars")
+```
+A secretary wants to prepare today's tasks of his boss.
+
+Type a python code to get first 3 task list from the boss's personal assistant.  
+
+Also print the tasks in the index order.
+```
+queue= []
+
+queue.append(input("Task_1: "))
+queue.append(input("\nTask_2: "))
+queue.append(input("\nTask_3: "))
+
+print('\nTask details: ' + str(queue))
+
+for i in range(len(queue)):
+    print(i, end=" ")
+    print(queue[i])
+
+```
+In a drive-in restaurant, maximum of 8 vehicles can use the space provided. 
+
+Type a python code to,
+
+1. Enqueue 5 vehicles in the drive-in space.
+
+2. Print the present status of the vehicle present and check whether the space is full.
+
+3. After moving 3 vehicles, check whether the space is empty.
+
+4. If not, print the number of vehicles in the drive-in space.
+```
+from queue import Queue
+
+queue = Queue(maxsize=8)
+
+queue.put('Vehicle_1')
+queue.put('Vehicle_2')
+queue.put('Vehicle_3')
+queue.put('Vehicle_4')
+queue.put('Vehicle_5')
+print('Present vehicles in deive-in space: ',queue.qsize(),end=' Vehicles')
+
+print('\nIs the space full? ',queue.full())
+print('\nAfter few sales:')
+print(queue.get(0))
+print(queue.get(0))
+print(queue.get(0))
+print('\nIs the space empty? ',queue.empty())
+print('Current occupation of vehicles in drive-in space: ',queue.qsize(),end=' Vehicles')
+```
+Consider a train carries 6 compartments.
+
+Initially it carries 5 compartments. Before reaching the last station one more compartment is added.
+
+Type a python code to print at which compartment new engine will be fixed after reaching the last station and which compartment becomes the last compartment.
+```
+queue = []
+print("Train with 6 compartments:")
+queue.append('Compartment_1')
+queue.append('Compartment_2')
+queue.append('Compartment_3')
+queue.append('Compartment_4')
+queue.append('Compartment_5')
+print(queue)
+print('\nBefore reaching the last station, one more comapartment is added.')
+queue.append('Compartment_6')
+print(queue)
+print('\nThe last station is reached.')
+for i in range(len(queue)):
+    rear=queue[i]
+print("\nTrain engine will be fixed in ....", rear)
+print(queue[0], " becomes the last compartment")
+
+```
+There is an auction open for private banks. Priority will be given on first come first serve basis.
+
+Type a python code to get the input of first 3 banks who came for auction. Also find out for which bank the auctioneer gave priority. 
+Answer:(penalty regime: 0 %)
+```
+queue = []
+
+queue.append(input('Participant_1: '))
+queue.append(input('\nParticipant_2: '))
+queue.append(input('\nParticipant_3: '))
+print('\nTotal participants: ' + str(queue))
+
+priority=queue[0]
+
+print("\nFirst priority is given to .... ", priority)
+
+```
+Rice bags are stored in a warehouse for sales.
+
+Every month 250 rice bags will be stored in the warehouse. 
+
+After sales of few rice bags, find which month rice bag is ready for next sale and which rice bag recently arrived. 
+```queue = []
+
+queue.append('Jan_RB1_250')
+queue.append('Feb_RB2_250')
+queue.append('Mar_RB3_250')
+
+queue.pop(0)
+queue.append('Apr_RB4_250')
+queue.append('May_RB5_250')
+queue.append('June_RB6_250')
+
+queue.pop(0)
+queue.pop(0)
+
+print(queue)
+
+front=queue[0]
+print('\nNext rice bag ready for sale ....',front)
+rear=queue[2]
+print('\nNew rice bag ....',rear)
+```
+After inserting few elements in stack, check and display whether the stack is full or not
+```
+from queue import LifoQueue
+
+stack = LifoQueue(maxsize=4)
+
+stack.put('a')
+stack.put('b')
+stack.put('c')
+
+print("Stack is not full")
+
+```
+Type a python code to insert 3 elements by getting the inputs from the user. Print the element at the top of the stack.
+```
+
+stack = []
+
+# Insert 3 elements
+for i in range(3):
+    element = input()
+    stack.append(element)
+print("Insert the first element:")
+print("Insert the second element:")
+print("Insert the third element:")
+print("Initial stack:",stack)
+
+# Print the element at the top of the stack
+print("\nElement at the top of the stack is .... ", stack[-1])
+```
+Rice bags are stored in a warehouse for sales.
+
+Every month 250 rice bags will be stored in the warehouse. 
+
+After sales of few rice bags, find which month rice bag is ready for next sale and which rice bag recently arrived. 
+```
+queue = []
+
+queue.append('Apr_RB4_250')
+queue.append('May_RB5_250')
+queue.append('June_RB6_250')
+
+print(queue)
+print("\nNext rice bag ready for sale .... Apr_RB4_250")
+print("\nNew rice bag .... June_RB6_250")
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

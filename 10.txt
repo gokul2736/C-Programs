@@ -1,0 +1,1582 @@
+Write a python program to get the integer values from the user and push only the even number into the stack and later pop the last 3 elements
+
+For example:
+
+Input	Result
+8
+2
+3
+4
+5
+6
+12
+7
+8
+[2, 4, 6, 12, 8]
+[2, 4]
+
+```
+n = int(input())
+stack = []
+
+for _ in range(n):
+    num = int(input())
+    if num % 2 == 0:
+        stack.append(num)
+
+print(stack)
+
+for _ in range(3):
+    if stack:
+        stack.pop()
+
+print(stack)
+
+```
+Write a python program to reverse a string using stack concept
+
+For example:
+
+Input	Result
+Python
+nohtyP
+```
+def reverse_string_using_stack(input_str):
+    stack = []
+
+    # Push all characters to stack
+    for char in input_str:
+        stack.append(char)
+
+    reversed_str = ''
+
+    # Pop all characters from stack to reverse
+    while stack:
+        reversed_str += stack.pop()
+
+    return reversed_str
+
+# Main program
+input_str = input()
+result = reverse_string_using_stack(input_str)
+print(result)
+
+```
+Write a python programming to sort the stack using recursion
+
+For example:
+
+Input	Result
+[5, -2, 9, -7, 3]
+[-7, -2, 3, 5, 9]
+```
+def insert_sorted(stack, element):
+    if not stack or element >= stack[-1]:
+        stack.append(element)
+    else:
+        temp = stack.pop()
+        insert_sorted(stack, element)
+        stack.append(temp)
+
+def sort_stack(stack):
+    if stack:
+        temp = stack.pop()
+        sort_stack(stack)
+        insert_sorted(stack, temp)
+
+stack = list(map(int, input().strip('[]').split(',')))
+sort_stack(stack)
+print(stack)
+
+```
+Write a python program to get the integer values from the user and push only the even number into the stack and later pop the last 3 elements
+
+For example:
+
+Input	Result
+8
+2
+3
+4
+5
+6
+12
+7
+8
+[2, 4, 6, 12, 8]
+[2, 4]
+```
+l=[]
+n=int(input())
+for i in range(n):
+    value=int(input())
+    if value%2==0:
+        l.append(value)
+print(l)
+
+for i in range(3):
+    l.pop()
+print(l)
+```
+Write a python program to delete two neighboring identical letters.
+
+For example:
+
+Input	Result
+abbaca
+ca
+```
+s = input()
+i = 0
+while i < len(s) - 1:
+    if s[i] == s[i + 1]:
+        s = s[:i] + s[i+2:]  # Remove the matching pair
+        i = max(i - 1, 0)    # Go back one step to check for new pairs
+    else:
+        i += 1
+print(s)
+
+```
+Write a python programming to sort the stack using recursion
+
+For example:
+
+Input	Result
+[5, -2, 9, -7, 3]
+[-7, -2, 3, 5, 9]
+
+```
+def sortedInsert(stack, key):
+    if not stack or key > stack[-1]:
+        stack.append(key)
+        return
+    top = stack.pop()
+    sortedInsert(stack, key)
+    stack.append(top)
+def sortStack(stack):
+    if not stack:
+        return
+ 
+    top = stack.pop()
+    sortStack(stack)
+    sortedInsert(stack, top)
+
+ 
+A = eval(input())
+sortStack(A)
+print(list(A))
+```
+Write a python program  to reverse substring between each pair of parenthesis
+
+For example:
+
+Input	Result
+(skeeg(for)skeeg)
+geeksforgeeks
+(abcd)
+dcba
+```
+def reverseParentheses(s):
+    stack = []
+
+    for char in s:
+        if char == ')':
+            temp = ''
+            while stack and stack[-1] != '(':
+                temp += stack.pop()
+            stack.pop()  # Remove '('
+            for ch in temp:
+                stack.append(ch)
+        else:
+            stack.append(char)
+
+    return ''.join(stack)
+
+# Input
+strr = input()
+print(reverseParentheses(strr))
+
+```
+Write a python program to implement the stack using deque method for rotating the stack.
+
+For example:
+
+Test	Input	Result
+fun(3)
+5
+yahoo.com
+gmail.com
+rediffmail.com
+hotmail.com
+fastmail.com
+deque([yahoo.com, gmail.com, rediffmail.com, hotmail.com, fastmail.com])
+Stack before rotation deque(['yahoo.com', 'gmail.com', 'rediffmail.com', 'hotmail.com', 'fastmail.com'])
+Stack 
+```
+import collections
+
+def fun(r):
+    de = collections.deque([])
+    n = int(input())
+    for i in range(n):
+        de.append(input())
+    print("Stack before rotation", de)
+    de.rotate(r)
+    print("Stack after rotation", de)
+```
+Write a python program to create a stack with a maximum size of 5 using Lifo Queue.  Get the input from the user and check whether the stack is full and then display the stack values in reverse order
+
+For example:
+
+Input	Result
+4
+10
+20
+30
+40
+False
+40
+30
+20
+10
+5
+2
+4
+6
+8
+3
+True
+3
+8
+6
+4
+2
+
+```
+from queue import LifoQueue
+
+stack = LifoQueue(maxsize=5)
+
+n = int(input())
+for _ in range(n):
+    stack.put(int(input()))
+
+print(stack.full())
+
+temp = []
+while not stack.empty():
+    temp.append(stack.get())
+
+for val in temp:
+    print(val)
+
+```
+Write a python program to perform arithmetic operation based on the operator in the stack 
+
+Note: When 'C' is received it have to pop out the last value in stack and store in another stack. 
+
+When 'D' is received it have to perform the multiplication by taking the last value from the stack with the previously poppod value 
+
+For example:
+
+Test	Input	Result
+print(calPoints(ops))
+["5","2","C","D","+"]
+30
+print(calPoints(ops))
+["2","3","C","D","4","C","D","-"]
+50
+```
+def calPoints(ops):
+    stack = []
+    r=[]
+    for i in ops: 
+        if i == "+":
+            stack.append(stack[-1]+stack[-2])
+        if i == "-":
+            stack.append(stack[-1]-stack[-2])
+        elif i =='D':
+            stack.append(stack[-1]*r[-1])
+            r.pop()
+        elif i == 'C':
+            r.append(stack.pop())
+        elif i.isdecimal():
+            stack.append(int(i))
+    return sum(stack)
+ops=eval(input())
+```
+Write a python program to implement the stack using deque method for rotating the stack.
+
+For example:
+
+Test	Input	Result
+fun(3)
+5
+12
+14
+67
+78
+45
+deque([12, 14, 67, 78, 45])
+Stack before rotation deque([12, 14, 67, 78, 45])
+Stack after rotation deque([67, 78, 45, 12, 14])
+```
+import collections
+def fun(r):
+    de = collections.deque([])
+    n=int(input())
+    for i in range(n):
+        de.append(int(input()))
+    print("Stack before rotation",de)
+    de.rotate(r)
+    print("Stack after rotation",de)
+```
+Write a python program to create a stack with a maximum size of 5 using Lifo Queue.  Get the input from the user and check whether the stack is full and then display the stack values in reverse order
+
+For example:
+
+Input	Result
+4
+10
+20
+30
+40
+False
+40
+30
+20
+10
+5
+2
+4
+6
+8
+3
+True
+3
+8
+6
+4
+2
+```
+from queue import LifoQueue
+
+n = int(input())
+values = [int(input()) for _ in range(n)]
+
+stack = LifoQueue(maxsize=5)
+
+for val in values[-5:]:
+    stack.put(val)
+
+print(stack.full())
+
+while not stack.empty():
+    print(stack.get())
+
+```
+Write a python program to check whether the given  string is palindrome
+
+For example:
+
+Input	Result
+madam
+Yes
+Python
+No
+```
+text = input()
+
+if text == text[::-1]:
+    print("Yes")
+else:
+    print("No")
+```
+Write a python program to implement the stack using deque method for rotating the stack.
+
+For example:
+
+Test	Input	Result
+fun(3)
+5
+12
+14
+67
+78
+45
+deque([12, 14, 67, 78, 45])
+Stack before rotation deque([12, 14, 67, 78, 45])
+Stack after rotation deque([67, 78, 45, 12, 14])
+```
+from collections import deque
+def fun(s):
+    d = deque()
+    n = int(input())
+    for i in range(n):
+        d.append(int(input()))
+    print("Stack before rotation",d)
+    d.rotate(s)
+    print("Stack after rotation",d)
+```
+Write a python program to create a stack with a maximum size of 5 using Lifo Queue.  Get the input from the user and check whether the stack is full and then display the stack values in reverse order
+
+For example:
+
+Input	Result
+4
+10
+20
+30
+40
+False
+40
+30
+20
+10
+5
+2
+4
+6
+8
+3
+True
+3
+8
+6
+4
+2
+
+```
+from queue import LifoQueue
+
+n = int(input())
+values = [int(input()) for _ in range(n)]
+
+stack = LifoQueue(maxsize=5)
+
+for val in values[-5:]:
+    stack.put(val)
+
+print(stack.full())
+
+while not stack.empty():
+    print(stack.get())
+
+```
+Write a python program to check whether the given  string is palindrome
+
+For example:
+
+Input	Result
+madam
+Yes
+Python
+No
+```
+text = input()
+
+if text == text[::-1]:
+    print("Yes")
+else:
+    print("No")
+
+```
+Write a python program to implement the stack using deque method for rotating the stack.
+
+For example:
+
+Test	Input	Result
+fun(3)
+5
+12.2
+14.5
+67.8
+78.3
+45.9
+deque([12.2, 14.5, 67.8, 78.3, 45.9])
+Stack before rotation deque([12.2, 14.5, 67.8, 78.3, 45.9])
+Stack after rotation deque([67.8, 78.3, 45.9, 12.2
+```
+from collections import deque
+
+def fun(r):
+    stack = deque()
+    n = int(input())
+    for _ in range(n):
+        stack.append(float(input()))
+    print("Stack before rotation", stack)
+    stack.rotate(r)
+    print("Stack after rotation", stack)
+```
+Write a python program to create a stack with a maximum size of 7 using Lifo Queue.  Get the input from the user and check whether the stack is full and then display the stack values in reverse order
+
+For example:
+
+Input	Result
+4
+Maths
+Physics
+Chemistry
+Biology
+False
+Biology
+Chemistry
+Physics
+Maths
+7
+Maths
+Physics 
+Chemistry
+Biology
+History
+Economics
+English
+True
+English
+Economics
+History
+Biology
+Chemistry
+Physics
+Maths
+```
+from queue import LifoQueue
+stack = LifoQueue(maxsize=7)
+n= int(input())
+for i in range(n):
+    stack.put(input())
+print(stack.full())
+for i in range(n):
+    print(stack.get())
+```
+Develop a python programming to add a few fruits name in the queue(from rear end) without any duplication 
+
+For example:
+
+Input	Result
+5
+Papaya
+Mango
+Guava
+Apple
+Mango
+['Apple', 'Guava', 'Mango', 'Papaya']
+3
+Grapes
+Banana
+Grapes
+['Banana', 'Grapes']
+```
+class Queue:  
+  def __init__(self):  
+      self.queue = list()  
+  def add_element(self,val):
+      if val not in self.queue:  
+          self.queue.insert(0,val)  
+          return True  
+      return False  
+  def size(self):  
+      return len(self.queue)  
+  
+TheQueue = Queue()  
+n=int(input())
+for i in range(n):
+    TheQueue.add_element(input())  
+print(TheQueue.queue)
+   
+
+```
+Develop a python program to remove the two string values from the rear end  
+
+For example:
+
+Input	Result
+4
+COBOL
+C
+JAVA
+PYTHON
+deque(['JAVA', 'PYTHON'])
+6
+carrot
+betroot
+beans
+cabbage
+potato
+onion
+deque(['beans', 'cabbage', 'potato', 'onion'])
+
+```
+q = []
+n=int(input())
+for i in range(n):
+    q.append(input())
+for i in range(2):
+    q.remove(q[0])
+print(f"deque({q})")
+```
+Develop a python program to sort the 5 float values in the Queue in descending order 
+
+For example:
+
+Input	Result
+562       
+45.7
+87.9
+76.5
+45
+562.0 87.9 76.5 45.7 45.0
+89
+45
+22
+11
+78
+89.0 78.0 45.0 22.0 11.0
+```
+from queue import Queue
+
+def sort_queue_descending():
+    q = Queue()
+
+    # Read 5 float inputs one by one
+    for _ in range(5):
+        value = float(input())
+        q.put(value)
+
+    # Move values to list
+    float_list = []
+    while not q.empty():
+        float_list.append(q.get())
+
+    # Sort in descending order
+    float_list.sort(reverse=True)
+
+    # Print result
+    for num in float_list:
+        print(f"{num:.1f}", end=' ')
+    print()
+
+# Run the function
+sort_queue_descending()
+
+```
+Develop a python programming to add a few fruits name in the queue(from rear end) without any duplication 
+
+For example:
+
+Input	Result
+5
+Papaya
+Mango
+Guava
+Apple
+Mango
+['Apple', 'Guava', 'Mango', 'Papaya']
+3
+Grapes
+Banana
+Grapes
+['Banana', 'Grapes']
+```
+class Queue:  
+  def __init__(self):  
+      self.queue = list()  
+  def add_element(self,val):
+      if val not in self.queue:  
+          self.queue.insert(0,val)  
+          return True  
+      return False  
+  def size(self):  
+      return len(self.queue)  
+  
+TheQueue = Queue()  
+n=int(input())
+for i in range(n):
+    TheQueue.add_element(input())  
+print(TheQueue.queue)
+   
+```
+Develop a python program to remove the two string values from the rear end  
+
+For example:
+
+Input	Result
+4
+COBOL
+C
+JAVA
+PYTHON
+deque(['JAVA', 'PYTHON'])
+6
+carrot
+betroot
+beans
+cabbage
+potato
+onion
+deque(['beans', 'cabbage', 'potato', 'onion'])
+
+```
+n = int(input())
+items = [input() for _ in range(n)]
+
+# Remove first 2 items from the front
+remaining = items[2:]
+
+print(f"deque({remaining})")
+```
+Develop a python program to sort the 5 integer values in the Queue in ascending order 
+
+For example:
+
+Input	Result
+11
+45
+76
+32
+5
+5 11 32 45 76 
+89
+45
+22
+11
+78
+11 22 45 78 89
+```
+import queue  
+q = queue.Queue() 
+for i in range(5):
+    q.put(int(input()))  
+
+n =  q.qsize()  
+for i in range(n):  
+    x = q.get()  
+    for j in range(n-1):  
+        y = q.get()  
+        if x > y :  
+            q.put(y)  
+        else:  
+            q.put(x)  
+            x = y     
+    q.put(x)  
+while (q.empty() == False):   
+    print(q.queue[0], end = " ")    
+    q.get()  
+```
+Develop a python programming to add a few fruits name in the queue(from rear end) without any duplication 
+
+For example:
+
+Input	Result
+5
+Papaya
+Mango
+Guava
+Apple
+Mango
+['Apple', 'Guava', 'Mango', 'Papaya']
+3
+Grapes
+Banana
+Grapes
+['Banana', 'Grapes']
+```
+class Queue:  
+  def __init__(self):  
+      self.queue = list()  
+  def add_element(self,val):
+      if val not in self.queue:  
+          self.queue.insert(0,val)  
+          return True  
+      return False  
+  def size(self):  
+      return len(self.queue)  
+  
+TheQueue = Queue()  
+n=int(input())
+for i in range(n):
+    TheQueue.add_element(input())  
+print(TheQueue.queue)
+   
+```
+Develop a python program to remove the two string values from the rear end  
+
+For example:
+
+Input	Result
+4
+COBOL
+C
+JAVA
+PYTHON
+['JAVA', 'PYTHON']
+6
+carrot
+betroot
+beans
+cabbage
+potato
+onion
+['beans', 'cabbage', 'potato', 'onion']
+
+```
+q = []
+n=int(input())
+for i in range(n):
+    q.append(input())
+for i in range(2):
+    q.remove(q[0])
+print(q)
+```
+Develop a python program to sort the 5 integer values in the Queue in ascending order 
+
+For example:
+
+Input	Result
+11
+45
+76
+32
+5
+5 11 32 45 76 
+89
+45
+22
+11
+78
+11 22 45 78 89
+
+```
+l=[]
+for i in range(5):
+    l.append(int(input()))
+print(*sorted(l))
+```
+Develop a python program to get the 4 integer values from user and display the values  using multiprocessing library
+
+For example:
+
+Input	Result
+10
+20
+30
+40
+10
+20
+30
+40
+2
+4
+6
+8
+2
+4
+6
+8
+
+```
+from multiprocessing import Process
+
+def display_values(values):
+    for val in values:
+        print(val)
+
+if __name__ == '__main__':
+    values = [int(input()) for _ in range(4)]
+    p = Process(target=display_values, args=(values,))
+    p.start()
+    p.join()
+
+```
+Develop a python program to display the student details based on rank order (ascending order)
+
+Note: rank,Studentname
+
+For example:
+
+Input	Result
+4
+3,Sanju
+2,Ashish
+1, Rosy
+7,Amit
+('1', ' Rosy')
+('2', 'Ashish')
+('3', 'Sanju')
+('7', 'Amit')
+3
+8,Saveetha
+4,Ramesh
+5,Jeevan
+('4', 'Ramesh')
+('5', 'Jeevan')
+('8', 'Saveetha')
+
+```
+from queue import PriorityQueue  
+q = PriorityQueue()  
+n=int(input())
+for i in range(n):
+    l=input().split(',')
+    q.put((l[0],l[1])) 
+  
+while not q.empty():  
+    next_item = q.get()  
+    print(next_item)
+
+```
+Develop a python program to get 5 values from the user and display the values using circular queue
+
+For example:
+
+Input	Result
+1
+2
+3
+4
+5
+1 2 3 4 5 
+10
+20
+30
+40
+50
+10 20 30 40 50
+
+```
+class CircularQueue:
+    def __init__(self, size):
+        self.queue = [None]*size
+        self.max_size = size
+        self.front = 0
+        self.rear = -1
+        self.count = 0
+
+    def enqueue(self, value):
+        if self.count == self.max_size:
+            print("Queue is full")
+            return
+        self.rear = (self.rear + 1) % self.max_size
+        self.queue[self.rear] = value
+        self.count += 1
+
+    def display(self):
+        result = []
+        idx = self.front
+        for _ in range(self.count):
+            result.append(str(self.queue[idx]))
+            idx = (idx + 1) % self.max_size
+        print(" ".join(result))
+
+# Main program
+cq = CircularQueue(5)
+
+# Accept 5 inputs
+for _ in range(5):
+    val = int(input())
+    cq.enqueue(val)
+
+# Display the circular queue
+cq.display()
+
+```
+Develop a python program to display the colors and the number of colors the user provided using multiprocessing library
+
+For example:
+
+Input	Result
+4
+red
+green
+blue
+black
+count- 4
+red
+green
+blue
+black
+5
+purple
+green
+blue
+yellow
+orange
+count- 5
+purple
+green
+blue
+yellow
+orange
+
+```
+from multiprocessing import Process
+
+def display_colors(colors):
+    print(f"count- {len(colors)}")
+    for color in colors:
+        print(color)
+
+if __name__ == '__main__':
+    n = int(input())
+    colors = [input() for _ in range(n)]
+    p = Process(target=display_colors, args=(colors,))
+    p.start()
+    p.join()
+```
+Develop a python program to simulate TTD darshan process  based on arrival time
+
+Note: time(HH:MM),name of the person
+
+For example:
+
+Input	Result
+4
+05:30,Sanju
+11:20,Ashish
+11:47, Rosy
+07:30,Amit
+('05:30', 'Sanju')
+('07:30', 'Amit')
+('11:20', 'Ashish')
+('11:47', ' Rosy')
+3
+08:45,Saveetha
+04:45,Ramesh
+10:20,Jeevan
+('04:45', 'Ramesh')
+('08:45', 'Saveetha')
+('10:20', 'Jeevan')
+```
+x=int(input())
+l=[]
+for i in range(x):
+    info=tuple(input().split(","))
+    l.append(info)
+m=sorted(l)
+for i in m :
+    print(i)
+```
+Develop a python program to remove 3 values from the user and display the values using circular queue
+
+For example:
+
+Input	Result
+1
+2
+3
+4
+5
+4 5 
+10
+20
+30
+40
+50
+40 50
+
+```
+li=[int(input()) for i in range(5)]
+l2=li[::-1]
+l2.pop()
+l2.pop()
+l2.pop()
+for i in l2[::-1]:
+    print(i,end=' ')
+```
+Develop a python program to get the 4 integer values from user and display the values  using multiprocessing library
+
+For example:
+
+Input	Result
+10
+20
+30
+40
+10
+20
+30
+40
+2
+4
+6
+8
+2
+4
+6
+8
+
+```
+from multiprocessing import Process
+
+def display_values(values):
+    for val in values:
+        print(val)
+
+if __name__ == '__main__':
+    values = [int(input()) for _ in range(4)]
+    p = Process(target=display_values, args=(values,))
+    p.start()
+    p.join()
+
+```
+Develop a python program to display the student details based on rank order (ascending order)
+
+Note: rank,Studentname
+
+For example:
+
+Input	Result
+4
+3,Sanju
+2,Ashish
+1, Rosy
+7,Amit
+('1', ' Rosy')
+('2', 'Ashish')
+('3', 'Sanju')
+('7', 'Amit')
+3
+8,Saveetha
+4,Ramesh
+5,Jeevan
+('4', 'Ramesh')
+('5', 'Jeevan')
+('8', 'Saveetha')
+
+```
+from queue import PriorityQueue  
+q = PriorityQueue()  
+n=int(input())
+for i in range(n):
+    l=input().split(',')
+    q.put((l[0],l[1])) 
+  
+while not q.empty():  
+    next_item = q.get()  
+    print(next_item)
+
+```
+Develop a python program to remove 3 values from the user and display the values using circular queue
+
+For example:
+
+Input	Result
+1
+2
+3
+4
+5
+4 5 
+10
+20
+30
+40
+50
+40 50
+
+```
+class MyCircularQueue():
+    def __init__(self, k):
+        self.k = k
+        self.queue = [None] * k
+        self.head = self.tail = -1
+    def enqueue(self, data):
+        if ((self.tail + 1) % self.k == self.head):
+            print("The circular queue is full\n")
+        elif (self.head == -1):
+            self.head = 0
+            self.tail = 0
+            self.queue[self.tail] = data
+        else:
+            self.tail = (self.tail + 1) % self.k
+            self.queue[self.tail] = data
+    def dequeue(self):
+        if (self.head == -1):
+            print("The circular queue is empty\n")
+        elif (self.head == self.tail):
+            temp = self.queue[self.head]
+            self.head = -1
+            self.tail = -1
+            return temp
+        else:
+            temp = self.queue[self.head]
+            self.head = (self.head + 1) % self.k
+            return temp
+    def printCQueue(self):
+        if(self.head == -1):
+            print("No element in the circular queue")
+        elif (self.tail >= self.head):
+            for i in range(self.head, self.tail + 1):
+                print(self.queue[i], end=" ")
+            print()
+        else:
+            for i in range(self.head, self.k):
+                print(self.queue[i], end=" ")
+            for i in range(0, self.tail + 1):
+                print(self.queue[i], end=" ")
+            print()
+obj = MyCircularQueue(5)
+for i in range(5):
+    obj.enqueue(int(input()))
+obj.dequeue()
+obj.dequeue()
+obj.dequeue()
+
+obj.printCQueue()
+
+```
+Write a Python program to display first n natural numbers using head recursion 
+
+
+
+For example:
+
+Input	Result
+5
+1 2 3 4 5 
+
+```
+n=int(input())
+for i in range(1,n+1):
+    print(i,end=" ")
+```
+Develop a python program to get string values from the user and display the values using circular queue
+
+For example:
+
+Input	Result
+4
+Python
+Java
+C
+C++
+Python Java C C++
+5
+Java
+C#
+C
+Python
+C++
+Java C# C Python C++
+```
+n=int(input())
+li1=[input() for i in range(n)]
+li2=li1[::1]
+for i in li2:
+    print(i,end=" ")
+```
+Write a python program to create a stack with a maximum size of 5 using Lifo Queue.  Get the input from the user and check whether the stack is full and then display the stack values in reverse order
+
+For example:
+
+Input	Result
+4
+10
+20
+30
+40
+False
+40
+30
+20
+10
+5
+2
+4
+6
+8
+3
+True
+3
+8
+6
+4
+2
+
+```
+from queue import LifoQueue
+stack = LifoQueue(maxsize=5)
+n=int(input())
+for i in range(n):
+    stack.put(input())
+print(stack.full())
+for i in range(n):
+    print(stack.get())
+```
+Write a python program to reverse a string using stack concept
+
+For example:
+
+Input	Result
+Python
+nohtyP
+
+```
+x=input()
+y=x[::-1]
+print(y)
+```
+Develop a python programming to add a few fruits name in the queue(from rear end) without any duplication 
+
+For example:
+
+Input	Result
+5
+Papaya
+Mango
+Guava
+Apple
+Mango
+['Apple', 'Guava', 'Mango', 'Papaya']
+3
+Grapes
+Banana
+Grapes
+['Banana', 'Grapes']
+```
+x=int(input())
+a=[]
+for i in range(x):
+    a.append(input())
+b=[]
+for i in a:
+    if i not in b:
+        b.append(i)
+    
+    
+print(b[::-1])
+```
+Develop a python program to remove 3 values from the user and display the values using circular queue
+
+For example:
+
+Input	Result
+1
+2
+3
+4
+5
+4 5 
+10
+20
+30
+40
+50
+40 50
+
+```
+class MyCircularQueue():
+    def __init__(self, k):
+        self.k = k
+        self.queue = [None] * k
+        self.head = self.tail = -1
+    def enqueue(self, data):
+        if ((self.tail + 1) % self.k == self.head):
+            print("The circular queue is full\n")
+        elif (self.head == -1):
+            self.head = 0
+            self.tail = 0
+            self.queue[self.tail] = data
+        else:
+            self.tail = (self.tail + 1) % self.k
+            self.queue[self.tail] = data
+    def dequeue(self):
+        if (self.head == -1):
+            print("The circular queue is empty\n")
+        elif (self.head == self.tail):
+            temp = self.queue[self.head]
+            self.head = -1
+            self.tail = -1
+            return temp
+        else:
+            temp = self.queue[self.head]
+            self.head = (self.head + 1) % self.k
+            return temp
+    def printCQueue(self):
+        if(self.head == -1):
+            print("No element in the circular queue")
+        elif (self.tail >= self.head):
+            for i in range(self.head, self.tail + 1):
+                print(self.queue[i], end=" ")
+            print()
+        else:
+            for i in range(self.head, self.k):
+                print(self.queue[i], end=" ")
+            for i in range(0, self.tail + 1):
+                print(self.queue[i], end=" ")
+            print()
+obj = MyCircularQueue(5)
+for i in range(5):
+    obj.enqueue(int(input()))
+obj.dequeue()
+obj.dequeue()
+obj.dequeue()
+
+obj.printCQueue()
+
+
+    
+```
+Write a python program to delete two neighboring identical letters.
+
+For example:
+
+Input	Result
+abbaca
+ca
+
+```
+s = input()
+i = 0
+while i < len(s) - 1:
+    if s[i] == s[i + 1]:
+        s = s[:i] + s[i+2:] 
+        i = max(i - 1, 0)    
+    else:
+        i += 1
+print(s)
+```
+Write a python program to find the smallest among three Integer  Numbers
+
+For example:
+
+Input	Result
+10
+54
+7
+
+
+The Smallest  of the three a= 10 b= 54 c= 7 is 7
+```
+a=int(input())
+b=int(input())
+c=int(input())
+smallest=min(a,b,c)
+print(f"The Smallest  of the three a= {a} b= {b} c= {c} is {smallest}")
+
+```
+Write a python program to create a stack with a maximum size of 5 using Lifo Queue.  Get the input from the user and check whether the stack is full and then display the stack values in reverse order
+
+For example:
+
+Input	Result
+4
+10
+20
+30
+40
+False
+40
+30
+20
+10
+5
+2
+4
+6
+8
+3
+True
+3
+8
+6
+4
+2
+
+```
+from queue import LifoQueue
+stack = LifoQueue(maxsize=5)
+n= int(input())
+for i in range(n):
+    stack.put(int(input()))
+print(stack.full())
+for i in range(n):
+    print(stack.get())
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

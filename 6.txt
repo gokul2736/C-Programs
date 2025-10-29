@@ -1,0 +1,5278 @@
+created two classes Ferrari and BMW. They have the same instance method names fuel_type() and max_speed(). However, we have not linked both the classes nor have we used inheritance. Pack two different objects into a tuple and iterate through it using a car variable. 
+
+
+
+
+```
+class Ferrari:
+    def fuel_type(self):
+        print("Petrol")
+    
+    def max_speed(self):
+        print("Max speed 350")
+
+class BMW:
+    def fuel_type(self):
+        print("Diesel")
+    
+    def max_speed(self):
+        print("Max speed is 240")
+
+# Create objects
+ferrari_car = Ferrari()
+bmw_car = BMW()
+
+# Pack into a tuple
+cars = (ferrari_car, bmw_car)
+
+# Iterate and call methods
+for car in cars:
+    car.fuel_type()
+    car.max_speed()
+```
+
+
+
+created two classes India and USA. They have the same instance method names capital(),language()and type(). However, we have not linked both the classes nor have we used inheritance. Pack two different objects into a tuple and iterate through it using a car variable. 
+
+
+
+```
+class India():
+    def capital(self):
+        print("New Delhi is the capital of India.")
+
+    def language(self):
+        print("Hindi is the most widely spoken language of India.")
+
+    def type(self):
+        print("India is a developing country.")
+
+class USA():
+    def capital(self):
+        print("Washington, D.C. is the capital of USA.")
+
+    def language(self):
+        print("English is the primary language of USA.")
+
+    def type(self):
+        print("USA is a developed country.")
+
+obj_ind = India()
+obj_usa = USA()
+
+for country in (obj_ind, obj_usa):
+    country.capital()
+    country.language()
+    country.type()
+```
+
+
+
+Create two different classes named as flipkart and amazon use the same method names info() and init() to provide respective price quotations of the product.
+
+However, we have not linked both the classes nor have we used inheritance. Pack two different objects into a tuple and iterate through it using a car variable. 
+
+
+
+```
+class Flipkart:
+    def init(self):
+        self.name = "Iphone"
+        self.price = 2.5
+
+    def info(self):
+        print(f"This is product and fli class is invoked. The name is {self.name}. This costs {self.price} rupees.")
+
+class Amazon:
+    def init(self):
+        self.name = "Iphone"
+        self.price = 4
+
+    def info(self):
+        print(f"This is product and am class is invoked. The name is {self.name}. This costs {self.price} rupees.")
+
+# Create objects
+fli = Flipkart()
+am = Amazon()
+
+# Pack into a tuple
+products = (fli, am)
+
+# Iterate and call methods
+for store in products:
+    store.init()
+    store.info()
+```
+
+
+
+
+created two classes Tiger and Elephant. They have the same instance method names color() and nature(). However, we have not linked both the classes nor have we used inheritance. Pack two different objects into a tuple and iterate through it using a car variable. 
+
+
+
+Note:It is possible due to polymorphism because we have added the same method in both classes Python first checks the object’s class type and executes the method present in its class.
+
+
+
+```
+class Tiger:
+    def nature(self):
+        print("I am a Tiger and I am dangerous.")
+
+    def color(self):
+        print("Tigers are orange with black strips")
+
+class Elephant:
+    def nature(self):
+        print("I am an Elephant and I am calm and harmless")
+
+    def color(self):
+        print("Elephants are grayish black")
+
+# Create objects
+t = Tiger()
+e = Elephant()
+
+# Pack into a tuple
+animals = (t, e)
+
+# Iterate and call methods
+for animal in animals:
+    animal.nature()
+    animal.color()
+```
+
+
+
+
+Create a parent class Fish and define a class method type, then create a child class called Shark while overriding the type method so that objects instantiated from the Shark class use the overridden method.
+
+
+
+```
+class Fish:
+    def type(self):
+        print("fish")
+
+class Shark(Fish):
+    def type(self):
+        print("shark")
+
+# Create objects
+f = Fish()
+s = Shark()
+
+# Call the type method
+f.type()
+s.type()
+```
+
+
+
+
+Create a parent class vehicle with the following methods show(),max_speed,change_gear() inherit the car class from the vehicle class,where the car class methods max_speed(),change_gear() override the same methods of base class  using method overriding
+
+
+
+```
+class Vehicle:
+
+    def __init__(self, name, color, price):
+        self.name = name
+        self.color = color
+        self.price = price
+
+    def show(self):
+        print('Details:', self.name, self.color, self.price)
+
+    def max_speed(self):
+        print('Vehicle max speed is 150')
+
+    def change_gear(self):
+        print('Vehicle change 6 gear')
+
+
+# inherit from Vehicle class
+class Car(Vehicle):
+    def max_speed(self):
+        print('Car max speed is 240')
+
+    def change_gear(self):
+        print('Car change 7 gear')
+
+
+# Car Object
+car = Car('Car x1', 'Red', 20000)
+car.show()
+car.max_speed()
+car.change_gear()
+
+# Vehicle Object
+vehicle = Vehicle('Truck x1', 'white', 75000)
+vehicle.show()
+vehicle.max_speed()
+vehicle.change_gear()
+
+```
+
+
+
+
+Create two classes Employee and Admin. These two different classes have the same method name info(). This method contains information(name, department) about employee in Employee class and admin in Admin class.after initializing classes, Create two objects for respective classes. Then the method info() is called. Once by the object of Employee class and once by the object of Admin class.
+
+
+
+```
+class Employee:
+    def info(self):
+        print("Rooney from Electronics")
+class Admin:
+    def info(self):
+        print("Kalesh from CS")
+obj_emp = Employee()
+obj_adm = Admin()
+obj_emp.info()
+obj_adm.info()
+```
+
+
+
+
+Create two different classes named as flipkart and amazon use the same method names info() and init() to provide respective price quotations of the product.
+
+However, we have not linked both the classes nor have we used inheritance. Pack two different objects into a tuple and iterate through it using a car variable. 
+
+
+
+```
+class Flipkart:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    def info(self):
+        print(f'This is product and fli class is invoked. The name is {self.name}. This costs {self.price} rupees.')
+
+class Amazon:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    def info(self):
+        print(f'This is product and am class is invoked. The name is {self.name}. This costs {self.price} rupees.')
+
+# Create objects of both classes
+fli = Flipkart('Iphone', 2.5)
+am = Amazon('Iphone', 4)
+
+# Pack both objects into a tuple
+products = (fli, am)
+
+# Iterate and call info() — polymorphism in action
+for car in products:
+    car.info()
+```
+
+
+
+
+created two classes Tiger and Elephant. They have the same instance method names color() and nature(). However, we have not linked both the classes nor have we used inheritance. Pack two different objects into a tuple and iterate through it using a car variable. 
+
+
+
+```
+class Tiger:
+    def nature(self):
+        print("I am a Tiger and I am dangerous.")
+
+    def color(self):
+        print("Tigers are orange with black strips")
+
+class Elephant:
+    def nature(self):
+        print("I am an Elephant and I am calm and harmless")
+
+    def color(self):
+        print("Elephants are grayish black")
+
+# Create objects of both classes
+t = Tiger()
+e = Elephant()
+
+# Pack both objects into a tuple
+animals = (t, e)
+
+# Iterate through the tuple using a common variable (car) — demonstrates polymorphism
+for car in animals:
+    car.nature()
+    car.color()
+```
+
+
+
+
+Create a parent class Fish and define a class method type, then create a child class called Shark while overriding the type method so that objects instantiated from the Shark class use the overridden method.
+
+
+
+```
+class Fish:
+    @classmethod
+    def type(cls):
+        print("fish")
+
+class Shark(Fish):
+    @classmethod
+    def type(cls):
+        print("shark")
+
+# Instantiate objects
+f = Fish()
+s = Shark()
+
+# Call type methods
+f.type()  # Outputs: fish
+s.type()  # Outputs: shark
+```
+
+
+
+Create two user-defined methods, perimeter and area, defined in circle and square classes, both circle class and square class invoke the same method name displaying the characteristic of Polymorphism to deliver the required output.
+
+
+
+```
+import math
+
+class Square:
+    def __init__(self, side):
+        self.side = side
+
+    def perimeter(self):
+        print("Perimeter computed for square: ", 4 * self.side)
+
+    def area(self):
+        print("Area computed for square: ", self.side ** 2)
+
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def perimeter(self):
+        print("Perimeter computed for Circle: ", 2 * math.pi * self.radius)
+
+    def area(self):
+        print("Area computed for Circle: ", math.pi * self.radius ** 2)
+
+# Taking it
+side = int(input())
+radius = int(input())
+
+# Creating objects
+square = Square(side)
+circle = Circle(radius)
+
+# Calling methods
+square.perimeter()
+square.area()
+
+circle.perimeter()
+circle.area()
+```
+
+
+
+Create two classes Cat and Dog with functions mood() and sound() which are same for both the classes yet they produce distinct outputs. iterate over the objects of the two classes “Cat” and “Dog” without worrying about the class types
+
+
+
+```
+class Cat:
+    def mood(self):
+        print("Grumpy")
+
+    def sound(self):
+        print("Meow")
+
+class Dog:
+    def mood(self):
+        print("Happy")
+
+    def sound(self):
+        print("Woof")
+
+# Creating objects
+cat = Cat()
+dog = Dog()
+
+# Storing in a list for iteration
+animals = [cat, dog]
+
+# Iterating and calling methods
+for animal in animals:
+    animal.mood()
+    animal.sound()
+```
+
+
+
+
+Create two new classes: Lion and Giraffe The outputs from this program are carnivore and herbivore, respectively. The two classes both use the method name diet, but they define those methods differently. An object instantiated from the Lion class will use the method as it is defined in that class. The Giraffe class may have a method with the same name, but objects instantiated from the Lion class won’t interact with it.
+
+
+```
+class Lion:
+    def diet(self):
+        print("carnivore")
+
+class Giraffe:
+    def diet(self):
+        print("herbivore")
+
+# Creating objects
+lion = Lion()
+giraffe = Giraffe()
+
+# Storing objects in a list
+animals = [lion, giraffe]
+
+# Iterating and calling the diet method
+for animal in animals:
+    animal.diet()
+```
+
+
+
+
+write a python program to perform subtraction of two complex number using binary '+' operator overloading
+
+class name : complex
+
+
+Ob1 = complex(1, 2)
+Ob2 = complex(2, 3)
+
+
+
+```
+class complex:
+    def __init__(self, real, imag):
+        self.real = real
+        self.imag = imag
+
+    def __add__(self, other):
+        # Perform subtraction inside + operator overloading
+        return (self.real - other.real, self.imag - other.imag)
+
+# Create objects
+Ob1 = complex(1, 2)
+Ob2 = complex(2, 3)
+
+# '+' operator is overloaded to perform subtraction
+result = Ob1 + Ob2
+print(result)
+```
+
+
+
+
+write a python program to overload less than operator 
+
+class name should be A
+
+ob1 = A(200)
+
+ob2 = A(30)
+
+
+```
+class A:
+    def __init__(self, value):
+        self.value = value
+
+    def __lt__(self, other):
+        return self.value < other.value
+
+# Create objects
+ob1 = A(200)
+ob2 = A(30)
+
+# Use overloaded < operator
+if ob2 < ob1:
+    print("ob2 is less than ob1")
+else:
+    print("ob2 is not less than ob1")
+```
+
+
+
+
+Write a Python program for simply using the overloading operator for adding two objects.
+
+class name : fruits
+
+object name :  apple, mango, a and b
+
+
+
+```
+class fruits:
+    def __init__(self, quantity=0, name=""):
+        self.quantity = quantity
+        self.name = name
+
+    def __add__(self, other):
+        total_quantity = self.quantity + other.quantity
+        combined_name = self.name + other.name
+        return fruits(total_quantity, combined_name)
+
+# Input values
+apple = fruits(100, "banana")
+mango = fruits(200, "orange")
+
+# Add the objects
+a = apple + mango
+
+# Display results
+print("apple and mango mixed:", a.quantity)
+print("fruit mix: ", a.name)
+```
+
+
+
+
+write a python program to overload greater than operator (compare obj1 and obj2)
+
+
+
+obj1 = saveetha(90)
+
+obj2 = saveetha(80)
+
+
+
+
+```
+class saveetha:
+    def __init__(self, value):
+        self.value = value
+
+    def __gt__(self, other):
+        return self.value > other.value
+
+# Create objects
+obj1 = saveetha(90)
+obj2 = saveetha(80)
+
+# Compare using overloaded > operator
+result = obj1 > obj2
+print(result)
+```
+
+
+
+Write a python program to multiply two object and print the word "hello" 3 times . 
+
+note : use class name saveetha
+
+obj1=saveetha(2)
+
+obj2=saveetha(3)
+
+
+
+```
+class saveetha:
+    def __init__(self, value):
+        self.value = value
+
+    def __mul__(self, other):
+        # Perform multiplication
+        result = self.value * other.value
+        
+        # Print the result of multiplication first
+        print(result)
+        
+        # Then print "hello" exactly 3 times in one line
+        print("hello" * 3)  # This will print 'hellohellohello'
+        
+        return result
+
+# Create objects
+obj1 = saveetha(2)
+obj2 = saveetha(3)
+
+# Multiply the objects
+obj1 * obj2
+```
+
+
+
+
+Write a Python program for simply using the overloading operator for adding two objects.
+
+class name : accessories
+
+
+
+```
+class accessories:
+    def __init__(self, rate=0, item=""):
+        self.rate = rate
+        self.item = item
+
+    def __add__(self, other):
+        # Perform addition on both rate and item
+        total_rate = self.rate + other.rate
+        combined_items = self.item + other.item
+        return accessories(total_rate, combined_items)
+
+# Create objects
+accessory1 = accessories(69, "APPLE")
+accessory2 = accessories(68, "LAPTOP")
+
+# Add the objects
+result = accessory1 + accessory2
+
+# Display results
+print("Rate is :", result.rate)
+print("accessories are: ", result.item)
+```
+
+
+
+
+Write a python program to multiply two object and print the word "apple" 6 times . 
+
+note : use class name saveetha
+
+obj1=saveetha(4)
+
+obj2=saveetha(6)
+
+
+
+```
+class saveetha:
+    def __init__(self, value):
+        self.value = value
+
+    def __mul__(self, other):
+        # Perform multiplication of the values
+        result = self.value * other.value
+        
+        # Print the result of multiplication
+        print(result)
+        
+        # Print "apple" result times
+        print("apple" * 6)
+        
+        return result
+
+# Create objects
+obj1 = saveetha(4)
+obj2 = saveetha(6)
+
+# Multiply the objects
+obj1 * obj2
+```
+
+
+
+write a python program to perform subtraction of two complex number using binary '+' operator overloading
+
+class name : complex
+
+
+Ob1 = complex(1, 2)
+Ob2 = complex(2, 3)
+
+
+
+```
+class complex:
+    def __init__(self, real, imag):
+        self.real = real
+        self.imag = imag
+
+    def __add__(self, other):
+        return (self.real - other.real, self.imag - other.imag)
+
+Ob1 = complex(1, 2)
+Ob2 = complex(2, 3)
+
+result = Ob1 + Ob2
+
+print(result)
+```
+
+
+
+
+Write a python program to overload equality operator .
+
+class name should be A
+
+ob1 = A(2)
+
+ob2 = A(4)
+
+
+
+```
+class A:
+    def __init__(self, value):
+        self.value = value
+
+    def __eq__(self, other):
+        return self.value == other.value
+
+ob1 = A(2)
+ob2 = A(4)
+
+if ob1 == ob2:
+    print("Equal")
+else:
+    print("Not equal")
+```
+
+
+
+
+Write a Python program for simply using the overloading operator for adding two objects.
+
+class name : fruits
+
+object name :  apple, mango, a and b
+
+
+
+
+```
+class fruits:
+    def __init__(self, quantity=0, name=""):
+        self.quantity = quantity
+        self.name = name
+
+    def __add__(self, other):
+        total_quantity = self.quantity + other.quantity
+        combined_name = self.name + other.name
+        return fruits(total_quantity, combined_name)
+
+    def show_mix(self):
+        print(f"apple and mango mixed: {self.quantity}")
+        print(f"fruit mix:  {self.name}")
+
+a = fruits(100, "banana")
+b = fruits(200, "orange")
+
+mix = a + b
+
+mix.show_mix()
+```
+
+
+
+write a python program to overload greater than operator (compare obj1 and obj2)
+
+
+
+obj1 = saveetha(90)
+
+obj2 = saveetha(80)
+
+
+
+
+```
+class saveetha:
+    def __init__(self, value):
+        self.value = value
+
+    def __gt__(self, other):
+        return self.value > other.value
+
+obj1 = saveetha(90)
+obj2 = saveetha(80)
+
+print(obj1 > obj2)
+```
+
+
+
+Write a python program to multiply two object and print the word "orange" 10 times . 
+
+note : use class name 'CSE'
+
+obj1=cse(4)
+
+obj2=cse(10)
+
+
+
+
+```
+class CSE:
+    def __init__(self, value):
+        self.value = value
+
+    def __mul__(self, other):
+        return self.value * other.value
+
+obj1 = CSE(4)
+obj2 = CSE(10)
+
+result = obj1 * obj2
+
+print(result)
+print("orange" * 10)
+```
+
+
+
+
+write a python program to perform product of two complex number using binary '+' operator overloading
+
+class name : complex
+
+
+Ob1 = complex(1, 2)
+Ob2 = complex(2, 3)
+
+
+
+```
+class complex:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+     # adding two objects
+    def __add__(self, other):
+        return self.a * other.a, self.b * other.b
+Ob1 = complex(1, 2)
+Ob2 = complex(2, 3)
+Ob3 = Ob1 + Ob2
+print(Ob3)
+```
+
+
+
+Write a python program to overload equality operator .
+
+class name should be A
+
+ob1 = A(4)
+
+ob2 = A(4)
+
+
+
+```
+class A:
+    def __init__(self, a):
+        self.a = a
+    def __eq__(self, other):
+        if(self.a == other.a):
+            return "Both are equal"
+        else:
+            return "Not equal"
+ob1 = A(4)
+ob2 = A(4            )
+print(ob1 == ob2)    
+```
+
+
+
+
+Write a Python program for simply using the overloading operator for adding two objects.
+
+For example:
+
+Input	Result
+23
+21
+hello
+world
+:  44
+:  helloworld
+
+
+
+
+```
+class example:  
+    def __init__(self, X):  
+        self.X = X  
+   
+    # adding two objects  
+    def __add__(self, U ):
+        return self.X + U.X  
+object_1 = example( int( input()))  
+object_2 = example( int( input()))  
+print (": ", object_1 + object_2)  
+object_3 = example(str( input()))  
+object_4 = example(str( input()))  
+print (": ", object_3 + object_4)   
+```
+
+
+
+write a python program to overload less than operator (compare obj1 and obj2)
+
+
+
+obj1 = Marks(20)
+
+obj2 = Marks(10)
+
+
+
+````
+class Marks(object):
+    # Define a constructor
+    def __init__(self, x):
+        self.x = x
+
+    # Use the magic function for < operator overloading
+    def __lt__(self, other):
+        return self.x < other.x
+
+# Driver code
+obj1 = Marks(20)
+obj2 = Marks(10)
+
+print(obj1 < obj2)
+```
+
+
+
+Write a python program to multiply two object and print the word "mobile" 2 times . 
+
+note : use class name 'CSE'
+
+obj1=cse(4)
+
+obj2=cse(2)
+
+
+
+```
+class cse:
+        def __init__(self,a):
+                self.a=a
+        def __mul__(self,z):
+                return self.a *z.a
+obj1=cse(4)
+obj2=cse(2)
+obj3=cse("mobile")
+print(obj1*obj2)
+print(obj2*obj3)
+```
+
+
+
+
+import the abc module to create the abstract base class. Create the Car class that inherit the ABC class and define an abstract method named mileage(). then inherit the base class from the three different subclasses and implement the abstract method differently. Create the objects to call the abstract method.
+
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Base Class
+class Car(ABC):
+    
+    @abstractmethod
+    def mileage(self):
+        pass
+
+# Subclass 1: Sedan
+class Sedan(Car):
+    def mileage(self):
+        print("The mileage is 30kmph")
+
+# Subclass 2: SUV
+class SUV(Car):
+    def mileage(self):
+        print("The mileage is 27kmph")
+
+# Subclass 3: Hatchback
+class Hatchback(Car):
+    def mileage(self):
+        print("The mileage is 25kmph")
+
+# Subclass 4: Sports Car
+class SportsCar(Car):
+    def mileage(self):
+        print("The mileage is 24kmph")
+
+# Create objects
+car1 = Sedan()
+car2 = SUV()
+car3 = Hatchback()
+car4 = SportsCar()
+
+# Call the abstract method mileage()
+car1.mileage()
+car2.mileage()
+car3.mileage()
+car4.mileage()
+```
+
+
+
+Create an abstract class Invoice, and abstract method invoice () under def statement also has two child class derived from Invoice and does the functionality. Then, using an Object ‘aa’, the methods are invoked.
+
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Base Class
+class Invoice(ABC):
+
+    @abstractmethod
+    def invoice(self, amount):
+        pass
+
+# Child Class 1: PayCheque
+class PayCheque(Invoice):
+    def invoice(self, amount):
+        print(f"paycheque of-  {amount}")
+        # No return value for cheque payment
+
+# Child Class 2: PurchaseProduct
+class PurchaseProduct(Invoice):
+    def invoice(self, amount):
+        print(f"Purchase of the product-  {amount}")
+        return True
+
+# Child Class 3: PayThroughCard
+class PayThroughCard(Invoice):
+    def invoice(self, amount):
+        print(f"pay through card of-  {amount}")
+        # No return value for card payment
+
+# Create objects
+aa = PayCheque()
+bb = PurchaseProduct()
+
+# Invoke the methods with paycheque and purchase product
+aa.invoice(6500)   # No return for cheque payment
+print(bb.invoice(6500))  # Purchase product with return value True
+
+# Create another instance with card payment and purchase product
+cc = PayThroughCard()
+dd = PurchaseProduct()
+
+# Invoke the methods with card payment
+cc.invoice(2600)   # No return for card payment
+print(dd.invoice(2600))  # Purchase product with return value True
+```
+
+
+
+Create an abstract method course () and a method print) visible to the user. The inherited class here is demo class and learn and has their course () method. The objects are created for the respective class and invoke the course () method for both of the classes. 
+
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Base Class
+class EduClass(ABC):
+
+    @abstractmethod
+    def course(self):
+        pass
+
+    def print(self, value):
+        print(f"The value is:  {value}")
+
+# Child Class 1: Demo
+class Demo(EduClass):
+    def course(self):
+        print("This is demo class")
+        self.print(850)
+
+# Child Class 2: Learn
+class Learn(EduClass):
+    def course(self):
+        print("This is test class")
+        self.print(500)
+
+# Create objects
+t1 = Learn()
+ex = Demo()
+
+# Invoke the course method
+t1.course()  # Calls course from Learn class
+ex.course()  # Calls course from Demo class
+
+# Check instance types
+print(f"t1 is instance of educlass?  {isinstance(t1, EduClass)}")
+print(f"ex is instance of educlass?  {isinstance(ex, EduClass)}")
+```
+
+
+
+Create a class VEHICLE  which is Abstract Class and CAR and BIKE are Child Classes. VEHICLE class have two unimplemented methods, which are implemented in child Classes.
+
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Base Class
+class VEHICLE(ABC):
+
+    @abstractmethod
+    def start(self):
+        pass
+
+    @abstractmethod
+    def stop(self):
+        pass
+
+# Child Class 1: CAR
+class CAR(VEHICLE):
+    def start(self):
+        print("Car is Started")
+
+    def stop(self):
+        print("Car is stopped")
+
+    def accelerate(self):
+        print("Car is accelrating @ 90kmph")
+
+    def park(self):
+        print("Car is parked at four wheeler parking")
+
+# Child Class 2: BIKE
+class BIKE(VEHICLE):
+    def start(self):
+        print("Bike is Started")
+
+    def stop(self):
+        print("Bike is stopped")
+
+    def accelerate(self):
+        print("Bike is accelrating @ 60kmph")
+
+    def park(self):
+        print("Bike is parked at two wheeler parking")
+
+# Create objects for Car and Bike
+car = CAR()
+bike = BIKE()
+
+# Perform operations for Bike
+print("Bike Object")
+bike.start()
+bike.accelerate()
+bike.park()
+bike.stop()
+
+# Perform operations for Car
+print("\nCar Object")
+car.start()
+car.accelerate()
+car.park()
+car.stop()
+```
+
+
+
+
+Create an abstract class Animal with an abstract mathod move which can be implemented by the subclasses of the animal class.
+
+For example:
+
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Base Class
+class Animal(ABC):
+
+    @abstractmethod
+    def move(self):
+        pass
+
+# Subclass 1: Dog
+class Dog(Animal):
+    def move(self):
+        print("I can walk and run")
+
+# Subclass 2: Snake
+class Snake(Animal):
+    def move(self):
+        print("I can crawl")
+        print("I can bark")
+
+# Subclass 3: Lion
+class Lion(Animal):
+    def move(self):
+        print("I can roar")
+
+# Create objects for each animal
+dog = Dog()
+snake = Snake()
+lion = Lion()
+
+# Call the move method for each animal
+dog.move()  # Dog's movement
+snake.move()  # Snake's movement
+lion.move()  # Lion's movement
+```
+
+
+
+
+Create an abstract base class has a concrete method sleep() that will be the same for all the child classes. So, we do not define it as an abstract method, thus saving us from code repetition. On the other hand, the sounds that animals make are all different. For that purpose, define the sound() method as an abstract method. then implement it in all child classes.
+
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Base Class
+class Animal(ABC):
+
+    # Concrete method
+    def sleep(self):
+        print("I am going to sleep in a while")
+
+    # Abstract method
+    @abstractmethod
+    def sound(self):
+        pass
+
+# Subclass 1: Cat
+class Cat(Animal):
+    def sound(self):
+        print("I can meow")
+
+# Subclass 2: Snake
+class Snake(Animal):
+    def sound(self):
+        print("I can hiss")
+
+# Create objects for each animal
+cat = Cat()
+snake = Snake()
+
+# Call the methods
+cat.sleep()  # All animals share the same sleep method
+cat.sound()  # Cat-specific sound
+
+
+snake.sound()  # Snake-specific sound
+```
+
+
+
+Create an abstract class Invoice, and abstract method invoice () under def statement also has two child class derived from Invoice and does the functionality. Then, using an Object ‘aa’, the methods are invoked
+
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Base Class
+class Invoice(ABC):
+
+    @abstractmethod
+    def invoice(self, amount):
+        pass
+
+# Child Class 1: PayCheque
+class PayCheque(Invoice):
+    def invoice(self, amount):
+        print(f"paycheque of-  {amount}")
+        # No return value for cheque payment
+
+# Child Class 2: PurchaseProduct
+class PurchaseProduct(Invoice):
+    def invoice(self, amount):
+        print(f"Purchase of the product-  {amount}")
+        return True
+
+# Child Class 3: PayThroughCard
+class PayThroughCard(Invoice):
+    def invoice(self, amount):
+        print(f"pay through card of-  {amount}")
+        # No return value for card payment
+
+# Create objects
+aa = PayCheque()
+bb = PurchaseProduct()
+
+# Invoke the methods with paycheque and purchase product
+aa.invoice(6500)   # No return for cheque payment
+print(bb.invoice(6500))  # Purchase product with return value True
+
+# Create another instance with card payment and purchase product
+cc = PayThroughCard()
+dd = PurchaseProduct()
+
+# Invoke the methods with card payment
+cc.invoice(2600)   # No return for card payment
+print(dd.invoice(2600))  # Purchase product with return value True
+```
+
+
+
+Bank is an abstract class which having intertest() abstract method. SBI class is a child class to Bank class, so SBI class should provide implementation for abstract method which is available in Bank abstract class. An object is created to subclass, which is SBI, and then implemented method interest() is called.
+
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Base Class: Bank
+class Bank(ABC):
+    
+    # Concrete method in the abstract class
+    def welcome(self):
+        print("Welcome to bank")
+    
+    # Abstract method
+    @abstractmethod
+    def interest(self):
+        pass
+
+# Subclass 1: SBI (SBI Bank)
+class SBI(Bank):
+    
+    # Providing implementation for the abstract method interest
+    def interest(self):
+        print("In sbi bank 5 rupees interest")
+
+# Create an object of SBI
+sbi_bank = SBI()
+
+# Call methods
+sbi_bank.welcome()  # Concrete method from Bank class
+sbi_bank.interest()  # SBI-specific implementation of interest
+```
+
+
+Create an abstract class Payment with an abstract methos payment .create two subclasses creditcardpayment and mobilewalletpayment,which can implement the abstract method.invoke the method using the objects of the abstract class.
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Base Class: Payment
+class Payment(ABC):
+    
+    # Abstract method
+    @abstractmethod
+    def payment(self, amount):
+        pass
+
+# Subclass 1: CreditCardPayment
+class CreditCardPayment(Payment):
+    
+    # Implementing the abstract method payment
+    def payment(self, amount):
+        print(f"Credit card payment of-  {amount}")
+        print(f"Purchase of amount-  {amount}")
+        print("True")
+        return True
+
+# Subclass 2: MobileWalletPayment
+class MobileWalletPayment(Payment):
+    
+    # Implementing the abstract method payment
+    def payment(self, amount):
+        print(f"Mobile wallet payment of-  {amount}")
+        print(f"Purchase of amount-  {amount}")
+        print("True")
+        return True
+
+# Create objects of CreditCardPayment and MobileWalletPayment
+credit_card_payment = CreditCardPayment()
+mobile_wallet_payment = MobileWalletPayment()
+
+# Call the payment method using both objects
+credit_card_payment.payment(100)
+mobile_wallet_payment.payment(200)
+```
+
+
+
+Create an abstract class Animal with an abstract mathod move which can be implemented by the subclasses of the animal class.
+
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Base Class: Animal
+class Animal(ABC):
+    
+    # Abstract method
+    @abstractmethod
+    def move(self):
+        pass
+
+# Subclass 1: Dog
+class Dog(Animal):
+    def move(self):
+        print("I can walk and run")
+
+# Subclass 2: Snake
+class Snake(Animal):
+    def move(self):
+        print("I can crawl")
+        print("I can bark")
+
+# Subclass 3: Lion
+class Lion(Animal):
+    def move(self):
+        print("I can roar")
+
+# Create objects for each animal
+dog = Dog()
+snake = Snake()
+lion = Lion()
+
+# Call the move method for each animal
+dog.move()  # Dog's movement
+snake.move()  # Snake's movement
+lion.move()  # Lion's movement
+```
+
+
+
+Create an abstract base class has a concrete method sleep() that will be the same for all the child classes. So, we do not define it as an abstract method, thus saving us from code repetition. On the other hand, the sounds that animals make are all different. For that purpose, define the sound() method as an abstract method. then implement it in all child classes.
+
+For example:
+
+
+
+```
+from abc import ABC,abstractmethod
+ 
+class Animal(ABC):
+ 
+    #concrete method
+    def sleep(self):
+        print("I am going to sleep in a while")
+ 
+    @abstractmethod
+    def sound(self):
+        print("This function is for defining the sound by any animal")
+        pass
+ 
+class Snake(Animal):
+    def sound(self):
+        print("I can hiss")
+ 
+class Dog(Animal):
+    def sound(self):
+        print("I can bark")
+ 
+class Lion(Animal):
+    def sound(self):
+        print("I can roar")
+       
+class Cat(Animal):
+    def sound(self):
+        print("I can meow")
+        
+#Create the objects to invoke the abstract method
+
+obj2 = Cat()
+obj2.sleep()
+obj2.sound()
+
+obj3 = Snake()
+obj3.sound()
+```
+
+
+
+
+Create the abstract method  calculate_area  which is  of the abstract class 'Shape'. The implementation of this abstract class can be defined in the sub-classes that inherit the class 'Shape'.  'Rectangle' and 'Circle' are the two sub-classes that inherit the abstract class 'Shape'.
+
+
+
+```
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def calculate_area(self):
+        pass
+
+class Rectangle(Shape):
+    def __init__(self, length=5, breadth=3):
+        self.length = length
+        self.breadth = breadth
+
+    def calculate_area(self):
+        return self.length * self.breadth
+
+class Circle(Shape):
+    def __init__(self, radius=4):
+        self.radius = radius
+
+    def calculate_area(self):
+        return 3.14 * self.radius * self.radius
+
+# Object creation
+rec = Rectangle()
+cir = Circle()
+
+print("Area of a rectangle:", rec.calculate_area())
+print("Area of a circle:", cir.calculate_area())
+```
+
+
+
+
+Bank is an abstract class which having intertest() abstract method. SBI class is a child class to Bank class, so SBI class should provide implementation for abstract method which is available in Bank abstract class. An object is created to subclass, which is SBI, and then implemented method interest() is called.
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Class
+class Bank(ABC):
+    def bank_info(self):
+        print("Welcome to bank")
+    
+    @abstractmethod
+    def interest(self):
+        pass
+
+# Subclass
+class SBI(Bank):
+    def interest(self):
+        print("In sbi bank 5 rupees interest")
+
+# Object creation and method calls
+s = SBI()
+s.bank_info()
+s.interest()
+```
+
+
+
+Create a class VEHICLE  which is Abstract Class and CAR and BIKE are Child Classes. VEHICLE class have two unimplemented methods, which are implemented in child Classes.
+
+For example:
+
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Class
+class Vehicle(ABC):
+    def start(self, name=""):
+        print(name, "is Started")
+    
+    @abstractmethod
+    def acclerate(self, name=""):
+        pass
+
+    @abstractmethod
+    def park(self, name=""):
+        pass
+
+    def stop(self, name=""):
+        print(name, "is stopped")
+
+class Bike(Vehicle):
+    def acclerate(self, name=""):
+        print(name, "is accelrating @ 60kmph")
+
+    def park(self, name=""):
+        print(name, "is parked at two wheeler parking")
+
+class Car(Vehicle):
+    def acclerate(self, name=""):
+        print(name, "is accelrating @ 90kmph")
+
+    def park(self, name=""):
+        print(name, "is parked at four wheeler parking")
+
+def main():
+    print("Bike Object")
+    b = Bike()
+    b.start("Bike")
+    b.acclerate("Bike")
+    b.park("Bike")
+    b.stop("Bike")
+
+    print("\nCar Object")
+    c = Car()
+    c.start("Car")
+    c.acclerate("Car")
+    c.park("Car")
+    c.stop("Car")
+
+if __name__ == "__main__":
+    main()
+```
+
+
+
+Create a abstract class Book with an abstract method __repr()__ method and create two subclasses Novel and academic which will give the implementation of the abstract method __repr__().
+
+
+
+```
+from abc import ABC, abstractmethod
+
+class Book(ABC):
+    def __init__(self, title, quantity, author, price):
+        self.title = title
+        self.quantity = quantity
+        self.author = author
+        self.__price = price
+        self.__discount = None
+
+    def set_discount(self, discount):
+        self.__discount = discount
+
+    def get_price(self):
+        if self.__discount:
+            return self.__price * (1 - self.__discount)
+        return self.__price
+
+    @abstractmethod
+    def __repr__(self):
+        pass
+
+class Novel(Book):
+    def __init__(self, title, quantity, author, price, pages):
+        super().__init__(title, quantity, author, price)
+        self.pages = pages
+
+    def __repr__(self):
+        return f"Book: {self.title}, Quantity: {self.quantity}, Author: {self.author}, Price: {self.get_price()}"
+
+class Academic(Book):
+    def __init__(self, title, quantity, author, price, branch):
+        super().__init__(title, quantity, author, price)
+        self.branch = branch
+
+    def __repr__(self):
+        return f"Book: {self.title}, Branch: {self.branch}, Quantity: {self.quantity}, Author: {self.author}, Price: {self.get_price()}"
+
+# Create and use objects
+novel1 = Novel('Two States', 20, 'Chetan Bhagat', 200, 187)
+novel1.set_discount(0.20)
+
+academic1 = Academic('Python Foundations', 12, 'PSF', 655, 'IT')
+
+print(novel1)
+print(academic1)
+```
+
+
+
+
+Create a class Employee with public method show to display the details of the employee.
+
+
+
+```
+class Employee:
+    # constructor
+    def __init__(self, name, salary):
+        # public data members
+        self.name = name
+        self.salary = salary
+
+    # public instance methods
+    
+# creating object of a class
+emp = Employee('Jessa', 10000)
+
+# accessing public data members
+print("Name: ", emp.name, 'Salary:', emp.salary)
+print("Name: ", emp.name, 'Salary:', emp.salary)
+
+# call public method of the class
+```
+
+
+
+
+
+Create a class student with members name ,age,rollno and an user defined function show() to display the details of the student ,use the getter and setter method Information Hiding and conditional logic for setting an object attributes
+
+
+
+```
+class Student:
+    def __init__(self, name, roll_no, age):
+        # private member
+        self.name = name
+        # private members to restrict access
+        # avoid direct data modification
+        self.__roll_no = roll_no
+        self.__age = age
+
+    def show(self):
+        print('Student Details:', self.name, self.__roll_no)
+
+    # getter methods
+    def get_roll_no(self):
+        return self.__roll_no
+
+    # setter method to modify data member
+    # condition to allow data modification with rules
+    def set_roll_no(self, number):
+        if number > 50:
+            print('Invalid roll no. Please set correct roll number')
+        else:
+            self.__roll_no = number
+
+jessa = Student('Jessa', 10, 15)
+
+# before Modify
+jessa.show()
+# call show()
+# changing roll number as 120 using setter
+jessa.set_roll_no(120)
+
+
+jessa.set_roll_no(25)
+jessa.show()
+```
+
+
+
+
+
+Create a class robot in python with the version as private member initialized with the value as 22 change the value of the private member using getter and setter methods and also display the value of the version variable.
+
+For example:
+
+
+
+```
+class Robot:
+    def __init__(self):
+        self.__version = 22
+
+    def get_version(self):
+        return self.__version
+
+    def set_version(self, new_version):
+        self.__version = new_version
+
+
+r1 = Robot()
+
+print(r1.get_version()) 
+
+r1.set_version(23)
+
+print(r1.get_version()) 
+```
+
+
+
+
+
+Create a class named Wallet with a single, private attribute money: define a getter method, which returns the amount of money currently in the wallet. Then we define a setter method, which sets a new value for the money attribute while making sure the new value is not negative.
+
+class Wallet:
+    def __init__(self):
+        self.__money = 0
+
+
+
+```
+class Wallet:
+    def __init__(self):
+        self.__money = 0
+
+    def get_money(self):
+        return self.__money
+
+    def set_money(self, new_value):
+        if new_value >= 0:
+            self.__money = new_value
+
+
+my_wallet = Wallet()
+
+print(my_wallet.get_money())
+
+my_wallet.set_money(50)
+print(my_wallet.get_money()) 
+
+my_wallet.set_money(-10)
+print(my_wallet.get_money())
+```
+
+
+
+
+
+Create a class (user) with required variables (is,name) and function userdetails(). To access the class members, Create an object (u1) and call the function.
+
+class user:
+
+   id = 10
+
+   name = "Suresh"
+
+   def __init__(self, uid, uname):
+
+     self.id = uid
+
+     self.name = uname
+
+
+
+```
+class user:
+    id = 10
+    name = "Suresh"
+
+    def __init__(self, uid, uname):
+        self.id = uid
+        self.name = uname
+
+    def userdetails(self):
+        print(f"Id: {self.id}, Name: {self.name}")
+
+
+u1 = user(30, "Trishi")
+u1.userdetails()
+```
+
+
+
+
+Create a Class  Student with the private members name and age ,Add getter and setter to initialize the age variable.
+
+
+```
+class Student:
+    def __init__(self, name, __age):
+        # private member
+        self.name = name
+        self.__age = __age
+
+    
+    def get_age(self):
+        return self.__age
+
+    
+    def set_age(self, age):
+        self.__age = age
+
+stud = Student('Jessa', 14)
+
+
+print('Name:', stud.name, stud.get_age())
+
+# change age using setter
+stud.set_age(16)
+
+
+print('Name:', stud.name, stud.get_age())
+```
+
+
+
+Create a class student with members name ,age,rollno and an user defined function show() to display the details of the student ,use the getter and setter method Information Hiding and conditional logic for setting an object attributes
+
+
+
+```
+class Student:
+    def __init__(self, name, roll_no, age):
+        # private member
+        self.name = name
+        # private members to restrict access
+        # avoid direct data modification
+        self.__roll_no = roll_no
+        self.__age = age
+
+    def show(self):
+        print('Student Details:', self.name, self.__roll_no)
+
+    # getter methods
+    def get_roll_no(self):
+        return self.__roll_no
+
+    # setter method to modify data member
+    # condition to allow data modification with rules
+    def set_roll_no(self, number):
+        if number > 50:
+            print('Invalid roll no. Please set correct roll number')
+        else:
+            self.__roll_no = number
+
+jessa = Student('Jessa', 10, 15)
+
+# before Modify
+jessa.show()# call show()
+# changing roll number as 120 using setter
+jessa.set_roll_no(120)
+
+
+jessa.set_roll_no(25)
+jessa.show()
+```
+
+
+
+Implement Encapsulation using private members –of a class rectangle with private variables length,width.
+
+
+
+```
+class Rectangle:
+  __length = 0 #private variable
+  __breadth = 0#private variable
+  def __init__(self):
+    #constructor
+    self.__length = 5
+    self.__breadth = 3
+    
+    print(self.__length)
+    print(self.__breadth)
+ 
+rect = Rectangle()
+```
+
+
+
+Create a class (user) with required variables (is,name) and function userdetails(). To access the class members, Create an object (u1) and call the function.
+
+class user:
+
+   id = 10
+
+   name = "Suresh"
+
+   def __init__(self, uid, uname):
+
+     self.id = uid
+
+     self.name = uname
+
+
+
+```
+class user:
+   id = 10
+   name = "Suresh"
+
+   def __init__(self, uid, uname):
+     self.id = uid
+     self.name = uname
+
+   def userdetails(self):
+     print(f"Id: {self.id}, Name: {self.name}")
+
+u1 = user(2, "Rohini")
+u1.id = 30
+u1.name = "Trishi"
+u1.userdetails()
+```
+
+
+
+Create a class  Player with two private attributes name and player number, change the value of the attributes  with getters and setters for both. 
+
+class Player:
+    def __init__(self, name: str, player_number: int):
+        self.__name = name
+        self.__player_number = player_number
+
+
+
+```
+class Player:
+    def __init__(self, name: str, player_number: int):
+        self.__name = name
+        self.__player_number = player_number
+
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, name):
+        if name != "":
+            self.__name = name
+        else:
+            raise ValueError("The name may not be an empty string")
+
+    @property
+    def player_number(self):
+        return self.__player_number
+
+    @player_number.setter
+    def player_number(self, player_number):
+        if player_number > 0:
+            self.__player_number = player_number
+        else:
+            raise ValueError("The player number must be a positive integer")
+            
+player = Player("Betty Ballmer", 10)
+print(player.name)
+print(player.player_number)
+
+player.name = "Buster Ballmer"
+player.player_number = 11
+print(player.name)
+print(player.player_number)
+```
+
+
+
+Write a program in Python to calculate the value of the following expression by using lambda function.
+The expression is -
+
+(x + 10) + (y + 2) * z
+
+
+
+```
+
+res = lambda x, y, z: (x + 10) + (y + 2) * z
+
+a, b, c = int(input()), int(input()), int(input())
+
+ans = res(a, b, c)
+print(ans)
+```
+
+
+
+
+Create  Counter class which  has one attribute called current which defaults to zero. And it has three methods:
+
+increment() increases the value of the current attribute by one.
+value() returns the current value of the current attribute
+reset() sets the value of the current attribute to zero
+create a new instance of the Counter class and calls the increment() method three times before showing the current value of the counter to the screen
+
+
+
+```
+class Counter:
+    def __init__(self):
+        self.current = 0
+
+    def increment(self):
+        self.current += 1
+
+    def value(self):
+        return self.current
+
+    def reset(self):
+        self.current = 0
+
+counter = Counter()
+
+counter.increment()
+counter.increment()
+counter.increment()
+
+
+print(counter.value())
+```
+
+
+
+
+Create an abstract base class has a concrete method sleep() that will be the same for all the child classes. So, we do not define it as an abstract method, thus saving us from code repetition. On the other hand, the sounds that animals make are all different. For that purpose, define the sound() method as an abstract method. then implement it in all child classes.Create an abstract base class has a concrete method sleep() that will be the same for all the child classes. So, we do not define it as an abstract method, thus saving us from code repetition. On the other hand, the sounds that animals make are all different. For that purpose, define the sound() method as an abstract method. then implement it in all child classes.
+
+
+
+```
+from abc import ABC,abstractmethod
+ 
+class Animal(ABC):
+    def sleep(self):
+        print("I am going to sleep in a while")
+ 
+class Snake(Animal):
+    def sound(self):
+        print("I can hiss")
+ 
+class Dog(Animal):
+    def sound(self):
+        print("I can bark")
+ 
+class Lion(Animal):
+    def sound(self):
+        print("I can roar")
+       
+class Cat(Animal):
+    def sound(self):
+        print("I can meow")
+        
+c = Cat()
+c.sleep()
+c.sound()
+c = Snake()
+c.sound()
+```
+
+
+
+
+Create a parent class Fish and define a class method type, then create a child class called Shark while overriding the type method so that objects instantiated from the Shark class use the overridden method.
+
+
+
+```
+class Fish:
+       #Add your code here
+    def display(self):
+        print("fish")
+
+class Shark(Fish):
+	#Add your code here
+	def display(self):
+	    print("shark")
+
+obj_goldfish=Fish()
+obj_hammerhead=Shark()
+
+#Call the functions for fish and shark class using the objects
+obj_goldfish.display()
+obj_hammerhead.display()
+```
+
+Create a numpy program for the following problem statement
+
+You are given a 2-D array with dimensions NXM
+
+Your task is to perform the min function over axis 1 and then find the max of that
+A
+
+
+```
+import numpy as np  
+N, M = map(int, input().split())
+arr = np.array([list(map(int, input().split())) for _ in range(N)])
+min_ = np.min(arr, axis=1)
+r = np.max(min_)
+print(r)
+```
+
+
+Create a numpy program for the following problem statement.
+
+Array re-shaping
+
+Convert a 1-D array to a 2-D Array 2 2X2 arrays
+
+input the number of elements,rows,columns and number of arrays
+
+
+```
+import numpy as np  
+ele = int(input())  
+row = int(input())  
+col = int(input())  
+noar=int(input())
+arr = np.arange(ele)  
+rear = arr.reshape(noar, row, col)  
+print(rear)
+```
+
+
+Create a numpy program to count frequency of unique values in the given  Numpy array in python.
+
+
+```
+import numpy as np
+a=np.array(eval(input()))
+uv,c=np.unique(a,return_counts=True)
+r=np.column_stack((uv,c))
+print(r)
+```
+
+
+Create a Pandas program to create a combination from two dataframes where a column id combination appears more than once in both dataframes.
+
+```
+import pandas as pd
+print("Original DataFrames:")
+a=pd.DataFrame(eval(input()))
+print(a)
+print("--------------------")
+b=pd.DataFrame(eval(input()))
+print(b)
+print()
+m=pd.merge(a,b,on=['key1'],how='outer')
+print("Merged Data (many-to-many join case):")
+print(m)
+```
+
+
+Create a python program to create  a  cars_model.csv file and read the content from the newly created file.
+
+Headers of the csv file:['No', 'Company', 'Car Model']
+
+```
+import csv
+column_name=['No', 'Company', 'Car Model']
+car=eval(input())
+header=['No', 'Company', 'Car Model']
+with open("Names.csv",'w') as csvfile:
+    writer=csv.DictWriter(csvfile, fieldnames=column_name)
+    writer.writeheader()
+    writer.writerows(car)
+rows=[]    
+```
+
+
+Write a numpy program to replace all odd numbers in the given array with -1
+
+
+```
+import numpy as np
+a=np.array(eval(input()))
+a[a%2!=0]=-1
+print(a)
+```
+
+
+
+Write a Numpy program to Convert a 1-D array into a 2-D array with 3 rows
+
+
+```
+import numpy as np
+a=np.array(eval(input()))
+print("The original array:")
+print("",a)
+print()
+print("3 x 3 Array:")
+print("",a.reshape(3,3))
+```
+
+
+Write a Python Pandas program first to carry out the Division mathematics operations for the following two series a1 and a2.
+
+
+```
+import pandas as pd
+a=pd.Series(eval(input()))
+b=pd.Series(eval(input()))
+print("Division of Series1 by Series2:")
+print(a.div(b))
+```
+
+
+Create a numpy program to perform addition and subtraction given two numpy array.
+
+
+
+```
+import numpy as np
+a=np.array(eval(input()))
+b=np.array(eval(input()))
+print("Addition:")
+print("",a+b)
+print()
+print("Subtraction:")
+print("",a-b)
+```
+
+
+
+Write a NumPy program to test if any of the elements of a given array are non-zero. 
+
+
+```
+import numpy as np
+a=input()
+arr=np.any(eval(a))
+a=a.replace(","," ")
+print("Original array:")
+print(a)
+print("Test whether any of the elements of a given array is non-zero:")
+print(arr)
+```
+
+
+Create a numPy program to return array of odd rows and even columns from the given numPy array.
+
+
+```
+import numpy as np
+a=input()
+arr=np.array(eval(a))
+print("Printing Input Array")
+print(arr,"\n")
+
+print(" Printing array of odd rows and even columns")
+print(arr[::2,1::2])
+```
+
+
+
+Create a numpy program for the following problem statement.
+
+Multiplying a matrix(numpy array) by a scalar.
+
+
+Given a numpy array (matrix), how to get a numpy array output which is equal to the original matrix multiplied by a scalar?
+
+NOTE:Multiply the given array by 2
+
+
+```
+import numpy as np 
+a=input()
+arr=np.array(eval(a))
+r=arr*2
+print(r)
+```
+
+
+Create a numpy program for the following problem statement.
+
+Array datatype conversion
+
+Convert all the elements of a numpy array from float to integer datatype
+
+
+```
+import numpy as np
+a=input()
+arr=np.array(eval(a))
+arr=arr.astype(int)
+print(arr)
+```
+
+
+Create a numpy program to print the exponential of the given numpy array using numpy built-in function exp.
+
+
+```
+import numpy as np
+a=input()
+arr=np.array(eval(a))
+arr=np.exp(arr)
+print(arr)
+```
+
+
+Write a NumPy program to create an array of 10 zeros, 10 ones, and 10 fives. 
+
+
+```
+import numpy as np
+n1=int(input())
+n2=int(input())
+n3=int(input())
+arr1=np.zeros(n1)
+arr2=np.ones(n2)
+arr3=np.full(n3,5,dtype=float)
+print("An array of 10 zeros:")
+print(arr1)
+print("An array of 10 ones:")
+print(arr2)
+print("An array of 10 fives:")
+print(arr3)
+```
+
+
+Write a NumPy program to create an array of integers from 30 to 70.
+
+
+```
+import numpy as np
+a=int(input())
+b=int(input())
+arr=np.arange(a,b)
+print(f"Array of the integers from {a} to {b}")
+print(arr)
+```
+
+
+Create a numpy program for the following problem statement.
+
+You are given a 2-D array with dimensions NXM.
+
+Your task is to perform the min function over axis 1 and then find the max of that.
+
+
+```
+import numpy as np  
+N, M = map(int, input().split())
+arr = np.array([list(map(int, input().split())) for _ in range(N)])
+min_ = np.min(arr, axis=1)
+r = np.max(min_)
+print(r)
+```
+
+
+
+Create a numpy program using the absolute builtin function of numpy to print absolute value of given numpy array.
+
+
+```
+import numpy as np
+a=input()
+arr=np.array(eval(a))
+r=np.abs(arr)
+print(r)
+```
+
+
+
+Create a numpy program to find the variance of the given numpy array.
+
+
+```
+import numpy as np
+a=input()
+arr=np.array(eval(a))
+r=np.var(arr)
+print(r)
+```
+
+
+
+Write a numpy program
+
+Find the positions of:
+
+elements in x where its value is more than its corresponding element in y, and
+elements in x where its value is equals to its corresponding element in y.
+
+
+
+```
+import numpy as np
+x=np.array(eval(input()))
+y=np.array(eval(input()))
+print(np.where(x > y))
+print(np.where(x == y))
+```
+
+
+Create a numPy program to Create a result array by adding the given two Numpy arrays.next,modify the result array by calculating the square of each element.
+
+
+```
+import numpy as np
+
+x=eval(input())
+y=eval(input())
+
+xr = np.array(x)
+yr = np.array(y)
+
+rr  = xr+yr
+print("Addition of two arrays is \n")
+print(f"{rr}\n")
+sqr=(xr+yr)**2
+print("Result array after calculating the square of all elements\n")
+print(sqr)
+```
+
+
+
+Create a numpy program for the following problem statement.
+
+You are given a 2-D array with dimensions NXM.
+
+Your task is to perform the min function over axis 1 and then find the max of that.
+
+
+
+```
+import numpy as np  
+N, M = map(int, input().split())
+arr = np.array([list(map(int, input().split())) for _ in range(N)])
+min_= np.min(arr, axis=1)
+result = np.max(min_)
+print(result)
+```
+
+
+
+Create a numpy program for the following problem statement.
+
+Array re-shaping
+
+Convert a 1-D array to a 2-D Array 2 2X2 arrays
+
+input the number of elements,rows,columns and number of arrays
+
+
+```
+import numpy as np  
+ele = int(input())  
+row = int(input())  
+col = int(input())  
+noar=int(input())
+arr = np.arange(ele)  
+rear = arr.reshape(noar, row, col)  
+print(rear)
+```
+
+
+Create a numpy program to find the mean of the given numpy array using the builtin function mean.
+
+
+```
+import numpy as np
+a=input()
+arr=np.array(eval(a))
+mean=np.mean(arr)
+print(mean)
+```
+
+
+
+Create a numPy Program for the following Problem statement.
+
+You are given a space separated list of numbers.
+Your task is to print a reversed NumPy array with the element type float.
+
+
+```
+import numpy as np
+a=input()
+arr=np.array(a.split(), dtype=float)
+arr=arr[::-1]
+print(arr)
+```
+
+
+Create a numPy Program for the following problem statement.
+
+Your task is to print an array of size NXM with its main diagonal elements as 1's and 0's everywhere else.
+
+
+```
+import numpy as np
+np.set_printoptions(sign=' ')
+n,m=map(int,input().split())
+arr=np.zeros((n,m), dtype=float)
+np.fill_diagonal(arr,1)
+print(arr)
+```
+
+
+Create a Numpy program to insert a new column into the numpy array
+
+
+```
+import numpy as np
+array=np.array(eval(input()))
+print("Before inserting new column","\n",array)
+new=np.array(eval(input())).reshape(-1,1)
+newarr=np.hstack((array,new))
+print("After inserting new column","\n",newarr)
+```
+
+
+
+Create a numpy program to replace all the elements of the numpy array which are greater than 30 to 0
+
+
+```
+import numpy as np
+a=np.array(eval(input()))
+a[a>30]=0
+print(a)
+```
+
+
+Create a numpy program to find the sum of first column in a given numpy array.
+
+
+```
+import numpy as np
+a=np.array(eval(input()))
+a=a.reshape(4,3)
+print(a)
+summ=np.sum(a[:,0])
+print(summ)
+```
+
+
+
+Create a numPy Program for the following Problem statement.
+
+You are given a space separated list of numbers.
+Your task is to print a reversed NumPy array with the element type float.
+
+
+```
+import numpy as np
+a=input()
+arr=np.array(a.split(), dtype=float)
+print(arr[::-1])
+```
+
+
+
+Create a numPy program for the following problem statement.
+
+You are given two integer arrays of size N X P and M XP(N&M  are rows, and P is the column). Your task is to concatenate the arrays along axis 0 .
+
+
+```
+import numpy as np
+n,m,p=map(int,input().split())
+arr1=np.array([list(map(int,input().split()))for _ in range(n)])
+arr2=np.array([list(map(int,input().split()))for _ in range (m)])
+r=np.concatenate((arr1,arr2),axis=0)
+print(r)
+```
+
+
+
+Create a numpy program to reverse the given numpy array.
+
+
+```
+import numpy as np
+a=np.array(eval(input()))
+print("the given array")
+print(f" {a}")
+print("Reversed array")
+print(f" {a[::-1]}")
+```
+
+
+Create a numpy program to replace all the elements in the array which are greater than 25 with  1 otherwise.
+
+
+```
+import numpy as np
+a=np.array(eval(input()))
+a=np.where(a>25,1,0)
+print(a)
+```
+
+
+
+Create a numpy program to count frequency of unique values in the given  Numpy array in python.
+
+
+```
+import numpy as np
+a=np.array(eval(input()))
+uv,c=np.unique(a,return_counts=True)
+r=np.column_stack((uv,c))
+print(r)
+```
+
+
+Create a Numpy program to insert a new column into the numpy array
+
+
+```
+#Complete the following numpy code
+import numpy as np
+array = np.array(eval(input()))
+newColumn = np.array(eval(input())).reshape(-1,1)
+print('Before inserting new column','\n',array)
+newArray = np.column_stack((array,newColumn))
+print('After inserting new column','\n',newArray)
+```
+
+
+
+Create a numpy program to replace all the elements of the numpy array which are greater than 30 to 0
+
+
+```
+import numpy as np
+a=np.array(eval(input()))
+a[a>30]=0
+print(a)
+```
+
+
+
+Create a numpy program to perform addition and subtraction given two numpy array.
+
+
+```
+#Complete the following code
+import numpy as np
+array1=np.array(eval(input()))
+array2=np.array(eval(input()))
+print('Addition:','\n',array1 + array2)
+print('')
+print('Subtraction:','\n',array1 - array2)
+```
+
+
+Create a pandas  program to to get the items of series A not present in series B?
+
+
+ser1 = pd.Series([1, 2, 3, 4, 5])
+ser2 = pd.Series([4, 5, 6, 7, 8])
+
+
+```
+import pandas as pd
+ser1=pd.Series(eval(input()))
+print(ser1)
+```
+
+
+
+Write a Python Pandas program to show a one dimensional array-like object contains the array in the following output.
+
+
+```
+import pandas as pd
+a=pd.Series(eval(input()))
+print(a)
+```
+
+
+
+Write a Python Pandas program first to carry out the Division mathematics operations for the following two series a1 and a2.
+
+
+```
+import pandas as pd
+a=pd.Series(eval(input()))
+b=pd.Series(eval(input()))
+print("Division of Series1 by Series2:")
+r=a.div(b)
+print(r)
+```
+
+
+Write a Pandas program to show the pandas series with a1 and a2 content. Therefore compare the equality of two elements.
+
+
+```
+import pandas as pd
+print("Pandas Series 1:")
+a=pd.Series(eval(input()))
+print(a)
+print("Pandas Series 2:")
+b=pd.Series(eval(input()))
+print(b)
+print("Compare the equality of Pandas Series 1 and 2:")
+r=a.isin(b)
+print(r)
+```
+
+
+
+Create a Dataframe quaterly sales where each row contains the item category,item name, and expenditure.Group the rows by the category and print the total expenditure per category.
+
+
+```
+import pandas as pd
+data=[['CAR','Maruti',1000000],['AC','Hitachi',55000],['AIRCOLLER','Bajaj',12000],['WASHING MACHINE','LG',15000],['CAR','Ford',7000000],['AC','SAMSUNG',45000],['AIRCOLLER','Symphony',20000],['WASHING MACHINE','Wirlpool',25000]]
+c=['itemcat','itemname','expenditure']
+df=pd.DataFrame(data,columns=c)
+print(df)
+print("Result after Filtering Dataframe")
+r=df.groupby('itemcat')['expenditure'].sum()
+print(r)
+```
+
+
+
+Write a Pandas program to create and display a DataFrame from a specified dictionary data which has the index labels.
+
+
+```
+import pandas as pd
+import numpy as np
+data={'name': ['Anastasia', 'Dima', 'Katherine', 'James', 'Emily', 'Michael', 'Matthew', 'Laura', 'Kevin', 'Jonas'],  'score': [12.5, 9, 16.5, np.nan, 9, 20, 14.5, np.nan, 8, 19],'attempts': [1, 3, 2, 3, 2, 3, 1, 1, 2, 1],'qualify': ['yes', 'no', 'yes', 'no', 'no', 'yes', 'yes', 'no', 'no', 'yes']}
+c=['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+df=pd.DataFrame(data,index=c)
+print(df)
+```
+
+
+Write a Python Pandas program to show a one dimensional array-like object contains the array in the following output.
+
+
+```
+import pandas as pd
+a=pd.Series(eval(input()))
+print(a)
+```
+
+
+
+Write a Python Pandas program first to carry out the Division mathematics operations for the following two series a1 and a2.
+
+
+```
+import pandas as pd
+a=pd.Series(eval(input()))
+b=pd.Series(eval(input()))
+r=a.div(b)
+print("Division of Series1 by Series2:")
+print(r)
+```
+
+
+
+Create a pandas program to sort the following data according to ascending order of name.
+
+
+```
+import pandas as pd
+a=['Sanjeev', 'Keshav', 'Rahul']
+b=[37,42,38]
+c=['Manager', 'Clerk', 'Accountant']
+d1={'Name' :a, 'Age' :b, 'Designation' :c}
+df=pd.DataFrame(d1)
+print(df)
+df1=df.sort_values(by='Age')
+print(df1)
+```
+
+
+Create a Pandas program to select the rows the percentage is between 70 and 90
+
+
+```
+import pandas as pd
+import numpy as np
+a=eval(input())
+b=eval(input())
+df=pd.DataFrame(a,index=b)
+rdf=df[(df['perc']>=70) & (df['perc']<=90)]
+print("Number of student whoes percentage more than 70:")
+print(rdf)
+```
+
+
+
+
+Create a Pandas program to join the two dataframes using the common column of both dataframes.
+
+
+```
+import pandas as pd 
+print("Original DataFrames:")
+data1=pd.DataFrame(eval(input()))
+print(data1)
+data2=pd.DataFrame(eval(input()))
+print(data2)
+mergedata=pd.merge(data1,data2,on=['student_id'],how='inner')
+print("Merged data (inner join):")
+print(mergedata)
+```
+
+
+Create a  Pandas program to join (left join) the two dataframes using keys from left dataframe only.
+
+
+```
+import pandas as pd
+print("Original DataFrames:")
+df1=pd.DataFrame(eval(input()))
+print(df1)
+print("--------------------")
+df2=pd.DataFrame(eval(input()))
+print(df2)
+print("\nMerged Data (keys from data1):")
+mdf1=pd.merge(df1,df2,on=['key1','key2'],how='left')
+print(mdf1)
+mdf2=pd.merge(df2,df1,on=['key1','key2'],how='left')
+print("\nMerged Data (keys from data2):")
+print(mdf2)
+```
+
+
+
+Create a Pandas Program to define a function named reduce_cardinality_grade() which gets the column MID_TERM_GRADE. Inside the function , ifstatement and startswith method are going to be used for comparison check hence returning the results Corhigher and Dorlower to the MID_TERM_GRADE column using apply() method.
+
+
+```
+import pandas as pd
+name=["MarkDavis","PriyaSingh","KimNaamjoon","TomKozoyed","TommyWalker"]
+stand=["Good","Warning","Probabtion","Suspension","Warning"]
+perc=[0.80,0.75,0.25,0.12,0.30]
+grade=['A+','B-','D+','D-','F']
+data={"STUDENT_NAME":name,"ACADEMIC_STANDING":stand,"ATTENDANCE_PERCENTAGE":perc,"MID_TERM_GRADE":grade}
+studentinfo=pd.DataFrame(data)
+print(studentinfo)
+reduce_cardinality_grade= lambda x: "Corhigher" if x.startswith('A') or x.startswith('B') else "Dorlower"
+```
+
+
+
+Create a python program to create  a  cars_model.csv file and read the content from the newly created file.
+
+
+```
+import csv
+column_names=['No', 'Company', 'Car Model']
+cars=eval(input())
+rows=[]
+with open("Names.csv", 'w') as csvfile:
+    writer=csv.DictWriter(csvfile, fieldnames=column_names)
+    writer.writeheader()
+    writer.writerows(cars)
+    
+```
+
+
+
+Create a Pandas program to join the given data frame using right join type.
+
+Note: For a right join, all the records from the second Dataframe will be displayed. However, only the records with the keys in the first Dataframe that can be found in the second Dataframe will be displayed.
+
+
+```
+def ab(a,b):
+    mdf=pd.merge(a,b,on=['id'],how='right')
+    print(mdf)
+```
+
+
+
+Create a Pandas program to append rows to an existing DataFrame and display the combined data.
+
+
+```
+import pandas as pd
+print("Original Dataframe")
+datadf=pd.DataFrame(eval(input()))
+print('',datadf)
+print("combined Dataframe")
+r1=eval(input())
+newdf=pd.DataFrame([r1],columns=datadf.columns)
+combinedf=pd.concat([datadf,newdf],ignore_index=True)
+print('',combinedf)
+```
+
+
+
+Create a pandas program to perform data cleaning check which will be inspecting whether all the values in column STUDENT_NAME are only alphabets.using apply() function.
+
+
+```
+import pandas as pd
+name=["MarkDavis","PriyaSingh","KimNaamjoon","TomKozoyed","TommyWalker"]
+stand=["Good","Warning","Probabtion","Suspension","Warning"]
+perc=[0.80,0.75,0.25,0.12,0.30]
+grade=["A+","B-","D+","D-","F"]
+data={"STUDENT_NAME":name,"ACADEMIC_STANDING":stand,"ATTENDANCE_PERCENTAGE":perc,"MID_TERM_GRADE":grade}
+studentinfo=pd.DataFrame(data)
+print(studentinfo)
+datacheck=lambda x: 'True' if x.isalpha() else 'False'
+```
+
+
+
+Create a Python program to write the user given employee details into a csv file and read the content from the newly created file.
+
+```
+import csv
+field_names= ['emp_name', 'dept', 'birth_month']
+details=[eval(input()), eval(input())]
+rows=[]
+with open('employee_file2.csv', 'w') as csvfile:
+    writer=csv.DictWriter(csvfile, fieldnames=field_names)
+    writer.writeheader()
+    writer.writerows(details)
+
+```
+
+
+
+Create a Pandas program to join the given data frame using right join type.
+
+Note: For a right join, all the records from the second Dataframe will be displayed. However, only the records with the keys in the first Dataframe that can be found in the second Dataframe will be displayed.
+
+
+```
+def ab(a,b):
+    mdf=pd.merge(a,b,on=['id'], how='right')
+    print(mdf)
+```
+
+
+
+Create a Pandas program to join the two given dataframes along rows and assign all data.
+
+
+
+```
+import pandas as pd
+student_data1 = pd.DataFrame(eval(input()))
+student_data2 = pd.DataFrame(eval(input()))
+print("Original DataFrames:")
+print(student_data1)
+print("-------------------------------------")
+print(student_data2)
+print()
+print("Join the said two dataframes along rows:")
+rdf=pd.concat([student_data1,student_data2])
+print(rdf)
+```
+
+
+
+Create a Pandas program to join the two dataframes with matching records from both sides where available.
+
+
+```
+#Complete the following code to get the output
+import pandas as pd
+student_data1 = pd.DataFrame(eval(input()))
+student_data2 = pd.DataFrame(eval(input()))
+print("Original DataFrames:")
+print(student_data1)
+print(student_data2)
+merged_data = pd.merge(student_data1,student_data2,on=['s_id'],how='outer')
+print("Merged data (outer join):")
+print(merged_data)
+```
+
+
+
+Create a Pandas Program to define a function named reduce_cardinality() which gets the column ACADEMIC_STANDING. Inside the function, if statement is going to be used for comparison check hence returning the results ACADEMIC_STANDING_GOOD and ACADEMIC_STANDING_BAD to the ACADEMIC_STANDING column using apply() function.
+
+
+```
+#Correct the errors in the following code to get the output.
+import pandas as pd
+studentinfo=pd.DataFrame({'STUDENT_NAME':["MarkDavis","PriyaSingh","KimNaamjoon","TomKozoyed","TommyWalker"],
+                         "ACADEMIC_STANDING":["Good","Warning","Probabtion","Suspension","Warning"],
+                         "ATTENDANCE_PERCENTAGE":[0.8,0.75,0.25,0.12,0.30],
+                         "MID_TERM_GRADE": ["A+","B-","D+","D-","F"]})
+
+print(studentinfo)
+
+def reduce_cardinality(data):
+  if data == "Good":
+   return "ACADEMIC_STANDING_GOOD"
+  else:
+   return "ACADEMIC_STANDING_BAD"
+```
+
+
+
+Create a python code to write a CSV file from a Python list.
+
+note: header = ['Name', 'Age', 'Site', 'Location']
+
+```
+#Correct the errors in the following code.
+import csv
+header = ['Name', 'Age', 'Site', 'Location']
+values = eval(input())
+with open("write_to_csv.csv", 'w') as file:
+    writer = csv.writer(file)
+    writer.writerow(header)
+    writer.writerows(values)
+rows=[]
+```
+
+
+
+Create a python program to select a single column of data as a Series in Pandas.
+
+note: headers=['Name','age','MotherTongue']
+
+Select age column as series and also print its type
+
+
+```
+#Complete the following code to get the output
+# importing pandas as library 
+import pandas as pd 
+
+# creating data frame: 
+df = pd.DataFrame(eval(input())) 
+
+print("The original data frame") 
+print(df)
+print("Selecting Single column value using dataframe.column name") 
+series_one = df['Age']
+print(series_one) 
+
+print("Type of selected one") 
+print(type(series_one)) 
+```
+
+
+
+
+created two classes Ferrari and BMW. They have the same instance method names fuel_type() and max_speed(). However, we have not linked both the classes nor have we used inheritance. Pack two different objects into a tuple and iterate through it using a car variable. 
+
+
+
+
+```
+class Ferrari:
+    def fuel_type(self):
+        print("Petrol")
+    
+    def max_speed(self):
+        print("Max speed 350")
+
+class BMW:
+    def fuel_type(self):
+        print("Diesel")
+    
+    def max_speed(self):
+        print("Max speed is 240")
+
+# Create objects
+ferrari_car = Ferrari()
+bmw_car = BMW()
+
+# Pack into a tuple
+cars = (ferrari_car, bmw_car)
+
+# Iterate and call methods
+for car in cars:
+    car.fuel_type()
+    car.max_speed()
+```
+
+
+
+created two classes India and USA. They have the same instance method names capital(),language()and type(). However, we have not linked both the classes nor have we used inheritance. Pack two different objects into a tuple and iterate through it using a car variable. 
+
+
+
+```
+class India():
+    def capital(self):
+        print("New Delhi is the capital of India.")
+
+    def language(self):
+        print("Hindi is the most widely spoken language of India.")
+
+    def type(self):
+        print("India is a developing country.")
+
+class USA():
+    def capital(self):
+        print("Washington, D.C. is the capital of USA.")
+
+    def language(self):
+        print("English is the primary language of USA.")
+
+    def type(self):
+        print("USA is a developed country.")
+
+obj_ind = India()
+obj_usa = USA()
+
+for country in (obj_ind, obj_usa):
+    country.capital()
+    country.language()
+    country.type()
+```
+
+
+
+Create two different classes named as flipkart and amazon use the same method names info() and init() to provide respective price quotations of the product.
+
+However, we have not linked both the classes nor have we used inheritance. Pack two different objects into a tuple and iterate through it using a car variable. 
+
+
+
+```
+class Flipkart:
+    def init(self):
+        self.name = "Iphone"
+        self.price = 2.5
+
+    def info(self):
+        print(f"This is product and fli class is invoked. The name is {self.name}. This costs {self.price} rupees.")
+
+class Amazon:
+    def init(self):
+        self.name = "Iphone"
+        self.price = 4
+
+    def info(self):
+        print(f"This is product and am class is invoked. The name is {self.name}. This costs {self.price} rupees.")
+
+# Create objects
+fli = Flipkart()
+am = Amazon()
+
+# Pack into a tuple
+products = (fli, am)
+
+# Iterate and call methods
+for store in products:
+    store.init()
+    store.info()
+```
+
+
+
+
+created two classes Tiger and Elephant. They have the same instance method names color() and nature(). However, we have not linked both the classes nor have we used inheritance. Pack two different objects into a tuple and iterate through it using a car variable. 
+
+
+
+Note:It is possible due to polymorphism because we have added the same method in both classes Python first checks the object’s class type and executes the method present in its class.
+
+
+
+```
+class Tiger:
+    def nature(self):
+        print("I am a Tiger and I am dangerous.")
+
+    def color(self):
+        print("Tigers are orange with black strips")
+
+class Elephant:
+    def nature(self):
+        print("I am an Elephant and I am calm and harmless")
+
+    def color(self):
+        print("Elephants are grayish black")
+
+# Create objects
+t = Tiger()
+e = Elephant()
+
+# Pack into a tuple
+animals = (t, e)
+
+# Iterate and call methods
+for animal in animals:
+    animal.nature()
+    animal.color()
+```
+
+
+
+
+Create a parent class Fish and define a class method type, then create a child class called Shark while overriding the type method so that objects instantiated from the Shark class use the overridden method.
+
+
+
+```
+class Fish:
+    def type(self):
+        print("fish")
+
+class Shark(Fish):
+    def type(self):
+        print("shark")
+
+# Create objects
+f = Fish()
+s = Shark()
+
+# Call the type method
+f.type()
+s.type()
+```
+
+
+
+
+Create a parent class vehicle with the following methods show(),max_speed,change_gear() inherit the car class from the vehicle class,where the car class methods max_speed(),change_gear() override the same methods of base class  using method overriding
+
+
+
+```
+class Vehicle:
+
+    def __init__(self, name, color, price):
+        self.name = name
+        self.color = color
+        self.price = price
+
+    def show(self):
+        print('Details:', self.name, self.color, self.price)
+
+    def max_speed(self):
+        print('Vehicle max speed is 150')
+
+    def change_gear(self):
+        print('Vehicle change 6 gear')
+
+
+# inherit from Vehicle class
+class Car(Vehicle):
+    def max_speed(self):
+        print('Car max speed is 240')
+
+    def change_gear(self):
+        print('Car change 7 gear')
+
+
+# Car Object
+car = Car('Car x1', 'Red', 20000)
+car.show()
+car.max_speed()
+car.change_gear()
+
+# Vehicle Object
+vehicle = Vehicle('Truck x1', 'white', 75000)
+vehicle.show()
+vehicle.max_speed()
+vehicle.change_gear()
+
+```
+
+
+
+
+Create two classes Employee and Admin. These two different classes have the same method name info(). This method contains information(name, department) about employee in Employee class and admin in Admin class.after initializing classes, Create two objects for respective classes. Then the method info() is called. Once by the object of Employee class and once by the object of Admin class.
+
+
+
+```
+class Employee:
+    def info(self):
+        print("Rooney from Electronics")
+class Admin:
+    def info(self):
+        print("Kalesh from CS")
+obj_emp = Employee()
+obj_adm = Admin()
+obj_emp.info()
+obj_adm.info()
+```
+
+
+
+
+Create two different classes named as flipkart and amazon use the same method names info() and init() to provide respective price quotations of the product.
+
+However, we have not linked both the classes nor have we used inheritance. Pack two different objects into a tuple and iterate through it using a car variable. 
+
+
+
+```
+class Flipkart:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    def info(self):
+        print(f'This is product and fli class is invoked. The name is {self.name}. This costs {self.price} rupees.')
+
+class Amazon:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+    def info(self):
+        print(f'This is product and am class is invoked. The name is {self.name}. This costs {self.price} rupees.')
+
+# Create objects of both classes
+fli = Flipkart('Iphone', 2.5)
+am = Amazon('Iphone', 4)
+
+# Pack both objects into a tuple
+products = (fli, am)
+
+# Iterate and call info() — polymorphism in action
+for car in products:
+    car.info()
+```
+
+
+
+
+created two classes Tiger and Elephant. They have the same instance method names color() and nature(). However, we have not linked both the classes nor have we used inheritance. Pack two different objects into a tuple and iterate through it using a car variable. 
+
+
+
+```
+class Tiger:
+    def nature(self):
+        print("I am a Tiger and I am dangerous.")
+
+    def color(self):
+        print("Tigers are orange with black strips")
+
+class Elephant:
+    def nature(self):
+        print("I am an Elephant and I am calm and harmless")
+
+    def color(self):
+        print("Elephants are grayish black")
+
+# Create objects of both classes
+t = Tiger()
+e = Elephant()
+
+# Pack both objects into a tuple
+animals = (t, e)
+
+# Iterate through the tuple using a common variable (car) — demonstrates polymorphism
+for car in animals:
+    car.nature()
+    car.color()
+```
+
+
+
+
+Create a parent class Fish and define a class method type, then create a child class called Shark while overriding the type method so that objects instantiated from the Shark class use the overridden method.
+
+
+
+```
+class Fish:
+    @classmethod
+    def type(cls):
+        print("fish")
+
+class Shark(Fish):
+    @classmethod
+    def type(cls):
+        print("shark")
+
+# Instantiate objects
+f = Fish()
+s = Shark()
+
+# Call type methods
+f.type()  # Outputs: fish
+s.type()  # Outputs: shark
+```
+
+
+
+Create two user-defined methods, perimeter and area, defined in circle and square classes, both circle class and square class invoke the same method name displaying the characteristic of Polymorphism to deliver the required output.
+
+
+
+```
+import math
+
+class Square:
+    def __init__(self, side):
+        self.side = side
+
+    def perimeter(self):
+        print("Perimeter computed for square: ", 4 * self.side)
+
+    def area(self):
+        print("Area computed for square: ", self.side ** 2)
+
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def perimeter(self):
+        print("Perimeter computed for Circle: ", 2 * math.pi * self.radius)
+
+    def area(self):
+        print("Area computed for Circle: ", math.pi * self.radius ** 2)
+
+# Taking it
+side = int(input())
+radius = int(input())
+
+# Creating objects
+square = Square(side)
+circle = Circle(radius)
+
+# Calling methods
+square.perimeter()
+square.area()
+
+circle.perimeter()
+circle.area()
+```
+
+
+
+Create two classes Cat and Dog with functions mood() and sound() which are same for both the classes yet they produce distinct outputs. iterate over the objects of the two classes “Cat” and “Dog” without worrying about the class types
+
+
+
+```
+class Cat:
+    def mood(self):
+        print("Grumpy")
+
+    def sound(self):
+        print("Meow")
+
+class Dog:
+    def mood(self):
+        print("Happy")
+
+    def sound(self):
+        print("Woof")
+
+# Creating objects
+cat = Cat()
+dog = Dog()
+
+# Storing in a list for iteration
+animals = [cat, dog]
+
+# Iterating and calling methods
+for animal in animals:
+    animal.mood()
+    animal.sound()
+```
+
+
+
+
+Create two new classes: Lion and Giraffe The outputs from this program are carnivore and herbivore, respectively. The two classes both use the method name diet, but they define those methods differently. An object instantiated from the Lion class will use the method as it is defined in that class. The Giraffe class may have a method with the same name, but objects instantiated from the Lion class won’t interact with it.
+
+
+```
+class Lion:
+    def diet(self):
+        print("carnivore")
+
+class Giraffe:
+    def diet(self):
+        print("herbivore")
+
+# Creating objects
+lion = Lion()
+giraffe = Giraffe()
+
+# Storing objects in a list
+animals = [lion, giraffe]
+
+# Iterating and calling the diet method
+for animal in animals:
+    animal.diet()
+```
+
+
+
+
+write a python program to perform subtraction of two complex number using binary '+' operator overloading
+
+class name : complex
+
+
+Ob1 = complex(1, 2)
+Ob2 = complex(2, 3)
+
+
+
+```
+class complex:
+    def __init__(self, real, imag):
+        self.real = real
+        self.imag = imag
+
+    def __add__(self, other):
+        # Perform subtraction inside + operator overloading
+        return (self.real - other.real, self.imag - other.imag)
+
+# Create objects
+Ob1 = complex(1, 2)
+Ob2 = complex(2, 3)
+
+# '+' operator is overloaded to perform subtraction
+result = Ob1 + Ob2
+print(result)
+```
+
+
+
+
+write a python program to overload less than operator 
+
+class name should be A
+
+ob1 = A(200)
+
+ob2 = A(30)
+
+
+```
+class A:
+    def __init__(self, value):
+        self.value = value
+
+    def __lt__(self, other):
+        return self.value < other.value
+
+# Create objects
+ob1 = A(200)
+ob2 = A(30)
+
+# Use overloaded < operator
+if ob2 < ob1:
+    print("ob2 is less than ob1")
+else:
+    print("ob2 is not less than ob1")
+```
+
+
+
+
+Write a Python program for simply using the overloading operator for adding two objects.
+
+class name : fruits
+
+object name :  apple, mango, a and b
+
+
+
+```
+class fruits:
+    def __init__(self, quantity=0, name=""):
+        self.quantity = quantity
+        self.name = name
+
+    def __add__(self, other):
+        total_quantity = self.quantity + other.quantity
+        combined_name = self.name + other.name
+        return fruits(total_quantity, combined_name)
+
+# Input values
+apple = fruits(100, "banana")
+mango = fruits(200, "orange")
+
+# Add the objects
+a = apple + mango
+
+# Display results
+print("apple and mango mixed:", a.quantity)
+print("fruit mix: ", a.name)
+```
+
+
+
+
+write a python program to overload greater than operator (compare obj1 and obj2)
+
+
+
+obj1 = saveetha(90)
+
+obj2 = saveetha(80)
+
+
+
+
+```
+class saveetha:
+    def __init__(self, value):
+        self.value = value
+
+    def __gt__(self, other):
+        return self.value > other.value
+
+# Create objects
+obj1 = saveetha(90)
+obj2 = saveetha(80)
+
+# Compare using overloaded > operator
+result = obj1 > obj2
+print(result)
+```
+
+
+
+Write a python program to multiply two object and print the word "hello" 3 times . 
+
+note : use class name saveetha
+
+obj1=saveetha(2)
+
+obj2=saveetha(3)
+
+
+
+```
+class saveetha:
+    def __init__(self, value):
+        self.value = value
+
+    def __mul__(self, other):
+        # Perform multiplication
+        result = self.value * other.value
+        
+        # Print the result of multiplication first
+        print(result)
+        
+        # Then print "hello" exactly 3 times in one line
+        print("hello" * 3)  # This will print 'hellohellohello'
+        
+        return result
+
+# Create objects
+obj1 = saveetha(2)
+obj2 = saveetha(3)
+
+# Multiply the objects
+obj1 * obj2
+```
+
+
+
+
+Write a Python program for simply using the overloading operator for adding two objects.
+
+class name : accessories
+
+
+
+```
+class accessories:
+    def __init__(self, rate=0, item=""):
+        self.rate = rate
+        self.item = item
+
+    def __add__(self, other):
+        # Perform addition on both rate and item
+        total_rate = self.rate + other.rate
+        combined_items = self.item + other.item
+        return accessories(total_rate, combined_items)
+
+# Create objects
+accessory1 = accessories(69, "APPLE")
+accessory2 = accessories(68, "LAPTOP")
+
+# Add the objects
+result = accessory1 + accessory2
+
+# Display results
+print("Rate is :", result.rate)
+print("accessories are: ", result.item)
+```
+
+
+
+
+Write a python program to multiply two object and print the word "apple" 6 times . 
+
+note : use class name saveetha
+
+obj1=saveetha(4)
+
+obj2=saveetha(6)
+
+
+
+```
+class saveetha:
+    def __init__(self, value):
+        self.value = value
+
+    def __mul__(self, other):
+        # Perform multiplication of the values
+        result = self.value * other.value
+        
+        # Print the result of multiplication
+        print(result)
+        
+        # Print "apple" result times
+        print("apple" * 6)
+        
+        return result
+
+# Create objects
+obj1 = saveetha(4)
+obj2 = saveetha(6)
+
+# Multiply the objects
+obj1 * obj2
+```
+
+
+
+write a python program to perform subtraction of two complex number using binary '+' operator overloading
+
+class name : complex
+
+
+Ob1 = complex(1, 2)
+Ob2 = complex(2, 3)
+
+
+
+```
+class complex:
+    def __init__(self, real, imag):
+        self.real = real
+        self.imag = imag
+
+    def __add__(self, other):
+        return (self.real - other.real, self.imag - other.imag)
+
+Ob1 = complex(1, 2)
+Ob2 = complex(2, 3)
+
+result = Ob1 + Ob2
+
+print(result)
+```
+
+
+
+
+Write a python program to overload equality operator .
+
+class name should be A
+
+ob1 = A(2)
+
+ob2 = A(4)
+
+
+
+```
+class A:
+    def __init__(self, value):
+        self.value = value
+
+    def __eq__(self, other):
+        return self.value == other.value
+
+ob1 = A(2)
+ob2 = A(4)
+
+if ob1 == ob2:
+    print("Equal")
+else:
+    print("Not equal")
+```
+
+
+
+
+Write a Python program for simply using the overloading operator for adding two objects.
+
+class name : fruits
+
+object name :  apple, mango, a and b
+
+
+
+
+```
+class fruits:
+    def __init__(self, quantity=0, name=""):
+        self.quantity = quantity
+        self.name = name
+
+    def __add__(self, other):
+        total_quantity = self.quantity + other.quantity
+        combined_name = self.name + other.name
+        return fruits(total_quantity, combined_name)
+
+    def show_mix(self):
+        print(f"apple and mango mixed: {self.quantity}")
+        print(f"fruit mix:  {self.name}")
+
+a = fruits(100, "banana")
+b = fruits(200, "orange")
+
+mix = a + b
+
+mix.show_mix()
+```
+
+
+
+write a python program to overload greater than operator (compare obj1 and obj2)
+
+
+
+obj1 = saveetha(90)
+
+obj2 = saveetha(80)
+
+
+
+
+```
+class saveetha:
+    def __init__(self, value):
+        self.value = value
+
+    def __gt__(self, other):
+        return self.value > other.value
+
+obj1 = saveetha(90)
+obj2 = saveetha(80)
+
+print(obj1 > obj2)
+```
+
+
+
+Write a python program to multiply two object and print the word "orange" 10 times . 
+
+note : use class name 'CSE'
+
+obj1=cse(4)
+
+obj2=cse(10)
+
+
+
+
+```
+class CSE:
+    def __init__(self, value):
+        self.value = value
+
+    def __mul__(self, other):
+        return self.value * other.value
+
+obj1 = CSE(4)
+obj2 = CSE(10)
+
+result = obj1 * obj2
+
+print(result)
+print("orange" * 10)
+```
+
+
+
+
+write a python program to perform product of two complex number using binary '+' operator overloading
+
+class name : complex
+
+
+Ob1 = complex(1, 2)
+Ob2 = complex(2, 3)
+
+
+
+```
+class complex:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+     # adding two objects
+    def __add__(self, other):
+        return self.a * other.a, self.b * other.b
+Ob1 = complex(1, 2)
+Ob2 = complex(2, 3)
+Ob3 = Ob1 + Ob2
+print(Ob3)
+```
+
+
+
+Write a python program to overload equality operator .
+
+class name should be A
+
+ob1 = A(4)
+
+ob2 = A(4)
+
+
+
+```
+class A:
+    def __init__(self, a):
+        self.a = a
+    def __eq__(self, other):
+        if(self.a == other.a):
+            return "Both are equal"
+        else:
+            return "Not equal"
+ob1 = A(4)
+ob2 = A(4            )
+print(ob1 == ob2)    
+```
+
+
+
+
+Write a Python program for simply using the overloading operator for adding two objects.
+
+For example:
+
+Input	Result
+23
+21
+hello
+world
+:  44
+:  helloworld
+
+
+
+
+```
+class example:  
+    def __init__(self, X):  
+        self.X = X  
+   
+    # adding two objects  
+    def __add__(self, U ):
+        return self.X + U.X  
+object_1 = example( int( input()))  
+object_2 = example( int( input()))  
+print (": ", object_1 + object_2)  
+object_3 = example(str( input()))  
+object_4 = example(str( input()))  
+print (": ", object_3 + object_4)   
+```
+
+
+
+write a python program to overload less than operator (compare obj1 and obj2)
+
+
+
+obj1 = Marks(20)
+
+obj2 = Marks(10)
+
+
+
+````
+class Marks(object):
+    # Define a constructor
+    def __init__(self, x):
+        self.x = x
+
+    # Use the magic function for < operator overloading
+    def __lt__(self, other):
+        return self.x < other.x
+
+# Driver code
+obj1 = Marks(20)
+obj2 = Marks(10)
+
+print(obj1 < obj2)
+```
+
+
+
+Write a python program to multiply two object and print the word "mobile" 2 times . 
+
+note : use class name 'CSE'
+
+obj1=cse(4)
+
+obj2=cse(2)
+
+
+
+```
+class cse:
+        def __init__(self,a):
+                self.a=a
+        def __mul__(self,z):
+                return self.a *z.a
+obj1=cse(4)
+obj2=cse(2)
+obj3=cse("mobile")
+print(obj1*obj2)
+print(obj2*obj3)
+```
+
+
+
+
+import the abc module to create the abstract base class. Create the Car class that inherit the ABC class and define an abstract method named mileage(). then inherit the base class from the three different subclasses and implement the abstract method differently. Create the objects to call the abstract method.
+
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Base Class
+class Car(ABC):
+    
+    @abstractmethod
+    def mileage(self):
+        pass
+
+# Subclass 1: Sedan
+class Sedan(Car):
+    def mileage(self):
+        print("The mileage is 30kmph")
+
+# Subclass 2: SUV
+class SUV(Car):
+    def mileage(self):
+        print("The mileage is 27kmph")
+
+# Subclass 3: Hatchback
+class Hatchback(Car):
+    def mileage(self):
+        print("The mileage is 25kmph")
+
+# Subclass 4: Sports Car
+class SportsCar(Car):
+    def mileage(self):
+        print("The mileage is 24kmph")
+
+# Create objects
+car1 = Sedan()
+car2 = SUV()
+car3 = Hatchback()
+car4 = SportsCar()
+
+# Call the abstract method mileage()
+car1.mileage()
+car2.mileage()
+car3.mileage()
+car4.mileage()
+```
+
+
+
+Create an abstract class Invoice, and abstract method invoice () under def statement also has two child class derived from Invoice and does the functionality. Then, using an Object ‘aa’, the methods are invoked.
+
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Base Class
+class Invoice(ABC):
+
+    @abstractmethod
+    def invoice(self, amount):
+        pass
+
+# Child Class 1: PayCheque
+class PayCheque(Invoice):
+    def invoice(self, amount):
+        print(f"paycheque of-  {amount}")
+        # No return value for cheque payment
+
+# Child Class 2: PurchaseProduct
+class PurchaseProduct(Invoice):
+    def invoice(self, amount):
+        print(f"Purchase of the product-  {amount}")
+        return True
+
+# Child Class 3: PayThroughCard
+class PayThroughCard(Invoice):
+    def invoice(self, amount):
+        print(f"pay through card of-  {amount}")
+        # No return value for card payment
+
+# Create objects
+aa = PayCheque()
+bb = PurchaseProduct()
+
+# Invoke the methods with paycheque and purchase product
+aa.invoice(6500)   # No return for cheque payment
+print(bb.invoice(6500))  # Purchase product with return value True
+
+# Create another instance with card payment and purchase product
+cc = PayThroughCard()
+dd = PurchaseProduct()
+
+# Invoke the methods with card payment
+cc.invoice(2600)   # No return for card payment
+print(dd.invoice(2600))  # Purchase product with return value True
+```
+
+
+
+Create an abstract method course () and a method print) visible to the user. The inherited class here is demo class and learn and has their course () method. The objects are created for the respective class and invoke the course () method for both of the classes. 
+
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Base Class
+class EduClass(ABC):
+
+    @abstractmethod
+    def course(self):
+        pass
+
+    def print(self, value):
+        print(f"The value is:  {value}")
+
+# Child Class 1: Demo
+class Demo(EduClass):
+    def course(self):
+        print("This is demo class")
+        self.print(850)
+
+# Child Class 2: Learn
+class Learn(EduClass):
+    def course(self):
+        print("This is test class")
+        self.print(500)
+
+# Create objects
+t1 = Learn()
+ex = Demo()
+
+# Invoke the course method
+t1.course()  # Calls course from Learn class
+ex.course()  # Calls course from Demo class
+
+# Check instance types
+print(f"t1 is instance of educlass?  {isinstance(t1, EduClass)}")
+print(f"ex is instance of educlass?  {isinstance(ex, EduClass)}")
+```
+
+
+
+Create a class VEHICLE  which is Abstract Class and CAR and BIKE are Child Classes. VEHICLE class have two unimplemented methods, which are implemented in child Classes.
+
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Base Class
+class VEHICLE(ABC):
+
+    @abstractmethod
+    def start(self):
+        pass
+
+    @abstractmethod
+    def stop(self):
+        pass
+
+# Child Class 1: CAR
+class CAR(VEHICLE):
+    def start(self):
+        print("Car is Started")
+
+    def stop(self):
+        print("Car is stopped")
+
+    def accelerate(self):
+        print("Car is accelrating @ 90kmph")
+
+    def park(self):
+        print("Car is parked at four wheeler parking")
+
+# Child Class 2: BIKE
+class BIKE(VEHICLE):
+    def start(self):
+        print("Bike is Started")
+
+    def stop(self):
+        print("Bike is stopped")
+
+    def accelerate(self):
+        print("Bike is accelrating @ 60kmph")
+
+    def park(self):
+        print("Bike is parked at two wheeler parking")
+
+# Create objects for Car and Bike
+car = CAR()
+bike = BIKE()
+
+# Perform operations for Bike
+print("Bike Object")
+bike.start()
+bike.accelerate()
+bike.park()
+bike.stop()
+
+# Perform operations for Car
+print("\nCar Object")
+car.start()
+car.accelerate()
+car.park()
+car.stop()
+```
+
+
+
+
+Create an abstract class Animal with an abstract mathod move which can be implemented by the subclasses of the animal class.
+
+For example:
+
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Base Class
+class Animal(ABC):
+
+    @abstractmethod
+    def move(self):
+        pass
+
+# Subclass 1: Dog
+class Dog(Animal):
+    def move(self):
+        print("I can walk and run")
+
+# Subclass 2: Snake
+class Snake(Animal):
+    def move(self):
+        print("I can crawl")
+        print("I can bark")
+
+# Subclass 3: Lion
+class Lion(Animal):
+    def move(self):
+        print("I can roar")
+
+# Create objects for each animal
+dog = Dog()
+snake = Snake()
+lion = Lion()
+
+# Call the move method for each animal
+dog.move()  # Dog's movement
+snake.move()  # Snake's movement
+lion.move()  # Lion's movement
+```
+
+
+
+
+Create an abstract base class has a concrete method sleep() that will be the same for all the child classes. So, we do not define it as an abstract method, thus saving us from code repetition. On the other hand, the sounds that animals make are all different. For that purpose, define the sound() method as an abstract method. then implement it in all child classes.
+
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Base Class
+class Animal(ABC):
+
+    # Concrete method
+    def sleep(self):
+        print("I am going to sleep in a while")
+
+    # Abstract method
+    @abstractmethod
+    def sound(self):
+        pass
+
+# Subclass 1: Cat
+class Cat(Animal):
+    def sound(self):
+        print("I can meow")
+
+# Subclass 2: Snake
+class Snake(Animal):
+    def sound(self):
+        print("I can hiss")
+
+# Create objects for each animal
+cat = Cat()
+snake = Snake()
+
+# Call the methods
+cat.sleep()  # All animals share the same sleep method
+cat.sound()  # Cat-specific sound
+
+
+snake.sound()  # Snake-specific sound
+```
+
+
+
+Create an abstract class Invoice, and abstract method invoice () under def statement also has two child class derived from Invoice and does the functionality. Then, using an Object ‘aa’, the methods are invoked
+
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Base Class
+class Invoice(ABC):
+
+    @abstractmethod
+    def invoice(self, amount):
+        pass
+
+# Child Class 1: PayCheque
+class PayCheque(Invoice):
+    def invoice(self, amount):
+        print(f"paycheque of-  {amount}")
+        # No return value for cheque payment
+
+# Child Class 2: PurchaseProduct
+class PurchaseProduct(Invoice):
+    def invoice(self, amount):
+        print(f"Purchase of the product-  {amount}")
+        return True
+
+# Child Class 3: PayThroughCard
+class PayThroughCard(Invoice):
+    def invoice(self, amount):
+        print(f"pay through card of-  {amount}")
+        # No return value for card payment
+
+# Create objects
+aa = PayCheque()
+bb = PurchaseProduct()
+
+# Invoke the methods with paycheque and purchase product
+aa.invoice(6500)   # No return for cheque payment
+print(bb.invoice(6500))  # Purchase product with return value True
+
+# Create another instance with card payment and purchase product
+cc = PayThroughCard()
+dd = PurchaseProduct()
+
+# Invoke the methods with card payment
+cc.invoice(2600)   # No return for card payment
+print(dd.invoice(2600))  # Purchase product with return value True
+```
+
+
+
+Bank is an abstract class which having intertest() abstract method. SBI class is a child class to Bank class, so SBI class should provide implementation for abstract method which is available in Bank abstract class. An object is created to subclass, which is SBI, and then implemented method interest() is called.
+
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Base Class: Bank
+class Bank(ABC):
+    
+    # Concrete method in the abstract class
+    def welcome(self):
+        print("Welcome to bank")
+    
+    # Abstract method
+    @abstractmethod
+    def interest(self):
+        pass
+
+# Subclass 1: SBI (SBI Bank)
+class SBI(Bank):
+    
+    # Providing implementation for the abstract method interest
+    def interest(self):
+        print("In sbi bank 5 rupees interest")
+
+# Create an object of SBI
+sbi_bank = SBI()
+
+# Call methods
+sbi_bank.welcome()  # Concrete method from Bank class
+sbi_bank.interest()  # SBI-specific implementation of interest
+```
+
+
+Create an abstract class Payment with an abstract methos payment .create two subclasses creditcardpayment and mobilewalletpayment,which can implement the abstract method.invoke the method using the objects of the abstract class.
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Base Class: Payment
+class Payment(ABC):
+    
+    # Abstract method
+    @abstractmethod
+    def payment(self, amount):
+        pass
+
+# Subclass 1: CreditCardPayment
+class CreditCardPayment(Payment):
+    
+    # Implementing the abstract method payment
+    def payment(self, amount):
+        print(f"Credit card payment of-  {amount}")
+        print(f"Purchase of amount-  {amount}")
+        print("True")
+        return True
+
+# Subclass 2: MobileWalletPayment
+class MobileWalletPayment(Payment):
+    
+    # Implementing the abstract method payment
+    def payment(self, amount):
+        print(f"Mobile wallet payment of-  {amount}")
+        print(f"Purchase of amount-  {amount}")
+        print("True")
+        return True
+
+# Create objects of CreditCardPayment and MobileWalletPayment
+credit_card_payment = CreditCardPayment()
+mobile_wallet_payment = MobileWalletPayment()
+
+# Call the payment method using both objects
+credit_card_payment.payment(100)
+mobile_wallet_payment.payment(200)
+```
+
+
+
+Create an abstract class Animal with an abstract mathod move which can be implemented by the subclasses of the animal class.
+
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Base Class: Animal
+class Animal(ABC):
+    
+    # Abstract method
+    @abstractmethod
+    def move(self):
+        pass
+
+# Subclass 1: Dog
+class Dog(Animal):
+    def move(self):
+        print("I can walk and run")
+
+# Subclass 2: Snake
+class Snake(Animal):
+    def move(self):
+        print("I can crawl")
+        print("I can bark")
+
+# Subclass 3: Lion
+class Lion(Animal):
+    def move(self):
+        print("I can roar")
+
+# Create objects for each animal
+dog = Dog()
+snake = Snake()
+lion = Lion()
+
+# Call the move method for each animal
+dog.move()  # Dog's movement
+snake.move()  # Snake's movement
+lion.move()  # Lion's movement
+```
+
+
+
+Create an abstract base class has a concrete method sleep() that will be the same for all the child classes. So, we do not define it as an abstract method, thus saving us from code repetition. On the other hand, the sounds that animals make are all different. For that purpose, define the sound() method as an abstract method. then implement it in all child classes.
+
+For example:
+
+
+
+```
+from abc import ABC,abstractmethod
+ 
+class Animal(ABC):
+ 
+    #concrete method
+    def sleep(self):
+        print("I am going to sleep in a while")
+ 
+    @abstractmethod
+    def sound(self):
+        print("This function is for defining the sound by any animal")
+        pass
+ 
+class Snake(Animal):
+    def sound(self):
+        print("I can hiss")
+ 
+class Dog(Animal):
+    def sound(self):
+        print("I can bark")
+ 
+class Lion(Animal):
+    def sound(self):
+        print("I can roar")
+       
+class Cat(Animal):
+    def sound(self):
+        print("I can meow")
+        
+#Create the objects to invoke the abstract method
+
+obj2 = Cat()
+obj2.sleep()
+obj2.sound()
+
+obj3 = Snake()
+obj3.sound()
+```
+
+
+
+
+Create the abstract method  calculate_area  which is  of the abstract class 'Shape'. The implementation of this abstract class can be defined in the sub-classes that inherit the class 'Shape'.  'Rectangle' and 'Circle' are the two sub-classes that inherit the abstract class 'Shape'.
+
+
+
+```
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def calculate_area(self):
+        pass
+
+class Rectangle(Shape):
+    def __init__(self, length=5, breadth=3):
+        self.length = length
+        self.breadth = breadth
+
+    def calculate_area(self):
+        return self.length * self.breadth
+
+class Circle(Shape):
+    def __init__(self, radius=4):
+        self.radius = radius
+
+    def calculate_area(self):
+        return 3.14 * self.radius * self.radius
+
+# Object creation
+rec = Rectangle()
+cir = Circle()
+
+print("Area of a rectangle:", rec.calculate_area())
+print("Area of a circle:", cir.calculate_area())
+```
+
+
+
+
+Bank is an abstract class which having intertest() abstract method. SBI class is a child class to Bank class, so SBI class should provide implementation for abstract method which is available in Bank abstract class. An object is created to subclass, which is SBI, and then implemented method interest() is called.
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Class
+class Bank(ABC):
+    def bank_info(self):
+        print("Welcome to bank")
+    
+    @abstractmethod
+    def interest(self):
+        pass
+
+# Subclass
+class SBI(Bank):
+    def interest(self):
+        print("In sbi bank 5 rupees interest")
+
+# Object creation and method calls
+s = SBI()
+s.bank_info()
+s.interest()
+```
+
+
+
+Create a class VEHICLE  which is Abstract Class and CAR and BIKE are Child Classes. VEHICLE class have two unimplemented methods, which are implemented in child Classes.
+
+For example:
+
+
+
+```
+from abc import ABC, abstractmethod
+
+# Abstract Class
+class Vehicle(ABC):
+    def start(self, name=""):
+        print(name, "is Started")
+    
+    @abstractmethod
+    def acclerate(self, name=""):
+        pass
+
+    @abstractmethod
+    def park(self, name=""):
+        pass
+
+    def stop(self, name=""):
+        print(name, "is stopped")
+
+class Bike(Vehicle):
+    def acclerate(self, name=""):
+        print(name, "is accelrating @ 60kmph")
+
+    def park(self, name=""):
+        print(name, "is parked at two wheeler parking")
+
+class Car(Vehicle):
+    def acclerate(self, name=""):
+        print(name, "is accelrating @ 90kmph")
+
+    def park(self, name=""):
+        print(name, "is parked at four wheeler parking")
+
+def main():
+    print("Bike Object")
+    b = Bike()
+    b.start("Bike")
+    b.acclerate("Bike")
+    b.park("Bike")
+    b.stop("Bike")
+
+    print("\nCar Object")
+    c = Car()
+    c.start("Car")
+    c.acclerate("Car")
+    c.park("Car")
+    c.stop("Car")
+
+if __name__ == "__main__":
+    main()
+```
+
+
+
+Create a abstract class Book with an abstract method __repr()__ method and create two subclasses Novel and academic which will give the implementation of the abstract method __repr__().
+
+
+
+```
+from abc import ABC, abstractmethod
+
+class Book(ABC):
+    def __init__(self, title, quantity, author, price):
+        self.title = title
+        self.quantity = quantity
+        self.author = author
+        self.__price = price
+        self.__discount = None
+
+    def set_discount(self, discount):
+        self.__discount = discount
+
+    def get_price(self):
+        if self.__discount:
+            return self.__price * (1 - self.__discount)
+        return self.__price
+
+    @abstractmethod
+    def __repr__(self):
+        pass
+
+class Novel(Book):
+    def __init__(self, title, quantity, author, price, pages):
+        super().__init__(title, quantity, author, price)
+        self.pages = pages
+
+    def __repr__(self):
+        return f"Book: {self.title}, Quantity: {self.quantity}, Author: {self.author}, Price: {self.get_price()}"
+
+class Academic(Book):
+    def __init__(self, title, quantity, author, price, branch):
+        super().__init__(title, quantity, author, price)
+        self.branch = branch
+
+    def __repr__(self):
+        return f"Book: {self.title}, Branch: {self.branch}, Quantity: {self.quantity}, Author: {self.author}, Price: {self.get_price()}"
+
+# Create and use objects
+novel1 = Novel('Two States', 20, 'Chetan Bhagat', 200, 187)
+novel1.set_discount(0.20)
+
+academic1 = Academic('Python Foundations', 12, 'PSF', 655, 'IT')
+
+print(novel1)
+print(academic1)
+```
+
+
+
+
+Create a class Employee with public method show to display the details of the employee.
+
+
+
+```
+class Employee:
+    # constructor
+    def __init__(self, name, salary):
+        # public data members
+        self.name = name
+        self.salary = salary
+
+    # public instance methods
+    
+# creating object of a class
+emp = Employee('Jessa', 10000)
+
+# accessing public data members
+print("Name: ", emp.name, 'Salary:', emp.salary)
+print("Name: ", emp.name, 'Salary:', emp.salary)
+
+# call public method of the class
+```
+
+
+
+
+
+Create a class student with members name ,age,rollno and an user defined function show() to display the details of the student ,use the getter and setter method Information Hiding and conditional logic for setting an object attributes
+
+
+
+```
+class Student:
+    def __init__(self, name, roll_no, age):
+        # private member
+        self.name = name
+        # private members to restrict access
+        # avoid direct data modification
+        self.__roll_no = roll_no
+        self.__age = age
+
+    def show(self):
+        print('Student Details:', self.name, self.__roll_no)
+
+    # getter methods
+    def get_roll_no(self):
+        return self.__roll_no
+
+    # setter method to modify data member
+    # condition to allow data modification with rules
+    def set_roll_no(self, number):
+        if number > 50:
+            print('Invalid roll no. Please set correct roll number')
+        else:
+            self.__roll_no = number
+
+jessa = Student('Jessa', 10, 15)
+
+# before Modify
+jessa.show()
+# call show()
+# changing roll number as 120 using setter
+jessa.set_roll_no(120)
+
+
+jessa.set_roll_no(25)
+jessa.show()
+```
+
+
+
+
+
+Create a class robot in python with the version as private member initialized with the value as 22 change the value of the private member using getter and setter methods and also display the value of the version variable.
+
+For example:
+
+
+
+```
+class Robot:
+    def __init__(self):
+        self.__version = 22
+
+    def get_version(self):
+        return self.__version
+
+    def set_version(self, new_version):
+        self.__version = new_version
+
+
+r1 = Robot()
+
+print(r1.get_version()) 
+
+r1.set_version(23)
+
+print(r1.get_version()) 
+```
+
+
+
+
+
+Create a class named Wallet with a single, private attribute money: define a getter method, which returns the amount of money currently in the wallet. Then we define a setter method, which sets a new value for the money attribute while making sure the new value is not negative.
+
+class Wallet:
+    def __init__(self):
+        self.__money = 0
+
+
+
+```
+class Wallet:
+    def __init__(self):
+        self.__money = 0
+
+    def get_money(self):
+        return self.__money
+
+    def set_money(self, new_value):
+        if new_value >= 0:
+            self.__money = new_value
+
+
+my_wallet = Wallet()
+
+print(my_wallet.get_money())
+
+my_wallet.set_money(50)
+print(my_wallet.get_money()) 
+
+my_wallet.set_money(-10)
+print(my_wallet.get_money())
+```
+
+
+
+
+
+Create a class (user) with required variables (is,name) and function userdetails(). To access the class members, Create an object (u1) and call the function.
+
+class user:
+
+   id = 10
+
+   name = "Suresh"
+
+   def __init__(self, uid, uname):
+
+     self.id = uid
+
+     self.name = uname
+
+
+
+```
+class user:
+    id = 10
+    name = "Suresh"
+
+    def __init__(self, uid, uname):
+        self.id = uid
+        self.name = uname
+
+    def userdetails(self):
+        print(f"Id: {self.id}, Name: {self.name}")
+
+
+u1 = user(30, "Trishi")
+u1.userdetails()
+```
+
+
+
+
+Create a Class  Student with the private members name and age ,Add getter and setter to initialize the age variable.
+
+
+```
+class Student:
+    def __init__(self, name, __age):
+        # private member
+        self.name = name
+        self.__age = __age
+
+    
+    def get_age(self):
+        return self.__age
+
+    
+    def set_age(self, age):
+        self.__age = age
+
+stud = Student('Jessa', 14)
+
+
+print('Name:', stud.name, stud.get_age())
+
+# change age using setter
+stud.set_age(16)
+
+
+print('Name:', stud.name, stud.get_age())
+```
+
+
+
+Create a class student with members name ,age,rollno and an user defined function show() to display the details of the student ,use the getter and setter method Information Hiding and conditional logic for setting an object attributes
+
+
+
+```
+class Student:
+    def __init__(self, name, roll_no, age):
+        # private member
+        self.name = name
+        # private members to restrict access
+        # avoid direct data modification
+        self.__roll_no = roll_no
+        self.__age = age
+
+    def show(self):
+        print('Student Details:', self.name, self.__roll_no)
+
+    # getter methods
+    def get_roll_no(self):
+        return self.__roll_no
+
+    # setter method to modify data member
+    # condition to allow data modification with rules
+    def set_roll_no(self, number):
+        if number > 50:
+            print('Invalid roll no. Please set correct roll number')
+        else:
+            self.__roll_no = number
+
+jessa = Student('Jessa', 10, 15)
+
+# before Modify
+jessa.show()# call show()
+# changing roll number as 120 using setter
+jessa.set_roll_no(120)
+
+
+jessa.set_roll_no(25)
+jessa.show()
+```
+
+
+
+Implement Encapsulation using private members –of a class rectangle with private variables length,width.
+
+
+
+```
+class Rectangle:
+  __length = 0 #private variable
+  __breadth = 0#private variable
+  def __init__(self):
+    #constructor
+    self.__length = 5
+    self.__breadth = 3
+    
+    print(self.__length)
+    print(self.__breadth)
+ 
+rect = Rectangle()
+```
+
+
+
+Create a class (user) with required variables (is,name) and function userdetails(). To access the class members, Create an object (u1) and call the function.
+
+class user:
+
+   id = 10
+
+   name = "Suresh"
+
+   def __init__(self, uid, uname):
+
+     self.id = uid
+
+     self.name = uname
+
+
+
+```
+class user:
+   id = 10
+   name = "Suresh"
+
+   def __init__(self, uid, uname):
+     self.id = uid
+     self.name = uname
+
+   def userdetails(self):
+     print(f"Id: {self.id}, Name: {self.name}")
+
+u1 = user(2, "Rohini")
+u1.id = 30
+u1.name = "Trishi"
+u1.userdetails()
+```
+
+
+
+Create a class  Player with two private attributes name and player number, change the value of the attributes  with getters and setters for both. 
+
+class Player:
+    def __init__(self, name: str, player_number: int):
+        self.__name = name
+        self.__player_number = player_number
+
+
+
+```
+class Player:
+    def __init__(self, name: str, player_number: int):
+        self.__name = name
+        self.__player_number = player_number
+
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, name):
+        if name != "":
+            self.__name = name
+        else:
+            raise ValueError("The name may not be an empty string")
+
+    @property
+    def player_number(self):
+        return self.__player_number
+
+    @player_number.setter
+    def player_number(self, player_number):
+        if player_number > 0:
+            self.__player_number = player_number
+        else:
+            raise ValueError("The player number must be a positive integer")
+            
+player = Player("Betty Ballmer", 10)
+print(player.name)
+print(player.player_number)
+
+player.name = "Buster Ballmer"
+player.player_number = 11
+print(player.name)
+print(player.player_number)
+```
+
+
+
+Write a program in Python to calculate the value of the following expression by using lambda function.
+The expression is -
+
+(x + 10) + (y + 2) * z
+
+
+
+```
+
+res = lambda x, y, z: (x + 10) + (y + 2) * z
+
+a, b, c = int(input()), int(input()), int(input())
+
+ans = res(a, b, c)
+print(ans)
+```
+
+
+
+
+Create  Counter class which  has one attribute called current which defaults to zero. And it has three methods:
+
+increment() increases the value of the current attribute by one.
+value() returns the current value of the current attribute
+reset() sets the value of the current attribute to zero
+create a new instance of the Counter class and calls the increment() method three times before showing the current value of the counter to the screen
+
+
+
+```
+class Counter:
+    def __init__(self):
+        self.current = 0
+
+    def increment(self):
+        self.current += 1
+
+    def value(self):
+        return self.current
+
+    def reset(self):
+        self.current = 0
+
+counter = Counter()
+
+counter.increment()
+counter.increment()
+counter.increment()
+
+
+print(counter.value())
+```
+
+
+
+
+Create an abstract base class has a concrete method sleep() that will be the same for all the child classes. So, we do not define it as an abstract method, thus saving us from code repetition. On the other hand, the sounds that animals make are all different. For that purpose, define the sound() method as an abstract method. then implement it in all child classes.Create an abstract base class has a concrete method sleep() that will be the same for all the child classes. So, we do not define it as an abstract method, thus saving us from code repetition. On the other hand, the sounds that animals make are all different. For that purpose, define the sound() method as an abstract method. then implement it in all child classes.
+
+
+
+```
+from abc import ABC,abstractmethod
+ 
+class Animal(ABC):
+    def sleep(self):
+        print("I am going to sleep in a while")
+ 
+class Snake(Animal):
+    def sound(self):
+        print("I can hiss")
+ 
+class Dog(Animal):
+    def sound(self):
+        print("I can bark")
+ 
+class Lion(Animal):
+    def sound(self):
+        print("I can roar")
+       
+class Cat(Animal):
+    def sound(self):
+        print("I can meow")
+        
+c = Cat()
+c.sleep()
+c.sound()
+c = Snake()
+c.sound()
+```
+
+
+
+
+Create a parent class Fish and define a class method type, then create a child class called Shark while overriding the type method so that objects instantiated from the Shark class use the overridden method.
+
+
+
+```
+class Fish:
+       #Add your code here
+    def display(self):
+        print("fish")
+
+class Shark(Fish):
+	#Add your code here
+	def display(self):
+	    print("shark")
+
+obj_goldfish=Fish()
+obj_hammerhead=Shark()
+
+#Call the functions for fish and shark class using the objects
+obj_goldfish.display()
+obj_hammerhead.display()
+```
+
+

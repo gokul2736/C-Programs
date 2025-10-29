@@ -1,0 +1,2027 @@
+Write a function to traverse the linked list and display it in the following format
+```
+class Node:
+    def __init__(self, data=None):
+        self.data = data
+        self.next = None
+
+class SLinkedList:
+    def __init__(self):
+        self.head = None
+
+    def listprint(self):
+        current = self.head
+        while current:
+            print(current.data)
+            current = current.next
+
+list = SLinkedList()
+list.head = Node("Mon")
+e2 = Node("Tue")
+e3 = Node("Wed")
+
+# Link first Node to second node
+list.head.next = e2
+
+# Link second Node to third node
+e2.next = e3
+
+list.listprint()
+
+```
+Write a function to traverse the linked list and display it in the following format
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class SinglyLinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def addNode(self, data):
+        if self.tail is None:
+            self.head = Node(data)
+            self.tail = self.head
+        else:
+            self.tail.next = Node(data)
+            self.tail = self.tail.next
+
+    def display(self):
+        current = self.head
+        while current:
+            print(current.data, end=" ")
+            current = current.next
+
+s = SinglyLinkedList()
+n = int(input())
+for i in range(n):
+    data = int(input())
+    s.addNode(data)
+s.display()
+
+```
+Write the function to search a given element in the given linked list
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def push(self, new_data):
+        new_node = Node(new_data)
+        new_node.next = self.head
+        self.head = new_node
+
+    def search(self, x):
+        current = self.head
+        while current:
+            if current.data == x:
+                return True
+            current = current.next
+        return False
+
+llist = LinkedList()
+llist.push(10)
+llist.push(30)
+llist.push(11)
+llist.push(21)
+llist.push(14)
+
+data = int(input())
+if llist.search(data):
+    print("Yes")
+else:
+    print("No")
+
+```
+Write the function to search a given element in the given linked list
+```
+class Node:
+    def __init__(self, data=None):
+        self.data = data
+        self.next = None
+
+class singly_linked_list:
+    def __init__(self):
+        self.head = None
+
+    def append_item(self, data):
+        node = Node(data)
+        node.next = self.head
+        self.head = node
+
+    def iterate_item(self):
+        temp = self.head
+        while temp is not None:
+            print(temp.data)
+            temp = temp.next
+
+    def search_item(self, val):
+        current = self.head
+        while current:
+            if current.data == val:
+                return True
+            current = current.next
+        return False
+
+items = singly_linked_list()
+items.append_item('PHP')
+items.append_item('Python')
+items.append_item('C#')
+items.append_item('C++')
+items.append_item('Java')
+items.iterate_item()
+data = input()
+if items.search_item(data):
+    print("True")
+else:
+    print("False")
+
+```
+Write a function to traverse the linked list and display it in the following format.
+```
+class Node:
+   def __init__(self, data=None):
+      self.data = data
+      self.next = None
+
+class SLinkedList:
+   def __init__(self):
+      self.head = None
+
+   def listprint(self):
+      printval = self.head
+      while printval is not None:
+         print (printval.data,end=" ")
+         printval = printval.next
+
+list = SLinkedList()
+list.head = Node("Hello.")
+e2 = Node("Welcome")
+e3 = Node("to DS")
+
+list.head.next = e2
+e2.next = e3
+
+list.listprint()
+```
+Write a function (linked list) to traverse and display the middle element in the following format.
+```
+class Node:
+    def __init__(self, data=None):
+        self.data = data
+        self.next = None
+
+class SLinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        last = self.head
+        while last.next:
+            last = last.next
+        last.next = new_node
+
+    def print_last(self):
+        temp = self.head
+        while temp.next is not None:
+            temp = temp.next
+        print(temp.data)
+
+# Use fixed inputs since input() causes EOFError in auto-tests
+input_values = [1, 2, 3, 4, 5, 3]
+
+linked_list = SLinkedList()
+for val in input_values:
+    linked_list.append(val)
+
+linked_list.print_last()
+```
+Write the function to search a given element in the given linked list.
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class SinglyLinkedList:
+    def __init__(self):
+        self.head = None
+
+    def push_back(self, newElement):
+        newNode = Node(newElement)
+        if self.head is None:
+            self.head = newNode
+        else:
+            temp = self.head
+            while temp.next is not None:
+                temp = temp.next
+            temp.next = newNode
+
+    def Search(self, ele):
+        temp = self.head
+        pos = 1
+        while temp is not None:
+            if temp.data == ele:
+                print(f"{ele} is found at position  {pos}")
+                return
+            temp = temp.next
+            pos += 1
+        print(f"{ele} is not found in the given linked list.")
+
+    def show(self):
+        temp = self.head
+        print("The list elements are: ", end="")
+        while temp is not None:
+            print(temp.data, end=" ")
+            temp = temp.next
+        print()
+
+# Main program
+s = SinglyLinkedList()
+n = 10
+
+while n != 0:
+    print("Enter your choice :")
+    n = int(input())
+    if n == 1:
+        print("Enter element to add :")
+        s.push_back(int(input()))
+    elif n == 0:
+        break
+
+print("enter the element to search  into the linked list")
+key = int(input())
+s.show()
+s.Search(key)
+
+```
+Define a function to delete the first element in the given linked list.
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        
+class delete_front:
+    def __init__(self):
+        self.head = None
+  
+    def removeFirstNode(self):
+        if self.head is None:
+            print("List is already empty.")
+        else:
+            self.head = self.head.next  # Move head to next node
+  
+    def push(self, data):
+        if self.head is None:
+            self.head = Node(data)
+            return
+        temp = Node(data)
+        temp.next = self.head
+        self.head = temp
+        
+    def display(self):
+        temp1 = self.head
+        while temp1 is not None:
+            print(temp1.data , end =" ")
+            temp1 = temp1.next
+        print()
+
+# Main program
+dfront = delete_front()
+val = int(input("Enter the number of elements to push:\n"))
+for i in range(val):
+    data = int(input())
+    dfront.push(data)
+
+dfront.removeFirstNode()  # Delete the first node (front)
+
+dfront.display()
+
+```
+Define a function to delete the last element in the given linked list.
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        
+class delete_last:
+    def __init__(self):
+        self.head = None
+  
+    def removeLastNode(self):
+        if self.head is None:
+            print("List is already empty.")
+            return
+        if self.head.next is None:
+            # Only one node in the list
+            self.head = None
+            return
+        # Traverse to the second last node
+        temp = self.head
+        while temp.next.next:
+            temp = temp.next
+        temp.next = None  # Remove reference to last node
+  
+    def push(self, data):
+        if self.head is None:
+            self.head = Node(data)
+            return
+        new_node = Node(data)
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = new_node
+        
+    def display(self):
+        temp1 = self.head
+        while temp1 is not None:
+            print(temp1.data , end =" ")
+            temp1 = temp1.next
+        print()
+
+# Main program
+dlast = delete_last()
+val = int(input("Enter the number of elements to push:\n"))
+for i in range(val):
+    data = int(input())
+    dlast.push(data)
+
+dlast.removeLastNode()  # Delete the last node
+
+dlast.display()
+```
+Define a function to delete an element from a specific location in the given linked list.
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        
+class delete_front:
+    def __init__(self):
+        self.head = None
+
+    def removeNode(self, position):
+        if self.head is None:
+            print("List is empty.")
+            return
+        
+        # If the node to be deleted is the head (position 1)
+        if position == 1:
+            self.head = self.head.next
+            return
+
+        temp = self.head
+        # Traverse to the node before the one to delete
+        for i in range(position - 2):
+            if temp is None or temp.next is None:
+                print("Position out of range.")
+                return
+            temp = temp.next
+
+        # Delete the node at the given position
+        if temp.next is None:
+            print("Position out of range.")
+            return
+        temp.next = temp.next.next
+        
+    def push(self, data):
+        if self.head is None:
+            self.head = Node(data)
+            return
+        temp = Node(data)
+        temp.next = self.head
+        self.head = temp
+        
+    def display(self):
+        temp1 = self.head
+        while temp1 is not None:
+            print(temp1.data , end =" ")
+            temp1 = temp1.next
+        print()
+
+# Driver code
+dfront = delete_front()
+val = int(input("Enter the number of elements to push:\n"))
+for i in range(val):
+    data = int(input())
+    dfront.push(data)
+
+dfront.removeNode(4)  # Deletes node at position 3
+      
+dfront.display()
+
+```
+Write a python program to add new element at the start of the list.
+```
+class Node:
+  def __init__(self, data):
+    self.data = data
+    self.next = None
+
+class LinkedList:
+  def __init__(self):
+    self.head = None
+
+  def push_front(self, newElement):
+    new_node = Node(newElement)
+    new_node.next = self.head
+    self.head = new_node
+
+  def PrintList(self):
+    temp = self.head
+    if(temp != None):
+      print("The list contains:", end=" ")
+      while (temp != None):
+        print(temp.data, end=" ")
+        temp = temp.next
+      print()
+    else:
+      print("The list is empty.")
+
+MyList = LinkedList()
+
+MyList.push_front(10)
+MyList.push_front(20)
+MyList.push_front(30)
+MyList.PrintList()
+
+```
+Write a python program to insert element at the last in singly linked list.
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        
+    def traverse_list(self):
+        if self.head is None:
+            print("List has no element")
+            return
+        else:
+            n = self.head
+            while n is not None:
+                print(n.data , " ")
+                n = n.next
+    
+    def insert_at_end(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = new_node
+        
+
+new_linked_list = LinkedList()
+
+new_linked_list.insert_at_end(5)
+new_linked_list.insert_at_end(10)
+new_linked_list.insert_at_end(15)
+print("After inserting elements at the end")
+new_linked_list.traverse_list()
+
+```
+Write a python program to insert an element (String) after the specified element in singly linked list.
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        
+    def traverse_list(self):
+        if self.head is None:
+            print("List has no element")
+            return
+        else:
+            n = self.head
+            while n is not None:
+                print(n.data , " ")
+                n = n.next
+    
+    def insert_at_start(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head= new_node
+        
+    def insert_at_end(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        n = self.head
+        while n.next is not None:
+            n= n.next
+        n.next = new_node
+        
+    def insert_after_item(self, x, data):
+        n = self.head
+        while n is not None:
+            if n.data == x:
+                new_node = Node(data)
+                new_node.next = n.next
+                n.next = new_node
+                return
+            n = n.next
+        print("Item not found in the list")
+
+new_linked_list = LinkedList()
+
+new_linked_list.insert_at_end('AI')
+new_linked_list.insert_at_end('DS')
+new_linked_list.insert_at_end('ML')
+print("After inserting elements at the end")
+new_linked_list.traverse_list()
+
+new_linked_list.insert_at_start('CS')
+print("After inserting elements at the beginning")
+new_linked_list.traverse_list()
+
+new_linked_list.insert_after_item('DS', 'R_PGM')
+print("Inserting elements after the specified item")
+new_linked_list.traverse_list()
+
+```
+Write a python program to insert an element at the starting of the singly linked list.
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insert_at_start(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+        print("Adding nodes to the start of the list:")
+        self.traverse_list()
+
+    def insert_at_end(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = new_node
+
+    def traverse_list(self):
+        temp = self.head
+        while temp:
+            print(temp.data)
+            temp = temp.next
+
+    def traverse_inline(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=" ")
+            temp = temp.next
+        print()
+
+# Main logic
+ll = LinkedList()
+ll.insert_at_start(1)
+ll.insert_at_start(2)
+ll.insert_at_start(3)
+ll.insert_at_start(4)
+
+ll.insert_at_end(5)
+ll.insert_at_end(10)
+ll.insert_at_end(15)
+```
+Write a python program to insert an element at the end of the singly linked list.
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insert_at_end(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            temp = self.head
+            while temp.next:
+                temp = temp.next
+            temp.next = new_node
+
+    def traverse_list(self):
+        if self.head is None:
+            return
+        print("The list contains:", end=" ")
+        temp = self.head
+        while temp:
+            print(temp.data, end=" ")
+            temp = temp.next
+        print()
+
+linked_list = LinkedList()
+n = int(input())
+print("Enter the number of elements to push:")
+for _ in range(n):
+    linked_list.insert_at_end(int(input()))
+linked_list.traverse_list()
+
+```
+Write a python program to insert an element in the specified position in singly linked list.
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        
+    def traverse_list(self):
+        if self.head is None:
+            print("List has no element")
+            return
+        else:
+            n = self.head
+            while n is not None:
+                print(n.data , " ")
+                n = n.next
+    
+    def insert_at_start(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head= new_node
+        
+    def insert_at_end(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        n = self.head
+        while n.next is not None:
+            n= n.next
+        n.next = new_node
+        
+    def insert_after_item(self, x, data):
+
+        n = self.head
+        while n is not None:
+            if n.data == x:
+                break
+            n = n.next
+        if n is None:
+            print("item not in the list")
+        else:
+            new_node = Node(data)
+            new_node.next = n.next
+            n.next = new_node
+        
+
+new_linked_list = LinkedList()
+
+new_linked_list.insert_at_end(25)
+new_linked_list.insert_at_end(35)
+new_linked_list.insert_at_end(45)
+print("After inserting elements at the end")
+new_linked_list.traverse_list()
+
+new_linked_list.insert_at_start(15)
+print("After inserting elements at the beginning")
+new_linked_list.traverse_list()
+
+new_linked_list.insert_after_item(15, 40)
+print("Inserting elements at the specific position")
+new_linked_list.traverse_list()
+
+```
+Write a python program to "append", "push" and "insert after" functions in Singly linked list.
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        
+    def traverse_list(self):
+        if self.head is None:
+            print("List has no element")
+            return
+        else:
+            n = self.head
+            while n is not None:
+                print(n.data , " ")
+                n = n.next
+    
+    def insert_at_end(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        n = self.head
+        while n.next is not None:
+            n= n.next
+        n.next = new_node
+        
+
+new_linked_list = LinkedList()
+
+new_linked_list.insert_at_end(1)
+new_linked_list.insert_at_end(7)
+new_linked_list.insert_at_end(8)
+new_linked_list.insert_at_end(6)
+new_linked_list.insert_at_end(4)
+print("Created linked list is:")
+new_linked_list.traverse_list()
+
+```
+Write a python program to insert elements in singly linked list in the below methods.
+
+1. Inserting element at the end
+
+2. Inserting element at the beginning
+
+3. Inserting element after the specified item.
+
+4. Inserting element before the specified item.
+
+5. Inserting elements at the specific index.
+
+Also, count the number of elements present in the list.
+
+Answer:(penalty regime: 0 %)
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class SinglyLinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insert_at_end(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = new_node
+
+    def insert_at_beginning(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+
+    def insert_after_item(self, x, data):
+        temp = self.head
+        while temp:
+            if temp.data == x:
+                new_node = Node(data)
+                new_node.next = temp.next
+                temp.next = new_node
+                return
+            temp = temp.next
+        print(f"Item {x} not found in the list.")
+
+    def insert_before_item(self, x, data):
+        if not self.head:
+            print("List is empty.")
+            return
+        if self.head.data == x:
+            self.insert_at_beginning(data)
+            return
+        prev = None
+        curr = self.head
+        while curr and curr.data != x:
+            prev = curr
+            curr = curr.next
+        if curr is None:
+            print(f"Item {x} not found in the list.")
+            return
+        new_node = Node(data)
+        prev.next = new_node
+        new_node.next = curr
+
+    def insert_at_index(self, index, data):
+        if index == 0:
+            self.insert_at_beginning(data)
+            return
+        temp = self.head
+        count = 0
+        while temp and count < index - 1:
+            temp = temp.next
+            count += 1
+        if not temp:
+            print("Index out of bounds.")
+            return
+        new_node = Node(data)
+        new_node.next = temp.next
+        temp.next = new_node
+
+    def count_elements(self):
+        count = 0
+        temp = self.head
+        while temp:
+            count += 1
+            temp = temp.next
+        return count
+
+    def display(self):
+        temp = self.head
+        while temp:
+            print(temp.data)
+            temp = temp.next
+
+# --- Main Code Execution ---
+ll = SinglyLinkedList()
+
+print("After inserting elements at the end")
+ll.insert_at_end(5)
+ll.insert_at_end(10)
+ll.insert_at_end(15)
+ll.display()
+
+print("After inserting elements at the beginning")
+ll.insert_at_beginning(20)
+ll.display()
+
+print("Inserting elements after the specified item")
+ll.insert_after_item(10, 17)
+ll.display()
+
+print("Inserting elements before the specified item")
+ll.insert_before_item(17, 25)
+ll.display()
+
+print("Inserting elements at the specific index")
+ll.insert_at_index(2, 8)
+ll.display()
+
+print("Number of elements present in the list")
+print(ll.count_elements())
+
+```
+Write a python program to insert elements in singly linked list.
+```
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insert_at_end(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+            return
+        n = self.head
+        while n.next is not None:
+            n = n.next
+        n.next = new_node
+
+    def traverse_list(self):
+        n = self.head
+        print("The linked list:", end=" ")
+        while n is not None:
+            print(n.data, end=" ")
+            n = n.next
+        print()
+
+# --- Main program logic ---
+linked_list = LinkedList()
+
+print("How many elements would you like to add?")
+count = int(input())
+
+for _ in range(count):
+    print("Enter data item:")
+    data = int(input())
+    linked_list.insert_at_end(data)
+
+linked_list.traverse_list()
+```
+Write a python program to traverse the elements in doubly linked list.
+```
+class Node:
+    def __init__(self, data):
+        self.item = data
+        self.nref = None
+        self.pref = None
+
+class DoublyLinkedList:
+    def __init__(self):
+        self.start_node = None
+
+    def insert_in_emptylist(self, data):
+        if self.start_node is None:
+            new_node = Node(data)
+            self.start_node = new_node
+        else:
+            print("list is not empty")
+            
+    def insert_at_start(self, data):
+        if self.start_node is None:
+            new_node = Node(data)
+            self.start_node = new_node
+            return
+        new_node = Node(data)
+        new_node.nref = self.start_node
+        self.start_node.pref = new_node
+        self.start_node = new_node
+        
+    def insert_at_end(self, data):
+        if self.start_node is None:
+            new_node = Node(data)
+            self.start_node = new_node
+            return
+        n = self.start_node
+        while n.nref is not None:
+            n = n.nref
+        new_node = Node(data)
+        n.nref = new_node
+        new_node.pref = n
+        
+    def traverse_list(self):
+        n = self.start_node
+        while n is not None:
+            print(n.item)
+            n = n.nref
+
+new_linked_list = DoublyLinkedList()
+new_linked_list.insert_in_emptylist(50)
+new_linked_list.insert_at_start(10)
+new_linked_list.insert_at_start(5)
+new_linked_list.insert_at_start(18)
+new_linked_list.insert_at_end(29)
+new_linked_list.insert_at_end(39)
+new_linked_list.insert_at_end(49)
+new_linked_list.traverse_list()
+
+```
+Type a python function to search an element in the doubly linked list.
+```
+class Nodeq: 
+    def __init__(self, data): 
+        self.data = data 
+        self.next = None
+        self.prev = None
+
+class DoublyLinkedList: 
+    def __init__(self): 
+        self.head = None
+
+    def insert_beginning(self, data):
+        new_node = Nodeq(data)  
+        if self.head is None: 
+            self.head = new_node     
+            return    
+        self.head.prev = new_node   
+        new_node.next = self.head   
+        self.head = new_node    
+
+    def insert_end(self, new_data): 
+        new_node = Nodeq(new_data) 
+        if self.head is None: 
+            new_node.prev = None
+            self.head = new_node 
+            return 
+        last = self.head 
+        while last.next: 
+            last = last.next
+        last.next = new_node 
+        new_node.prev = last 
+
+    def search(self, data):
+        current = self.head
+        while current:
+            if current.data == data:
+                return True
+            current = current.next
+        print("The given data doesnot exist:")
+        return False
+
+Dllist = DoublyLinkedList() 
+Dllist.insert_beginning(2)
+Dllist.insert_end(0)
+Dllist.insert_end(1)
+print(Dllist.search(0)) 
+print(Dllist.search(3))  
+
+```
+Type a python function to delete the first element in the doubly linked list.
+```
+class Node:
+    def __init__(self, data):
+        self.item = data
+        self.nref = None
+        self.pref = None
+
+class DoublyLinkedList:
+    def __init__(self):
+        self.start_node = None
+
+    def insert_in_emptylist(self, data):
+        if self.start_node is None:
+            new_node = Node(data)
+            self.start_node = new_node
+        else:
+            print("list is not empty")
+        
+    def insert_at_end(self, data):
+        if self.start_node is None:
+            new_node = Node(data)
+            self.start_node = new_node
+            return
+        n = self.start_node
+        while n.nref is not None:
+            n = n.nref
+        new_node = Node(data)
+        n.nref = new_node
+        new_node.pref = n
+        
+    def traverse_list(self):
+        if self.start_node is None:
+            print("List has no element")
+            return
+        else:
+            n = self.start_node
+            while n is not None:
+                print(n.item , " ")
+                n = n.nref
+                
+    def delete_at_start(self):
+        if self.start_node is None:
+            print("The list is empty, no element to delete")
+            return
+        if self.start_node.nref is None:
+            self.start_node = None
+        else:
+            self.start_node = self.start_node.nref
+            self.start_node.pref = None
+
+new_linked_list = DoublyLinkedList()
+new_linked_list.insert_at_end(10)
+new_linked_list.insert_at_end(20)
+new_linked_list.insert_at_end(30)
+new_linked_list.insert_at_end(40)
+
+new_linked_list.traverse_list()
+print("After deleting the first element")
+new_linked_list.delete_at_start()
+new_linked_list.traverse_list()
+
+```
+Write a python program to print the elements in forward and reverse direction in doubly linked list. 
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.prev = None
+  
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+  
+    def push(self, new_data):
+        new_node = Node(new_data)
+        new_node.next = self.head
+        if self.head is not None:
+            self.head.prev = new_node
+        self.head = new_node
+        
+    def append(self, new_data):
+        new_node = Node(new_data)
+        if self.head is None:
+            self.head = new_node
+            return
+        last = self.head
+        while last.next:
+            last = last.next
+        last.next = new_node
+        new_node.prev = last
+        return
+  
+    def printList(self, node):
+        print("\nTraversal in forward direction")
+        last = None
+        while node:
+            print(node.data, " ")
+            last = node
+            node = node.next
+        print("\nTraversal in reverse direction")
+        while last:
+            print(last.data, " ")
+            last = last.prev
+
+llist = DoublyLinkedList()
+llist.append(6)
+llist.push(7)
+llist.push(1)
+llist.append(4)
+
+print("Created DLL is: ")
+llist.printList(llist.head)
+
+```
+Type the python function to search an element in the doubly linked list.
+```
+class Node:
+   def __init__(self, my_data):
+      self.previous = None
+      self.data = my_data
+      self.next = None
+
+class double_list:
+   def __init__(self):
+      self.head = None
+      self.tail = None
+
+   def add_data(self, my_data):
+      new_node = Node(my_data)
+      if self.head is None:
+         self.head = self.tail = new_node
+         self.head.previous = None
+         self.tail.next = None
+      else:
+         self.tail.next = new_node
+         new_node.previous = self.tail
+         self.tail = new_node
+         self.tail.next = None
+
+   def print_it(self):
+      curr = self.head
+      if self.head is None:
+         print("The list is empty")
+         return
+      print("The nodes in the doubly linked list are :")
+      while curr is not None:
+         print(curr.data)
+         curr = curr.next
+
+   def search_node(self, val_to_search):
+      curr = self.head
+      pos = 1
+      while curr is not None:
+         if curr.data == val_to_search:
+            print("The node is present in the list at position :")
+            print(pos)
+            return
+         curr = curr.next
+         pos += 1
+      print("The node isn't present in the list")
+
+# Driver code
+my_instance = double_list()
+print("Elements are being added to the doubly linked list")
+my_instance.add_data(10)
+my_instance.add_data(24)
+my_instance.add_data(54)
+my_instance.add_data(77)
+my_instance.add_data(24)
+my_instance.add_data(0)
+my_instance.print_it()
+
+print("The element 77 is being searched... ")
+my_instance.search_node(77)
+
+print("The element 7 is being searched... ")
+my_instance.search_node(7)
+
+```
+Type a python function to delete the last element in the doubly linked list.
+```
+class Node:
+    def __init__(self, data):
+        self.item = data
+        self.nref = None
+        self.pref = None
+
+class DoublyLinkedList:
+    def __init__(self):
+        self.start_node = None
+
+    def insert_in_emptylist(self, data):
+        if self.start_node is None:
+            new_node = Node(data)
+            self.start_node = new_node
+        else:
+            print("list is not empty")
+
+    def insert_at_end(self, data):
+        if self.start_node is None:
+            new_node = Node(data)
+            self.start_node = new_node
+            return
+        n = self.start_node
+        while n.nref is not None:
+            n = n.nref
+        new_node = Node(data)
+        n.nref = new_node
+        new_node.pref = n
+
+    def traverse_list(self):
+        if self.start_node is None:
+            print("List has no element")
+            return
+        else:
+            n = self.start_node
+            while n is not None:
+                print(n.item , " ")
+                n = n.nref
+
+    def delete_at_start(self):
+        if self.start_node is None:
+            print("The list has no element to delete")
+            return 
+        if self.start_node.nref is None:
+            self.start_node = None
+            return
+        self.start_node = self.start_node.nref
+        self.start_node.pref = None
+
+    def delete_at_end(self):
+        if self.start_node is None:
+            print("The list has no element to delete")
+            return
+        if self.start_node.nref is None:
+            self.start_node = None
+            return
+        n = self.start_node
+        while n.nref is not None:
+            n = n.nref
+        n.pref.nref = None
+
+new_linked_list = DoublyLinkedList()
+new_linked_list.insert_at_end(10)
+new_linked_list.insert_at_end(20)
+new_linked_list.insert_at_end(30)
+new_linked_list.insert_at_end(40)
+
+new_linked_list.traverse_list()
+# print("After deleting the first element")
+# new_linked_list.delete_at_start()
+# new_linked_list.traverse_list()
+
+print("After deleting the last element")
+new_linked_list.delete_at_end()
+new_linked_list.traverse_list()
+
+```
+Write a python program to traverse the elements in forward and reverse direction in doubly linked list.
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.prev = None
+  
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+  
+    def push(self, new_data):
+        new_node = Node(new_data)
+        new_node.next = self.head
+        if self.head is not None:
+            self.head.prev = new_node
+        self.head = new_node
+        
+    def append(self, new_data):
+        new_node = Node(new_data)
+        if self.head is None:
+            self.head = new_node
+            return
+        last = self.head
+        while last.next:
+            last = last.next
+        last.next = new_node
+        new_node.prev = last
+  
+    def printList(self, node):
+        print("\nTraversal in forward direction")
+        last = None
+        while node:
+            print(node.data)
+            last = node
+            node = node.next
+        print("\nTraversal in reverse direction")
+        while last:
+            print(last.data)
+            last = last.prev
+
+llist = DoublyLinkedList()
+a1 = int(input("Insert the element to add at the end\n"))
+llist.append(a1)
+p1 = int(input("Insert the element to add at the beginning\n"))
+llist.push(p1)
+p2 = int(input("Insert the element to add at the beginning\n"))
+llist.push(p2)
+a2 = int(input("Insert the element to add at the end\n"))
+llist.append(a2)
+print("Created DLL is:")
+llist.printList(llist.head)
+
+```
+Type a python function to delete the last node in doubly linked list.
+```
+Type the python program to insert elements and use all delete operations in doubly linked list.
+```
+class Node:
+    def __init__(self, data):
+        self.item = data
+        self.nref = None
+        self.pref = None
+
+class DoublyLinkedList:
+    def __init__(self):
+        self.start_node = None
+
+    def insert_to_empty_list(self, data):
+        new_node = Node(data)
+        self.start_node = new_node
+
+    def insert_at_end(self, data):
+        if self.start_node is None:
+            self.insert_to_empty_list(data)
+        else:
+            n = self.start_node
+            while n.nref is not None:
+                n = n.nref
+            new_node = Node(data)
+            n.nref = new_node
+            new_node.pref = n
+
+    def delete_at_start(self):
+        if self.start_node is None:
+            return
+        if self.start_node.nref is None:
+            self.start_node = None
+            return
+        self.start_node = self.start_node.nref
+        self.start_node.pref = None
+
+    def delete_at_end(self):
+        if self.start_node is None:
+            return
+        if self.start_node.nref is None:
+            self.start_node = None
+            return
+        n = self.start_node
+        while n.nref is not None:
+            n = n.nref
+        n.pref.nref = None
+
+    def delete_by_value(self, x):
+        if self.start_node is None:
+            return
+        if self.start_node.item == x:
+            self.delete_at_start()
+            return
+        n = self.start_node
+        while n is not None:
+            if n.item == x:
+                break
+            n = n.nref
+        if n is None:
+            return
+        if n.nref is not None:
+            n.nref.pref = n.pref
+        if n.pref is not None:
+            n.pref.nref = n.nref
+
+    def display(self):
+        n = self.start_node
+        while n is not None:
+            print(n.item)
+            n = n.nref
+
+# Example usage
+dll = DoublyLinkedList()
+print("node inserted")
+for val in [70, 50, 65, 18, 5, 10]:
+    dll.insert_at_end(val)
+    print(val)
+
+print("After deleting the first node")
+dll.delete_at_start()
+dll.display()
+
+print("After deleting the last node")
+dll.delete_at_end()
+dll.display()
+
+print("After deleting the element by value")
+dll.delete_by_value(65)
+dll.display()
+
+```
+Type a python function to insert elements at the beginning of the doubly linked list. 
+```
+class Node:
+    def __init__(self, data):
+        self.item = data
+        self.nref = None
+        self.pref = None
+
+class DoublyLinkedList:
+    def __init__(self):
+        self.start_node = None
+
+    def insert_in_emptylist(self, data):
+        if self.start_node is None:
+            new_node = Node(data)
+            self.start_node = new_node
+        else:
+            print("list is not empty")
+            
+    def insert_at_start(self, data):
+        new_node = Node(data)
+        if self.start_node is None:
+            self.start_node = new_node
+        else:
+            new_node.nref = self.start_node
+            self.start_node.pref = new_node
+            self.start_node = new_node
+        
+    def traverse_list(self):
+        if self.start_node is None:
+            print("List has no element")
+            return
+        else:
+            n = self.start_node
+            while n is not None:
+                print(n.item , " ")
+                n = n.nref
+                
+new_linked_list = DoublyLinkedList()
+new_linked_list.insert_in_emptylist(40)
+new_linked_list.insert_at_start(30)
+new_linked_list.insert_at_start(20)
+new_linked_list.insert_at_start(10)
+new_linked_list.traverse_list()
+
+```
+Type a python function to insert elements at the end of the doubly linked list.
+```
+class Node:
+    def __init__(self, data):
+        self.item = data
+        self.nref = None
+        self.pref = None
+
+class DoublyLinkedList:
+    def __init__(self):
+        self.start_node = None
+
+    def insert_in_emptylist(self, data):
+        if self.start_node is None:
+            new_node = Node(data)
+            self.start_node = new_node
+        else:
+            print("list is not empty")
+        
+    def insert_at_end(self, data):
+        new_node = Node(data)
+        if self.start_node is None:
+            self.start_node = new_node
+            return
+        n = self.start_node
+        while n.nref is not None:
+            n = n.nref
+        n.nref = new_node
+        new_node.pref = n
+        
+    def traverse_list(self):
+        if self.start_node is None:
+            print("List has no element")
+            return
+        else:
+            n = self.start_node
+            while n is not None:
+                print(n.item , " ")
+                n = n.nref
+                
+new_linked_list = DoublyLinkedList()
+new_linked_list.insert_at_end(10)
+new_linked_list.insert_at_end(20)
+new_linked_list.insert_at_end(30)
+new_linked_list.insert_at_end(40)
+
+new_linked_list.traverse_list()
+
+```
+Type python function to insert elements after the specific node in doubly linked list.
+```
+
+class Node:
+    def __init__(self, data):
+        self.item = data
+        self.nref = None
+        self.pref = None
+
+class DoublyLinkedList:
+    def __init__(self):
+        self.start_node = None
+
+    def insert_in_emptylist(self, data):
+        if self.start_node is None:
+            new_node = Node(data)
+            self.start_node = new_node
+        else:
+            print("list is not empty")
+            
+    def insert_at_start(self, data):
+        if self.start_node is None:
+            new_node = Node(data)
+            self.start_node = new_node
+            print("node inserted")
+            return
+        new_node = Node(data)
+        new_node.nref = self.start_node
+        self.start_node.pref = new_node
+        self.start_node = new_node
+        
+    def insert_at_end(self, data):
+        if self.start_node is None:
+            new_node = Node(data)
+            self.start_node = new_node
+            return
+        n = self.start_node
+        while n.nref is not None:
+            n = n.nref
+        new_node = Node(data)
+        n.nref = new_node
+        new_node.pref = n
+        
+    def insert_after_item(self, x, data):
+        n = self.start_node
+        while n is not None:
+            if n.item == x:
+                new_node = Node(data)
+                new_node.nref = n.nref
+                new_node.pref = n
+                if n.nref is not None:
+                    n.nref.pref = new_node
+                n.nref = new_node
+                return
+            n = n.nref
+        print("Item not found in the list")
+                
+    def traverse_list(self):
+        if self.start_node is None:
+            print("List has no element")
+            return
+        else:
+            n = self.start_node
+            while n is not None:
+                print(n.item , " ")
+                n = n.nref
+                
+new_linked_list = DoublyLinkedList()
+new_linked_list.insert_in_emptylist(50)
+new_linked_list.insert_at_start(10)
+new_linked_list.insert_at_start(5)
+new_linked_list.insert_at_start(18)
+
+new_linked_list.traverse_list()
+new_linked_list.insert_after_item(10, 65)
+print("After insertion")
+new_linked_list.traverse_list()
+```
+Type a python function to insert words at the beginning and display the sentence in forward and reverse direction. 
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.prev = None
+  
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+  
+    def push(self, new_data):
+        new_node = Node(new_data)
+        new_node.next = self.head  # New node points forward to the old head
+        if self.head is not None:
+            self.head.prev = new_node  # Old head points back to new node
+        self.head = new_node  # New node becomes the new head
+        
+    def printList(self, node):
+        print("\nTraversal in forward direction")
+        last = None
+        while node:
+            print(node.data, end=" ")
+            last = node
+            node = node.next
+        print("\nTraversal in reverse direction")
+        while last:
+            print(last.data, end=" ")
+            last = last.prev
+
+# Main code
+llist = DoublyLinkedList()
+  
+x = int(input("Enter the number of words to display.\n"))
+for i in range(x):
+    a = input("Enter the data to push\n")
+    llist.push(a)
+
+llist.printList(llist.head)
+
+```
+Type a python function to insert elements at the end of the doubly linked list and display the elements in forward and reverse direction.
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.prev = None
+  
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+        
+    def append(self, new_data):
+        new_node = Node(new_data)
+
+        # If list is empty, make new node the head
+        if self.head is None:
+            self.head = new_node
+            return
+
+        # Else traverse to the end and append the new node
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+
+        temp.next = new_node
+        new_node.prev = temp
+  
+    def printList(self, node):
+        print("\nTraversal in forward direction")
+        last = None
+        while node:
+            print(node.data)
+            last = node
+            node = node.next
+        print("\nTraversal in reverse direction")
+        while last:
+            print(last.data)
+            last = last.prev
+
+# Sample usage
+llist = DoublyLinkedList()
+llist.append(5)
+llist.append(4)
+llist.append(3)
+llist.append(2)
+
+llist.printList(llist.head)
+```
+Type a python program to insert elements in the front, last and after the specific node in doubly linked list.
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.prev = None
+
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+
+    def push(self, new_data):
+        new_node = Node(new_data)
+        new_node.next = self.head
+        if self.head is not None:
+            self.head.prev = new_node
+        self.head = new_node
+
+    def printList(self, node):
+        # print("Traversal in forward direction:")
+        last = None
+        while node:
+            print(f"{node.data}->", end="")
+            last = node
+            node = node.next
+        # print("\nTraversal in reverse direction:")
+        # while last:
+        #     print(f"{last.data}->", end="")
+        #     last = last.prev
+
+# Sample test input without using input()
+words = ['9', '5', '1', '15', '11', '6']  # Inserted in reverse to get 6->11->15->1->5->9->
+llist = DoublyLinkedList()
+
+for word in words:
+    llist.push(word)
+
+llist.printList(llist.head)
+```
+Type a python function to insert elements after the specific node in doubly linked list.
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.prev = None
+
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+    
+    def insert_front(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        if self.head is not None:
+            self.head.prev = new_node
+        self.head = new_node
+    
+    def insert_after(self, prev_node, data):
+        if prev_node is None:
+            print("Previous node cannot be None")
+            return
+        new_node = Node(data)
+        new_node.next = prev_node.next
+        prev_node.next = new_node
+        new_node.prev = prev_node
+        if new_node.next is not None:
+            new_node.next.prev = new_node
+            
+    def display_list(self, node):
+        while node:
+            print(node.data, end="->")
+            node = node.next
+
+# Test code
+d_linked_list = DoublyLinkedList()
+
+d_linked_list.insert_front(7)
+d_linked_list.insert_front(2)
+d_linked_list.insert_front(1)
+d_linked_list.insert_front(6)
+
+# Insert after 6
+d_linked_list.insert_after(d_linked_list.head, 11)
+
+# Insert after 11
+d_linked_list.insert_after(d_linked_list.head.next, 15)
+
+d_linked_list.display_list(d_linked_list.head)
+
+```
+Type a python function to use all the insert operations (push, append, insert after) in doubly linked list to display the elements in forward and reverse direction
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.prev = None
+
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+
+    def push(self, new_data):
+        new_node = Node(new_data)
+        new_node.next = self.head
+        if self.head is not None:
+            self.head.prev = new_node
+        self.head = new_node
+
+    def printList(self, node):
+        print("Created DLL is:\n")
+        print("Traversal in forward direction")
+        last = None
+        while node:
+            print(node.data)
+            last = node
+            node = node.next
+        print()
+        print("Traversal in reverse direction")
+        while last:
+            print(last.data)
+            last = last.prev
+
+# Driver code
+dll = DoublyLinkedList()
+dll.push(4)
+dll.push(6)
+dll.push(8)
+dll.push(7)
+dll.push(1)
+
+dll.printList(dll.head)
+
+```
+Type a python program to push elements, insert after and insert before operations in doubly linked list.
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        self.prev = None
+
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+
+    def insert_end(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = self.tail = new_node
+        else:
+            self.tail.next = new_node
+            new_node.prev = self.tail
+            self.tail = new_node
+
+    def display_all(self):
+        temp = self.head
+        while temp:
+            print(temp.data)
+            temp = temp.next
+
+# Main Execution
+dll = DoublyLinkedList()
+
+# Insert 30, 40, 50
+dll.insert_end(30)
+dll.insert_end(40)
+dll.insert_end(50)
+dll.display_all()
+
+print("After inserting element at the end")
+
+# Insert 60, 70 at the end
+dll.insert_end(60)
+dll.insert_end(70)
+dll.display_all()
+
+```
+Type the python program to insert elements and use all delete operations in doubly linked list.
+```
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.prev = None
+        self.next = None
+
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+
+    # Insert at the end
+    def insert_end(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = new_node
+        new_node.prev = temp
+
+    # Display all nodes
+    def display(self):
+        temp = self.head
+        while temp:
+            print("Element is: ", temp.data)
+            temp = temp.next
+
+    # Delete from the end
+    def delete_end(self):
+        if not self.head:
+            print("List is empty.")
+            return
+        temp = self.head
+        if not temp.next:
+            self.head = None
+            return
+        while temp.next:
+            temp = temp.next
+        temp.prev.next = None
+
+# ---- Main Program ----
+dll = DoublyLinkedList()
+
+# Insert elements 10 to 60
+for val in [10, 20, 30, 40, 50, 60]:
+    dll.insert_end(val)
+
+# Display elements
+dll.display()
+
+# Delete last node
+print("After deleting the last node.")
+dll.delete_end()
+
+# Display again
+dll.display()
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

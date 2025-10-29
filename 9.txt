@@ -1,0 +1,2599 @@
+Write a Python program to print the column-wise sum of a matrix
+```
+def mat(rows,cols):
+    matrix=[]
+    for _ in range(rows):
+        row=list(map(int,input().split()))
+        matrix.append(row)
+    return matrix
+
+def sumof_column(matrix):
+    rows=len(matrix)
+    cols=len(matrix[0])
+    for col in range(cols):
+        col_sum=0
+        for row in range(rows):
+            col_sum+=matrix[row][col]
+        print(f"Sum of Columns[ {col} ] =  {col_sum}")
+
+def main():
+    rows=int(input())
+    cols=int(input())
+    
+    matrix=mat(rows,cols)
+    
+    print("Matrix:")
+    for row in matrix:
+        print(" ".join(map(str, row)))
+
+    sumof_column(matrix)
+    
+main()
+```
+Write a Python Program to display the transpose of a matrix with order R X C.
+```
+def read_matrix(r,c):
+    v=[]
+    for i in range(r):
+        d=list(map(int,input().split()))
+        v.append(d)
+    return v
+def print_matrix(M):
+    print("Matrix: ")
+    for row in M:
+        print(" ".join(map(str,row)))
+def transpose(M):
+    row = len(M)
+    col = len(M[0])
+    transpose = [[M[j][i] for j in range(row)] for i in range(col)] 
+    return transpose 
+
+```
+Write a Python program to multiply two matrices with equal number of rows and columns (N X N).
+```
+def read_matrix(n):
+
+    matrix = []
+    for _ in range(n):
+        row = list(map(int, input().split()))
+        matrix.append(row)
+    return matrix
+
+def multiply_matrices(A, B):
+
+    n = len(A)
+    result = [[0 for _ in range(n)] for _ in range(n)]
+    for i in range(n):
+        for j in range(n):
+            for k in range(n):
+                result[i][j] += A[i][k] * B[k][j]
+    return result
+
+def print_matrix(matrix):
+    
+    for row in matrix:
+        print(" ".join(map(str, row)))
+
+def main():
+  
+    N = int(input())
+
+  
+    A = read_matrix(N)
+
+ 
+    B = read_matrix(N)
+
+   
+    print("Matrix:")
+    print_matrix(A)
+    print("Matrix:")
+    print_matrix(B)
+
+
+    result = multiply_matrices(A, B)
+    print("Matrix:")
+    print_matrix(result)
+
+
+main()
+
+```
+Write a Python Program to find whether the given matrix is sparse matrix
+```
+n=int(input())
+arr=[]
+for i in range(n):
+    row =list(map(int,input().split()))
+    arr.append(row)
+c=0 
+total =len(arr)*len(arr[0]) 
+for i in arr:
+    c += i.count(0) 
+print("Matrix: ")
+for i in range(n):
+    for j in range(n):
+        print(arr[i][j],end=" ")
+    print()
+if c>total//2:
+    print("True")
+else:
+    print("False")
+```
+Write a Python Program to subtract two matrices by reading the matrix from the user.
+
+For example:
+
+Input	Result
+3 3
+3
+3
+3
+5
+5
+5
+7
+7
+7
+1
+1
+1
+1
+1
+1
+1
+1
+1
+[[3, 3, 3], [5, 5, 5], [7, 7, 7]]
+[[1, 1, 1], [1, 1, 1], [1, 1, 1]]
+[[2, 2, 2], [4, 4, 4], [6, 6, 6]]
+
+```
+rows, cols = map(int, input().split())
+
+matrix1 = [int(input()) for _ in range(rows * cols)]
+matrix1 = [matrix1[i:i+cols] for i in range(0, len(matrix1), cols)]
+
+matrix2 = [int(input()) for _ in range(rows * cols)]
+matrix2 = [matrix2[i:i+cols] for i in range(0, len(matrix2), cols)]
+
+result = [[matrix1[i][j] - matrix2[i][j] for j in range(cols)] for i in range(rows)]
+
+print(matrix1)
+print(matrix2)
+print(result)
+```
+Write a Python program to print the column-wise sum of a matrix.
+
+
+
+For example:
+
+Input	Result
+3
+3
+1 1 1
+2 2 2
+3 3 3
+Matrix:
+1 1 1
+2 2 2
+3 3 3
+Sum of Columns[ 0 ] =  6
+Sum of Columns[ 1 ] =  6
+Sum of Columns[ 2 ] =  6
+```
+rows = int(input())
+cols = int(input())
+
+matrix = [list(map(int, input().split())) for _ in range(rows)]
+
+print("Matrix:")
+for row in matrix:
+    print(*row)
+
+for col in range(cols):
+    col_sum = sum(matrix[row][col] for row in range(rows))
+    print(f"Sum of Columns[ {col} ] =  {col_sum}")
+
+    
+```
+Write a Python program to print the Sum of major and minor diagonal elements in a matrix.
+```
+rows = int(input())
+cols = int(input())
+
+matrix = [list(map(int, input().split())) for _ in range(rows)]
+
+print("Matrix:")
+for row in matrix:
+    print(*row)
+
+major_diag_sum = sum(matrix[i][i] for i in range(rows))
+minor_diag_sum = sum(matrix[i][cols - 1 - i] for i in range(rows))
+
+print("Sum of Major Diagonal Elements : ", major_diag_sum)
+print("Sum of Minor Diagonal Elements : ", minor_diag_sum)
+
+```
+Write a Python program to multiply two matrices with equal number of rows and columns (N X N).
+
+For example:
+
+Input	Result
+3
+1 1 1
+2 2 2
+3 3 3
+2 2 2
+2 2 2
+2 2 2
+Matrix:
+1 1 1
+2 2 2
+3 3 3
+Matrix:
+2 2 2
+2 2 2
+2 2 2
+Matrix:
+6 6 6
+12 12 12
+18 18 18
+```n = int(input())
+
+matrix1 = [list(map(int, input().split())) for _ in range(n)]
+
+matrix2 = [list(map(int, input().split())) for _ in range(n)]
+
+print("Matrix:")
+for row in matrix1:
+    print(*row)
+print("Matrix:")
+for row in matrix2:
+    print(*row)
+
+result = [[sum(matrix1[i][k] * matrix2[k][j] for k in range(n)) for j in range(n)] for i in range(n)]
+
+print("Matrix:")
+for row in result:
+    print(*row)
+
+   ```
+Write  a Python program to read a matrix and display the upper triangle Matrix.
+
+
+
+For example:
+
+Test	Input	Result
+n=int(input())
+M=read_matrix(n)
+print_matrix(M)
+4
+5 3 2 1
+8 4 6 0
+7 3 3 2
+6 3 8 9
+Matrix:
+5 3 2 1
+0 4 6 0
+0 0 3 2
+0 0 0 9
+```
+def read_matrix(n):
+    matrix = []
+    for _ in range(n):
+        row = list(map(int, input().split()))
+        matrix.append(row)
+    return matrix
+
+def print_matrix(matrix):
+    n = len(matrix)
+    print("Matrix:")
+    for i in range(n):
+        for j in range(n):
+            if j < i:
+                print(0, end=' ')
+            else:
+                print(matrix[i][j], end=' ')
+        print()
+
+
+
+
+
+  
+```
+
+
+
+Write  a Python program to read a matrix and display the upper triangle Matrix.
+```
+def read_matrix(n):
+    matrix = []
+    for _ in range(n):
+        row = list(map(int, input().split()))
+        matrix.append(row)
+    return matrix
+
+def print_lower_triangle(matrix):
+    n = len(matrix)
+    print("Lower Triangular Matrix:")
+    for i in range(n):
+        for j in range(n):
+            if j > i:
+                print(0, end=' ')
+            else:
+                print(matrix[i][j], end=' ')
+        print()
+
+# Example usage
+n = int(input("Enter the size of the matrix: "))
+matrix = read_matrix(n)
+print_lower_triangle(matrix)
+
+```
+Write a function to read a matrix ’A’  using a function name create_matrix() and copy the matrix from ‘A’ to ‘B’.
+```
+def create_matrix(n,m):
+    M=[]
+    for i in range(n):
+        row=[]
+        for j in range(m):
+            x=int(input())
+            row.append(x)
+        M.append(row)
+    return M 
+r,c=map(int,input().split())
+A=create_matrix(r,c)
+print('A=',A)
+B=A
+print('B=',B)
+
+```
+Write a Python program to print the column-wise sum of a matrix.
+
+
+
+For example:
+
+Input	Result
+3
+3
+1 1 1
+2 2 2
+3 3 3
+Matrix:
+1 1 1
+2 2 2
+3 3 3
+Sum of Columns[ 0 ] =  6
+Sum of Columns[ 1 ] =  6
+Sum of Columns[ 2 ] =  6
+```
+rows = int(input())
+cols = int(input())
+
+matrix = [list(map(int, input().split())) for _ in range(rows)]
+
+print("Matrix:")
+for row in matrix:
+    print(*row)
+
+for col in range(cols):
+    col_sum = sum(matrix[row][col] for row in range(rows))
+    print(f"Sum of Columns[ {col} ] =  {col_sum}")
+
+    
+```
+ Write a Python Program to display the transpose of a matrix with order R X C.
+```
+def read_matrix(rows, cols):
+    matrix = []
+    for _ in range(rows):
+        row = list(map(int, input().split()))
+        matrix.append(row)
+    return matrix
+
+def print_matrix(matrix):
+    print("Matrix:")
+    for row in matrix:
+        print(" ".join(map(str, row)))
+
+def transpose(matrix):
+    return [list(row) for row in zip(*matrix)]
+
+```
+Write a Python Program  to  find the product of two matrices. Check the condition to multiply two matrices, if the condition is false, print "Cannot Multiply"
+
+
+For example:
+
+Input	Result
+2 3
+1 1 2
+2 3 1
+3 2
+2 4
+1 2
+3 5
+Matrix:
+1 1 2 
+2 3 1 
+Matrix:
+2 4 
+1 2 
+3 5 
+Matrix:
+9 16 
+10 19
+
+```
+def read_matrix(rows, cols):
+    matrix = []
+    for _ in range(rows):
+        matrix.append(list(map(int, input().split())))
+    return matrix
+
+def print_matrix(matrix):
+    print("Matrix:")
+    for row in matrix:
+        print(" ".join(map(str, row)))
+
+def multiply_matrices(A, B):
+    result = []
+    for i in range(len(A)):
+        row = []
+        for j in range(len(B[0])):
+            val = 0
+            for k in range(len(B)):
+                val += A[i][k] * B[k][j]
+            row.append(val)
+        result.append(row)
+    return result
+
+# Read both matrices first
+r1, c1 = map(int, input().split())
+A = read_matrix(r1, c1)
+
+r2, c2 = map(int, input().split())
+B = read_matrix(r2, c2)
+
+# Check multiplication condition
+if c1 != r2:
+    print("Cannot Multiply")
+else:
+    print_matrix(A)
+    print_matrix(B)
+    product = multiply_matrices(A, B)
+    print_matrix(product)
+```
+Write a Python Program to find whether the given matrix is sparse matrix
+
+For example:
+
+Input	Result
+3
+1 0 0
+0 0 2
+0 1 0
+Matrix:
+1 0 0
+0 0 2
+0 1 0
+True
+```
+
+n = int(input())
+matrix = [list(map(int, input().split())) for _ in range(n)]
+
+print("Matrix:")
+for row in matrix:
+    print(*row)
+
+# Count zeros
+zero_count = sum(row.count(0) for row in matrix)
+total_elements = n * n
+
+# Sparse condition
+print(zero_count > total_elements // 2)
+```
+Write a Python program to generate an Arithmetic Progression using list Comprehension with first number, difference and last number as input.
+
+
+
+For example:
+
+Input	Result
+50
+5
+100
+First Number 50
+Difference 5
+Last Number 100
+[50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]
+```
+class Generate:
+    def __init__(self, first,d,last):
+        self.first = first
+        self.d = d
+        self.last=last
+    def Ap_generate(self):
+        L=[i for i in range(self.first,self.last+1,self.d)]
+        return L
+
+f=int(input())
+diff=int(input())
+l=int(input())
+Series = Generate(f,diff,l)
+print('First Number', Series.first)
+print('Difference', Series.d)
+print('Last Number', Series.last)
+print(Series.Ap_generate())
+
+```
+Write a Python program to find the square root of all elements in a list using list comprehension.
+
+
+For example:
+
+Input	Result
+3
+9
+121
+25
+[9.0, 121.0, 25.0]
+[3.0, 11.0, 5.0]
+```
+n=int(input())
+l=[]
+for i in range(n):
+    x=float(input())
+    l.append(x)
+sq_l=[item**0.5 for item in l]
+print(l)
+print(sq_l)
+    
+    
+```
+Write a Python program to add two list using list comprehension.
+
+
+For example:
+
+Input	Result
+3
+1
+2
+3
+4
+5
+6
+[1, 2, 3]
+[4, 5, 6]
+[5, 7, 9]
+```
+L=[]
+n=int(input())
+L1=[]
+L2=[]
+for i in range(n):
+    x=int(input())
+    L1.append(x)
+for i in range(n):
+    x=int(input())
+    L2.append(x)
+L=[L1[i]+L2[i] for i in range(n)]
+print(L1)
+print(L2)
+print(L)
+```
+Write a Python Program to read n elements in the list and sum of  odd and sum of even elements in the list using list comprehension 
+
+For example:
+
+Input	Result
+5
+11
+33
+22
+44
+55
+[11, 33, 22, 44, 55]
+99
+66
+
+```
+L=[]
+n=int(input())
+for i in range(n):
+    x=int(input())
+    L.append(x) 
+ODD=sum([x for x in L if x%2!=0])
+EVEN=sum([x for x in L if x%2==0])
+print(L)
+print(ODD)
+print(EVEN)
+```
+Write a Python Program  to combine two separate lists with name and marks  using list comprehension
+
+For example:
+
+Input	Result
+5
+aaa 89
+ddd 76
+ccc 54
+sss 78
+lll 65
+['aaa', 'ddd', 'ccc', 'sss', 'lll']
+['89', '76', '54', '78', '65']
+[('aaa', 89), ('ddd', 76), ('ccc', 54), ('sss', 78), ('lll', 65)]
+
+```
+def main():
+   
+    n = int(input())
+
+    names = []
+    marks = []
+
+    for _ in range(n):
+        name, mark = input().split()
+        names.append(name)
+        marks.append(int(mark))  
+
+    combined = [(names[i], marks[i]) for i in range(n)]
+
+    print(names)
+    print([str(m) for m in marks])  
+    print(combined)
+
+main()
+
+```
+Write a Python class program  to generate all even numbers between 200 and 300 and store in a list using list comprehension. 
+
+
+For example:
+
+Input	Result
+200
+2
+300
+[200, 202, 204, 206, 208, 210, 212, 214, 216, 218, 220, 222, 224, 226, 228, 230
+```
+class EvenNumberGenerator:
+    def __init__(self, start, step, end):
+        self.start = start
+        self.step = step
+        self.end = end
+
+    def generate_even_numbers(self):
+        return [i for i in range(self.start, self.end + 1, self.step) if i % 2 == 0]
+
+start = int(input())
+step = int(input())
+end = int(input())
+
+gen = EvenNumberGenerator(start, step, end)
+print(gen.generate_even_numbers())
+
+```
+Write a Python program to find the square root of all elements in a list using list comprehension.
+
+
+For example:
+
+Input	Result
+3
+9
+121
+25
+[9.0, 121.0, 25.0]
+[3.0, 11.0, 5.0]
+
+```
+import math
+
+n = int(input())
+numbers = [float(input()) for _ in range(n)]
+
+print(numbers)
+square_roots = [math.sqrt(num) for num in numbers]
+print(square_roots)
+
+```
+Write a Python program to Multiply each  element  of the first list with all the elements in the second lists using list comprehension.
+
+
+For example:
+
+Input	Result
+3
+1
+2
+3
+4
+5
+6
+[1, 2, 3]
+[4, 5, 6]
+[4, 5, 6, 8, 10, 12, 12, 15, 18]
+
+```
+n1 = int(input())
+list1 = [int(input()) for _ in range(n1)]
+
+list2 = [int(input()) for _ in range(n1)]
+
+print(list1)
+print(list2)
+
+result = [a * b for a in list1 for b in list2]
+print(result)
+
+
+
+
+```
+Write a Python Program to read the mark of n students and separate the pass marks and low marks with the condition(mark<50 as low marks) 
+
+For example:
+
+Input	Result
+5
+89
+76
+50
+34
+90
+[89, 76, 50, 34, 90]
+[89, 76, 50, 90]
+[34]
+```
+
+n = int(input())
+marks = [int(input()) for _ in range(n)]
+
+pass_marks = [mark for mark in marks if mark >= 50]
+low_marks = [mark for mark in marks if mark < 50]
+
+print(marks)
+print(pass_marks)
+print(low_marks)
+```
+Write a Python Program to read the mark of n students and generate a list as  'Pass'  and 'Fail' respectively  with the condition(mark<50 as low marks)  using List Comprehension
+
+For example:
+
+Input	Result
+5
+89
+76
+50
+34
+90
+[89, 76, 50, 34, 90]
+['Pass', 'Pass', 'Pass', 'Fail', 'Pass']
+
+```
+n = int(input())
+marks = [int(input()) for _ in range(n)]
+
+status = ['Pass' if mark >= 50 else 'Fail' for mark in marks]
+
+print(marks)
+print(status)
+
+```
+Write a Python class program to generate all even numbers between a range of lower and upper limit using list comprehension.
+
+
+For example:
+
+Input	Result
+50
+85
+First Number 50
+Last Number 85
+[50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84]
+
+```
+class Generate:
+    def __init__(self, first,last):
+        self.first = first
+        self.d = 2
+        self.last=last
+    def Ap_generate(self):
+        if self.first%2!=0:
+            self.first=self.first+1
+        L=[i for i in range(self.first,self.last+1,self.d)]
+        return L
+
+f=int(input())
+l=int(input())
+Series = Generate(f,l)
+print('First Number', Series.first)
+print('Last Number', Series.last)
+print(Series.Ap_generate())
+```
+Write a Python program to find the square root of all elements in a list using list comprehension.
+
+
+For example:
+
+Input	Result
+3
+9
+121
+25
+[9.0, 121.0, 25.0]
+[3.0, 11.0, 5.0]
+Answer:(penalty regime: 0 %)
+```
+n=int(input())
+l=[]
+for i in range(n):
+    x=float(input())
+    l.append(x)
+sq_l=[item**0.5 for item in l]
+print(l)
+print(sq_l)
+    
+    
+```
+Write a Python program to Multiply each  element  of the first list with all the elements in the second lists using list comprehension.
+
+
+For example:
+
+Input	Result
+3
+1
+2
+3
+4
+5
+6
+[1, 2, 3]
+[4, 5, 6]
+[4, 5, 6, 8, 10, 12, 12, 15, 18]
+
+```
+L=[]
+n=int(input())
+L1=[]
+L2=[]
+for i in range(n):
+    x=int(input())
+    L1.append(x)
+for i in range(n):
+    x=int(input())
+    L2.append(x)
+L=[a*b for a in L1 for b in L2]
+print(L1)
+print(L2)
+print(L)
+```
+Write a Python Program to calculate the pass percentage of a group of n students by reading their marks using list comprehension
+
+For example:
+
+Input	Result
+5
+89
+76
+50
+34
+90
+[89, 76, 50, 34, 90]
+80.0
+```
+L=[]
+n=int(input())
+for i in range(n):
+    x=int(input())
+    L.append(x) 
+Pass=[x for x in L if x>=50]
+percentage=len(Pass)/n
+print(L)
+print(percentage*100)
+
+```
+Write a Python Program to read the mark of n students and generate a list as  'Pass'  and 'Fail' respectively  with the condition(mark<50 as low marks)  using List Comprehension
+
+For example:
+
+Input	Result
+5
+89
+76
+50
+34
+90
+[89, 76, 50, 34, 90]
+['Pass', 'Pass', 'Pass', 'Fail', 'Pass']
+
+```
+L=[]
+n=int(input())
+for i in range(n):
+    x=int(input())
+    L.append(x) 
+P=['Pass' if m>=50 else 'Fail' for m in L ]
+print(L)
+print(P)
+```
+Write a Python program to multiply the corresponding position element of two matrices using list Comprehension
+
+For example:
+
+Input	Result
+2 2
+1
+1
+1
+1
+2
+2
+2
+2
+[[1, 1], [1, 1]]
+[[2, 2], [2, 2]]
+[[2, 2], [2, 2]]
+```
+
+rows, cols = map(int, input().split())
+
+matrix1 = [int(input()) for _ in range(rows * cols)]
+matrix1 = [matrix1[i:i+cols] for i in range(0, len(matrix1), cols)]
+
+matrix2 = [int(input()) for _ in range(rows * cols)]
+matrix2 = [matrix2[i:i+cols] for i in range(0, len(matrix2), cols)]
+
+print(matrix1)
+print(matrix2)
+
+result = [[matrix1[i][j] * matrix2[i][j] for j in range(cols)] for i in range(rows)]
+
+print(result)
+
+```
+Write a python program to read a list of strings and store the length of the string in a list using map function
+
+For example:
+
+Input	Result
+4
+Tree
+Forest
+Pine
+Climber
+['Tree', 'Forest', 'Pine', 'Climber']
+[4, 6, 4, 7]
+```
+S=[]
+n=int(input())
+for i in range(n):
+    x=input()
+    S.append(x)
+print(S)
+L=list(map(len,S))
+print(L)
+```
+Write a Python program to filter the odd and even numbers  in a list using filter (  )
+
+For example:
+
+Input	Result
+5
+34
+57
+89
+24
+11
+[34, 24]
+[57, 89, 11]
+```
+L=[]
+n=int(input())
+for i in range(n):
+    x=int(input())
+    L.append(x)
+even_list=list(filter(lambda x: x % 2 == 0,L))
+print(even_list)
+even_list=list(filter(lambda x: x % 2 != 0,L))
+print(even_list)
+```
+Write a Python Program to extract only the strong numbers from a list using filter
+
+Example :145 is a strong number
+Sum of digit factorials  = 1! + 4! + 5!
+                        = 1 + 24 + 120
+                        = 145
+
+For example:
+
+Input	Result
+5
+2
+67
+145
+40585    
+60
+[2, 145, 40585]
+
+```
+def factorial(n):
+    p=1
+    for i in range(1,n+1):
+        p=p*i
+    return p
+def IsStrong(x):
+    temp=x
+    sum=0
+    while (x>0):
+        r=x%10
+        sum = sum+factorial(r)
+        x=x//10
+    if sum==temp:
+        return True
+    else:
+        return False
+
+L=[]
+n=int(input())
+for i in range(n):
+    x=int(input())
+    L.append(x)
+StrongList=list(filter(IsStrong,L))
+print(StrongList)
+```
+Write a Python program to subtract two matrices using list Comprehension
+
+For example:
+
+Input	Result
+2 2
+1
+1
+1
+1
+2
+2
+2
+2
+[[1, 1], [1, 1]]
+[[2, 2], [2, 2]]
+[[-1, -1], [-1, -1]]
+
+```
+rows, cols = map(int, input().split())
+
+matrix1 = [int(input()) for _ in range(rows * cols)]
+matrix1 = [matrix1[i:i+cols] for i in range(0, len(matrix1), cols)]
+
+matrix2 = [int(input()) for _ in range(rows * cols)]
+matrix2 = [matrix2[i:i+cols] for i in range(0, len(matrix2), cols)]
+
+print(matrix1)
+print(matrix2)
+
+result = [[matrix1[i][j] - matrix2[i][j] for j in range(cols)] for i in range(rows)]
+print(result)
+
+
+
+```
+Write a Python Program to store the count the consonant in each string stored in a list using map (  )
+
+For example:
+
+Input	Result
+3
+bat
+eagle
+Apple
+['bat', 'eagle', 'Apple']
+[2, 2, 3]
+```
+def Vowel(s):
+    count=0
+    for ch in s:
+        if ch not in 'aeiouAEIOU':
+            count=count+1 
+    return count
+L=[]
+n=int(input())
+for i in range(n):
+    x=input()
+    L.append(x)
+print(L)
+C=list(map(Vowel,L))
+print(C)
+```
+Write a Python program to filter the odd and even numbers  in a list using filter (  )
+
+For example:
+
+Input	Result
+5
+34
+57
+89
+24
+11
+[34, 24]
+[57, 89, 11]
+
+```
+L=[]
+n=int(input())
+for i in range(n):
+    x=int(input())
+    L.append(x)
+even_list=list(filter(lambda x: x % 2 == 0,L))
+print(even_list)
+even_list=list(filter(lambda x: x % 2 != 0,L))
+print(even_list)
+```
+Python program to find the factorial of a number using reduce function
+
+For example:
+
+Input	Result
+7
+Factorial= 5040
+
+```
+from functools import reduce
+n=int(input())
+L=[i for i in range(1,n+1)]
+fact=reduce(lambda x,y:x*y,L )
+print('Factorial=',fact)
+```
+Write a Python program perform the following:
+
+To store n elements in a tuple  
+
+To multiply all the numbers in the tuple using reduce()
+
+To convert all the elements to binary number using map()
+
+To filter the perfect square numbers using filter()
+
+
+
+
+For example:
+
+Input	Result
+5
+23
+36
+64
+12
+07
+4451328
+('0b10111', '0b100100', '0b1000000', '0b1100', '0b111')
+(36, 64)
+```
+from functools import reduce
+def is_perfect_square(num):
+    temp = num**(0.5)
+    return (temp//1)==temp
+
+L=[]
+n=int(input())
+for i in range(n):
+    x=int(input())
+    L.append(x)
+T=tuple(L)
+product=reduce(lambda x,y:x*y,T)
+print(product)
+T1=tuple(map(bin,T))
+print(T1)
+T2=tuple(filter(is_perfect_square,T))
+print(T2)
+```
+
+Find the transpose of a matrix using list Comprehension
+
+
+
+For example:
+
+Input	Result
+2 3
+1
+2
+3
+4
+5
+6
+[[1, 2, 3], [4, 5, 6]]
+[[1, 4], [2, 5], [3, 6]]
+
+```
+rows, cols = map(int, input().split())
+
+matrix = [int(input()) for _ in range(rows * cols)]
+matrix = [matrix[i:i+cols] for i in range(0, len(matrix), cols)]
+
+transpose = [[matrix[i][j] for i in range(rows)] for j in range(cols)]
+
+print(matrix)
+print(transpose)
+
+```
+Write a python  program to add two matrices using map function 
+
+For example:
+
+Input	Result
+2 2
+1
+2
+3
+4
+2
+3
+4
+7
+[[1, 2], [3, 4]]
+[[2, 3], [4, 7]]
+[[3, 5], [7, 11]]
+
+```
+rows, cols = map(int, input().split())
+
+matrix1 = [int(input()) for _ in range(rows * cols)]
+matrix1 = [matrix1[i:i+cols] for i in range(0, len(matrix1), cols)]
+
+matrix2 = [int(input()) for _ in range(rows * cols)]
+matrix2 = [matrix2[i:i+cols] for i in range(0, len(matrix2), cols)]
+
+result = [list(map(lambda x, y: x + y, row1, row2)) for row1, row2 in zip(matrix1, matrix2)]
+
+print(matrix1)
+print(matrix2)
+print(result)
+
+
+```
+Write a Python Program to extract only the strong numbers from a list using filter
+
+Example :145 is a strong number
+Sum of digit factorials  = 1! + 4! + 5!
+                        = 1 + 24 + 120
+                        = 145
+```
+def factorial(n):
+    p=1
+    for i in range(1,n+1):
+        p=p*i
+    return p
+def IsStrong(x):
+    temp=x
+    sum=0
+    while (x>0):
+        r=x%10
+        sum = sum+factorial(r)
+        x=x//10
+    if sum==temp:
+        return True
+    else:
+        return False
+
+L=[]
+n=int(input())
+for i in range(n):
+    x=int(input())
+    L.append(x)
+StrongList=list(filter(IsStrong,L))
+print(StrongList)
+```
+Python program to combine all words in a list to a sentence using reduce (  )
+
+For example:
+
+Input	Result
+3
+Welcome
+to
+SEC
+['Welcome', 'to', 'SEC']
+Welcome to SEC
+```
+from functools import reduce
+n=int(input())
+words=[]
+for i in range(n):
+    x=input()
+    words.append(x)
+print(words)
+Sentence=reduce(lambda x,y:x+' '+y,words)
+print(Sentence)
+```
+Write a Python program perform the following:
+
+
+To store n elements in a list
+
+ To write a function to check a number is prime or not
+
+To separate the prime npumbers and the composite numbers using filter()
+
+To find the sum of prime numbers and composite numbers using reduce()
+
+
+
+
+For example:
+
+Input	Result
+5
+3
+11
+9
+68
+13
+[3, 11, 9, 68, 13]
+[3, 11, 13]
+[9, 68]
+27
+77
+
+```
+from functools import reduce
+import math
+
+def is_prime(n):
+    if n <= 1:
+        return False
+    if n == 2:
+        return True
+    for i in range(2, int(math.sqrt(n)) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+n = int(input())
+numbers = [int(input()) for _ in range(n)]
+
+primes = list(filter(is_prime, numbers))
+composites = list(filter(lambda x: x > 1 and not is_prime(x), numbers))
+
+prime_sum = reduce(lambda x, y: x + y, primes, 0)
+composite_sum = reduce(lambda x, y: x + y, composites, 0)
+
+print(numbers)
+print(primes)
+print(composites)
+print(prime_sum)
+print(composite_sum)
+```
+Write a Python program to sort the elements in a matrix row-wise:
+
+Example 
+
+Given  After sorting :  
+
+For example:
+
+Input	Result
+2 3
+9
+5
+7
+6
+2
+8
+9 5 7
+6 2 8
+Resultant Matrix:
+5 7 9
+2 6 8
+
+```
+rows, cols = map(int, input().split())
+
+
+elements = [int(input()) for _ in range(rows * cols)]
+matrix = [elements[i:i + cols] for i in range(0, len(elements), cols)]
+
+for row in matrix:
+    print(*row)
+
+sorted_matrix = [sorted(row) for row in matrix]
+
+print("Resultant Matrix:")
+for row in sorted_matrix:
+    print(*row)
+
+```
+1.       Write a Python class to perform Insertion sort algorithm with three functions:
+
+(i)Create list
+
+(ii) Insertion sort
+
+(iii) print list
+
+
+For example:
+
+Input	Result
+5
+78
+23
+67
+90
+25
+Before Sorting
+78
+23
+67
+90
+25
+After Sorting
+23
+25
+67
+78
+90
+
+```
+class InsertionSorter:
+    def __init__(self):
+        self.nums = []
+
+    def create_list(self, n):
+        self.nums = [int(input()) for _ in range(n)]
+
+    def insertion_sort(self):
+        for i in range(1, len(self.nums)):
+            key = self.nums[i]
+            j = i - 1
+            while j >= 0 and key < self.nums[j]:
+                self.nums[j + 1] = self.nums[j]
+                j -= 1
+            self.nums[j + 1] = key
+
+    def print_list(self):
+        for num in self.nums:
+            print(num)
+
+sorter = InsertionSorter()
+n = int(input())
+sorter.create_list(n)
+
+print("Before Sorting")
+sorter.print_list()
+
+sorter.insertion_sort()
+
+print("After Sorting")
+sorter.print_list()
+
+```
+Write a Python code to find the pair whose product is closest to x and the pair has an element from each array. 
+Input: 
+L1[ ] = {1, 4, 5, 7} 
+L2[ ] = {10, 20, 30, 40}
+x = 32
+Output: 1 and 30
+```
+def create_List():
+    n=int(input())
+    l=[int(input())for i in range(n)]
+    return l
+def printClosest(ar1, ar2, m, n, x):
+    min_prod=abs(x-(ar1[0]*ar2[0]))
+    res=[ar1[0],ar2[0]]
+    for i in range(m):
+        for j in range(n):
+            if (abs(x-(ar1[i]*ar2[j])))<min_prod:
+                min_prod=abs(x-(ar1[i]*ar2[j]))
+                res=[ar1[i],ar2[j]]
+                
+    print(f'The closest pair is [ {res[0]} , {res[1]} ]')            
+```
+Given a 2D array, write a Python code print it in spiral form.
+
+
+
+For example:
+
+Input	Result
+4
+1 2 3 4
+5 6 7 8
+9 1 2 3
+4 5 6 7
+1 2 3 4 8 3 7 6 5 4 9 5 6 7 2 1
+```
+def create_matrix(n):
+    matrix = [[0]*n for row in range(n)]
+    for i in range(n):
+        lines = list(map(int, input().split()))
+        for j in range(n):
+            matrix[i][j] = lines[j]
+    return matrix
+def spiralOrder(matrix):
+    ans = []
+    if (len(matrix) == 0):
+        return ans
+    m = len(matrix)
+    n = len(matrix[0])
+    seen = [[0 for i in range(n)] for j in range(m)]
+    dr = [0, 1, 0, -1]
+    dc = [1, 0, -1, 0]
+    x = 0
+    y = 0
+    di = 0
+    # Iterate from 0 to R * C - 1
+    for i in range(m * n):
+        ans.append(matrix[x][y])
+        seen[x][y] = True
+        cr = x + dr[di]
+        cc = y + dc[di]
+ 
+        if (0 <= cr and cr < m and 0 <= cc and cc < n and not(seen[cr][cc])):
+            x = cr
+            y = cc
+        else:
+            di = (di + 1) % 4
+            x += dr[di]
+            y += dc[di]
+    return ans
+    
+n= int(input())
+M=create_matrix(n)
+for x in spiralOrder(M):
+    print(x, end=" ")
+print()
+```Write a python code to find the suffix factorials of a suffix sum array of the given array.
+[Hint: input: arr[] = {1, 2, 3, 4}
+Output: {3628800, 362880, 5040, 24}
+Explanation: The suffix sum of the given array is {10, 9, 7, 4}. 
+Therefore, suffix factorials of the obtained suffix sum array is {10!, 9!, 7!, 4!} ]
+For example:
+
+Test	Input	Result
+N = int(input())
+arr=createList(N)
+print('The given array: ',arr)
+suffixFactorialArray(arr)
+4
+1
+2
+3
+4
+The given array:  [1, 2, 3, 4]
+The suffix sum array:  [10, 9, 7, 4]
+Factorial of suffix sum array:,3628800 362880 5040 
+```
+import math
+
+def createList(n):
+    arr = []
+    for _ in range(n):
+        arr.append(int(input()))
+    return arr
+
+def suffixFactorialArray(arr):
+    suffix_sum = []
+    total = 0
+    for i in range(len(arr)-1, -1, -1):
+        total += arr[i]
+        suffix_sum.append(total)
+    suffix_sum.reverse()
+
+    print("The suffix sum array: ", suffix_sum)
+
+    factorials = [math.factorial(x) for x in suffix_sum]
+    print("Factorial of suffix sum array:," + " ".join(map(str, factorials)))
+
+
+```
+
+Write a Python Program to search an element in a 2D array
+
+
+
+For example:
+
+Input	Result
+3 3
+1
+2
+3
+4
+5
+6
+7
+7
+9
+7
+1 2 3
+4 5 6
+7 7 9
+search element is  7
+Element is found in ( 2 , 0 )
+Element is found in ( 2 , 1 )
+2 2
+3
+4
+5
+6
+7
+3 4
+5 6
+search element is  7
+Element is not found in the Matrix
+```
+def create_matrix(n,m):
+    M=[]
+    for i in range(n):
+        row=[]
+        for j in range(m):
+            x=int(input())
+            row.append(x)
+        M.append(row)
+    return M 
+def printmatrix(M):
+    for i in range(len(M)):
+        for j in range(len(M[0])):
+            print(M[i][j],end=' ')
+        print() 
+def search(M,x):
+    flag=False
+    for i in range(len(M)):
+        for j in range(len(M[0])):
+            if M[i][j]==x:
+                print(f"Element is found in ( {i} , {j} )")
+                flag=True
+    return flag
+r,c=input().split()
+A=create_matrix(int(r),int(c))
+x=int(input())
+printmatrix(A)
+print('search element is ',x)
+if (not search(A,x)):
+    print('Element is not found in the Matrix')
+```
+
+ Write a Python class to perform Bubble sort algorithm with three functions:
+
+(i)Create list
+
+(ii) Bubble sort
+
+(iii) print list
+
+
+For example:
+
+Test	Input	Result
+L1=Numbers()
+L1. create_list()
+print('Before Sorting')
+L1.print_List()
+L1.sorting()
+print('After Sorting')
+L1.print_List()
+5
+78
+23
+67
+90
+25
+Before Sorting
+78
+23
+67
+90
+25
+After Sorting
+23
+25
+67
+78
+90
+```
+class Numbers:
+    def __init__(self):
+        self.lst = []
+
+    def create_list(self):
+        n = int(input())
+        self.lst = [int(input()) for _ in range(n)]
+
+    def sorting(self):
+        for i in range(len(self.lst)):
+            for j in range(0, len(self.lst) - i - 1):
+                if self.lst[j] > self.lst[j + 1]:
+                    self.lst[j], self.lst[j + 1] = self.lst[j + 1], self.lst[j]
+
+    def print_List(self):
+        for val in self.lst:
+            print(val)
+
+```
+Write a Python code to find the pair whose product is closest to x and the pair has an element from each array. 
+Input: 
+L1[ ] = {1, 4, 5, 7} 
+L2[ ] = {10, 20, 30, 40}
+x = 32
+Output: 1 and 30
+
+```import sys
+def printClosest(ar1, ar2, m, n, x):
+    diff=sys.maxsize
+    l = 0
+    r = n-1
+    while(l < m and r >= 0):
+        if abs(ar1[l] * ar2[r] - x) < diff:
+            res_l = l
+            res_r = r
+            diff = abs(ar1[l] * ar2[r] - x)
+        if ar1[l] * ar2[r] > x:
+            r=r-1
+        else:
+            l=l+1
+    print("The closest pair is [",ar1[res_l],",",ar2[res_r],"]")
+def create_List():
+    N=int(input())
+    L=[]
+    for i in range(N):
+        x=int(input())
+        L.append(x)
+    return L
+```
+
+Write a Python code to print this matrix in ZIG-ZAG fashion 
+
+Input: 
+1 2 3
+4 5 6
+7 8 9
+Output: 
+1 2 4 7 5 3 6 8 9
+
+For example:
+
+Input	Result
+4
+1 2 3 4
+5 6 7 8
+9 1 2 3
+4 5 6 7
+1 2 5 9 6 3 4 7 1 4 5 2 8 3 6 7
+
+```
+n = int(input())
+matrix = [list(map(int, input().split())) for _ in range(n)]
+
+result = []
+for d in range(2 * n - 1):
+    if d % 2 == 0:
+        i = min(d, n - 1)
+        while i >= 0 and d - i < n:
+            result.append(matrix[i][d - i])
+            i -= 1
+    else:
+        i = 0 if d < n else d - n + 1
+        while i < n and d - i >= 0:
+            result.append(matrix[i][d - i])
+            i += 1
+
+print(" ".join(map(str, result)))
+
+
+
+
+
+```
+Write the Python code to find the count of all sub-arrays whose sum is divisible by K from the given array.
+
+Input:
+
+arr[] = [4, 5, 0, -2, -3, 1] 
+
+         K = 5
+Output : 7
+Explanation: 
+// there are 7 sub-arrays whose sum is divisible by K
+// {4, 5, 0, -2, -3, 1}
+// {5}
+// {5, 0}
+// {5, 0, -2, -3}
+// {0}
+// {0, -2, -3}
+// {-2, -3}
+```
+def create_list(N):
+    L=[]
+    for i in range(N):
+        x=int(input())
+        L.append(x)
+    return L
+def subarray(arr,k):
+    mod =[]
+    for i in range(k + 1):
+        mod.append(0)
+    cumSum = 0
+    for i in range(len(arr)):
+        cumSum = cumSum + arr[i]
+        mod[((cumSum % k)+k)% k]= mod[((cumSum % k)+k)% k] + 1
+    result = 0  
+    for i in range(k):
+        if (mod[i] > 1):
+            result = result + (mod[i]*(mod[i]-1))//2
+      
+    result = result + mod[0]
+    return result
+
+```
+
+Write a Python Program to search an element in a 2D array
+
+
+
+For example:
+
+Input	Result
+3 3
+1
+2
+3
+4
+5
+6
+7
+7
+9
+7
+1 2 3
+4 5 6
+7 7 9
+search element is  7
+Element is found in ( 2 , 0 )
+Element is found in ( 2 , 1 )
+2 2
+3
+4
+5
+6
+7
+3 4
+5 6
+search element is  7
+Element is not found in the Matrix
+```
+def create_matrix(n,m):
+    M=[]
+    for i in range(n):
+        row=[]
+        for j in range(m):
+            x=int(input())
+            row.append(x)
+        M.append(row)
+    return M 
+def printmatrix(M):
+    for i in range(len(M)):
+        for j in range(len(M[0])):
+            print(M[i][j],end=' ')
+        print() 
+def search(M,x):
+    flag=False
+    for i in range(len(M)):
+        for j in range(len(M[0])):
+            if M[i][j]==x:
+                print(f"Element is found in ( {i} , {j} )")
+                flag=True
+    return flag
+r,c=input().split()
+A=create_matrix(int(r),int(c))
+x=int(input())
+printmatrix(A)
+print('search element is ',x)
+if (not search(A,x)):
+    print('Element is not found in the Matrix')
+```
+1.       Write a Python class to perform selection sort algorithm with three functions:
+
+(i)Create list
+
+(ii) Selection sort
+
+(iii) print list
+
+
+For example:
+
+Test	Input	Result
+L1=Numbers()
+L1. create_list()
+print('Before Sorting')
+L1.print_List()
+L1.sorting()
+print('After Sorting')
+L1.print_List()
+5
+78
+23
+67
+90
+25
+Before Sorting
+78
+23
+67
+90
+25
+After Sorting
+23
+25
+67
+78
+90
+
+```class Numbers:
+    def create_list(self):
+        n=int(input())
+        self.l=[]
+        for i in range(n):
+            num=int(input())
+            self.l.append(num)
+    def print_List(self):
+        for i in range(len(self.l)):
+            print(self.l[i])
+    def sorting(self):
+        for i in range(len(self.l)-1):
+            min=i
+            for j in range(i+1,len(self.l)):
+                if self.l[j]<self.l[min]:
+                    min=j
+            if min!=i:
+                self.l[i],self.l[min]=self.l[min],self.l[i]
+
+```Write a Program to check idempotent matrix or not 
+
+
+Idempotent matrix: A matrix is said to be idempotent matrix if matrix multiplied by itself return the same matrix. The matrix M is said to be idempotent matrix if and only if M * M = M. In idempotent matrix M is a square matrix.
+
+
+
+
+For example:
+
+Input	Result
+3
+1 1 1
+2 2 2
+3 3 3
+Matrix:
+1 1 1
+2 2 2
+3 3 3
+Matrix:
+6 6 6
+12 12 12
+18 18 18
+The matrix is not an idempotent matrix.
+```
+def input_matrix(n):
+    matrix = []
+    for i in range(n):
+        row = list(map(int, input().split()))
+        if len(row) != n:
+            raise ValueError("Each row must have exactly {} elements.".format(n))
+        matrix.append(row)
+    return matrix
+
+def multiply_matrix(A, B):
+    n = len(A)
+    result = [[0]*n for _ in range(n)]
+    for i in range(n):
+        for j in range(n):
+            for k in range(n):
+                result[i][j] += A[i][k] * B[k][j]
+    return result
+
+def is_idempotent(matrix):
+    product = multiply_matrix(matrix, matrix)
+    return product == matrix
+
+def print_matrix(matrix):
+    for row in matrix:
+        print(' '.join(map(str, row)))
+
+# Main program
+n = int(input())
+matrix = input_matrix(n)
+
+print("Matrix:")
+print_matrix(matrix)
+
+product = multiply_matrix(matrix, matrix)
+print("Matrix:")
+print_matrix(product)
+
+if is_idempotent(matrix):
+    print("The matrix is an idempotent matrix.")
+else:
+    print("The matrix is not an idempotent matrix.")
+```Write a Python code to print this matrix in ZIG-ZAG fashion 
+
+Input: 
+1 2 3
+4 5 6
+7 8 9
+Output: 
+1 2 4 7 5 3 6 8 9
+
+For example:
+
+Input	Result
+4
+1 2 3 4
+5 6 7 8
+9 1 2 3
+4 5 6 7
+1 2 5 9 6 3 4 7 1 4 5 2 8 3 6 7
+
+
+```
+def create_matrix(n):
+    matrix = [[0]*n for row in range(n)]
+    for i in range(n):
+        lines = list(map(int, input().split()))
+        for j in range(n):
+            matrix[i][j] = lines[j]
+    return matrix
+def print_zigzag(matrix):
+    if not matrix:
+        return 
+    rows=len(matrix)
+    cols=len(matrix[0])
+    res=[]
+    for s in range(rows+cols-1):
+        if s%2==0:
+            x=min(s,rows-1)
+            y=s-x
+            while(x>=0 and y<cols):
+                res.append(matrix[x][y])
+                x-=1
+                y+=1
+        else:
+            y=min(s,cols-1)
+            x=s-y
+            while y>=0 and x<rows:
+                res.append(matrix[x][y])
+                x+=1
+                y-=1
+    print(" ".join(map(str,res)))
+    
+n= int(input())
+M=create_matrix(n)
+print_zigzag(M)
+```Write the Python code to find the count of all sub-arrays whose sum is divisible by K from the given array.
+
+Input:
+
+arr[] = [4, 5, 0, -2, -3, 1] 
+
+         K = 5
+Output : 7
+Explanation: 
+// there are 7 sub-arrays whose sum is divisible by K
+// {4, 5, 0, -2, -3, 1}
+// {5}
+// {5, 0}
+// {5, 0, -2, -3}
+// {0}
+// {0, -2, -3}
+// {-2, -3}
+
+```def create_list(N):
+    L=[]
+    for i in range(N):
+        x=int(input())
+        L.append(x)
+    return L
+def subarray(arr,k):
+    mod =[]
+    for i in range(k + 1):
+        mod.append(0)
+    cumSum = 0
+    for i in range(len(arr)):
+        cumSum = cumSum + arr[i]
+        mod[((cumSum % k)+k)% k]= mod[((cumSum % k)+k)% k] + 1
+    result = 0  
+    for i in range(k):
+        if (mod[i] > 1):
+            result = result + (mod[i]*(mod[i]-1))//2
+      
+    result = result + mod[0]
+    return result
+    
+n=int(input())
+k=int(input())
+arr=create_list(n)
+print(subarray(arr,k))
+
+```
+Write a python program to sort the given string "workshop" using sorted() function.
+
+For example:
+
+Result
+['h', 'k', 'o', 'o', 'p', 'r', 's', 'w']
+```
+s = "workshop"
+sorted_s = sorted(s)
+print(sorted_s)
+```
+Write a Python Program to extract only the strong numbers from a list using filter
+
+Example :145 is a strong number
+Sum of digit factorials  = 1! + 4! + 5!
+                        = 1 + 24 + 120
+                        = 145
+
+For example:
+
+Input	Result
+5
+2
+67
+145
+40585    
+60
+[2, 145, 40585]
+
+```
+import math
+
+def is_strong_number(num):
+    return num == sum(math.factorial(int(digit)) for digit in str(num))
+
+n = int(input())
+numbers = [int(input()) for _ in range(n)]
+strong_numbers = list(filter(is_strong_number, numbers))
+print(strong_numbers)
+
+```
+Write a Python program to find the square root of all elements in a list using list comprehension.
+
+
+For example:
+
+Input	Result
+3
+9
+121
+25
+[9.0, 121.0, 25.0]
+[3.0, 11.0, 5.0]
+
+```
+import math
+n=int(input())
+nums=[]
+for i in range(n):
+    x=float(input())
+    nums.append(x)
+roots = [math.sqrt(x) for x in nums]
+print(nums)
+print(roots)
+
+```
+Given an array arr[] of size n, its prefix sum array is another array prefixSum[] of the same size, 
+
+such that the value of prefixSum[i] is arr[0] + arr[1] + arr[2] … arr[i]. Write a Python code to generate the prefixSum [] 
+
+Input  : arr[] = {10, 20, 10, 5, 15}
+Output : prefixSum[] = {10, 30, 40, 45, 60}
+
+For example:
+
+Test	Input	Result
+n = int(input())
+arr=createList(n)
+prefix=fillPrefixSum(arr)
+print(arr)
+print(prefix)
+3
+11
+22
+33
+[11, 22, 33]
+[11, 33, 66]
+
+```
+def fillPrefixSum(arr):
+    prefixSum = [0] * len(arr)
+    prefixSum[0] = arr[0]
+    for i in range(1, len(arr)):
+        prefixSum[i] = prefixSum[i - 1] + arr[i]
+    return prefixSum
+
+def createList(n):
+    return [int(input()) for _ in range(n)]
+
+```
+Write a Python Program  to  find the product of two matrices. Check the condition to multiply two matrices, if the condition is false, print "Cannot Multiply"
+
+
+For example:
+
+Input	Result
+2 3
+1 1 2
+2 3 1
+3 2
+2 4
+1 2
+3 5
+Matrix:
+1 1 2 
+2 3 1 
+Matrix:
+2 4 
+1 2 
+3 5 
+Matrix:
+9 16 
+10 19
+Answer:(penalty regime
+```
+def read_matrix(rows, cols):
+    matrix = []
+    for _ in range(rows):
+        matrix.append(list(map(int, input().split())))
+    return matrix
+
+def print_matrix(matrix):
+    print("Matrix:")
+    for row in matrix:
+        print(" ".join(map(str, row)))
+
+def multiply_matrices(A, B):
+    result = []
+    for i in range(len(A)):
+        row = []
+        for j in range(len(B[0])):
+            val = 0
+            for k in range(len(B)):
+                val += A[i][k] * B[k][j]
+            row.append(val)
+        result.append(row)
+    return result
+
+# Read both matrices first
+r1, c1 = map(int, input().split())
+A = read_matrix(r1, c1)
+
+r2, c2 = map(int, input().split())
+B = read_matrix(r2, c2)
+
+# Check multiplication condition
+if c1 != r2:
+    print("Cannot Multiply")
+else:
+    print_matrix(A)
+    print_matrix(B)
+    product = multiply_matrices(A, B)
+    print_matrix(product)
+```
+Write a Python Program to sort n real numbers using  merge sort algorithm with recursion
+
+
+
+For example:
+
+Input	Result
+5
+23.45
+98.67
+11.77
+84.22
+66.48
+Enter the size of listSplitting  [23.45, 98.67, 11.77, 84.22, 66.48]
+Splitting  [23.45, 98.67]
+Splitting  [23.45]
+Merging  [23.45]
+Splitting  [98.67]
+Merging  [98.67]
+Merging  [23.45, 98.67]
+Splitting  [11.77, 84.22, 66.48]
+Splitting  [11.77]
+Merging  [11.77]
+Splitting  [84.22, 66.48]
+Splitting  [84.22]
+Merging  [84.22]
+Splitting  [66.48]
+Merging  [66.48]
+Merging  [66.48, 84.22]
+Merging  [11.77, 66.48, 84.22]
+Merging  [11.77, 23.45, 66.48, 84.22, 98.67]
+[11.77, 23.45, 66.48, 84.22, 98.67]
+```
+def merge_sort(arr):
+    if len(arr) > 1:
+        print("Splitting ", arr)
+        mid = len(arr) // 2
+        left_half = arr[:mid]
+        right_half = arr[mid:]
+
+        # Recursively sort both halves
+        merge_sort(left_half)
+        merge_sort(right_half)
+
+        # Merging the sorted halves
+        i = j = k = 0
+
+        # Copy data to temp arrays left_half[] and right_half[]
+        while i < len(left_half) and j < len(right_half):
+            if left_half[i] < right_half[j]:
+                arr[k] = left_half[i]
+                i += 1
+            else:
+                arr[k] = right_half[j]
+                j += 1
+            k += 1
+
+        # Check for remaining elements
+        while i < len(left_half):
+            arr[k] = left_half[i]
+            i += 1
+            k += 1
+
+        while j < len(right_half):
+            arr[k] = right_half[j]
+            j += 1
+            k += 1
+
+        print("Merging ", arr)
+
+# Main program
+n = int(input("Enter the size of list"))
+arr = []
+
+for _ in range(n):
+    num = float(input())
+    arr.append(num)
+
+merge_sort(arr)
+print(arr)
+
+
+
+
+```
+Write a Python program to store a scalar multiple of a set of numbers  in a list using list comprehension.
+
+
+For example:
+
+Input	Result
+3
+5
+11.5
+22
+33.23
+[11.5, 22.0, 33.23]
+[57.5, 110.0, 166.14999999999998]
+
+```
+n = int(input())
+t=int(input())
+lst = [float(input()) for _ in range(n)]
+print(lst)
+print([x*t for x in lst])
+
+```
+Write a Python program to multiply two matrices with equal number of rows and columns (N X N).
+
+For example:
+
+Input	Result
+3
+1 1 1
+2 2 2
+3 3 3
+2 2 2
+2 2 2
+2 2 2
+Matrix:
+1 1 1
+2 2 2
+3 3 3
+Matrix:
+2 2 2
+2 2 2
+2 2 2
+Matrix:
+6 6 6
+12 12 12
+18 18 18
+
+```
+n=int(input())
+lst1=[]
+print("Matrix:")
+for i in range(n):
+    for j in range(n):
+        k=int(input())
+        lst1.append(k)
+print(lst1)
+        
+```
+Write a Python program to find the sum of cube of a first n Natural Numbers
+
+
+
+For example:
+
+Input	Result
+7
+Result is 784
+
+```
+def sum_of_cubes(n):
+    if n==0:
+        return 0
+    if n==1:
+        return 1
+    else:
+        return pow(n,3)+ sum_of_cubes(n - 1)
+
+n = int(input())
+print("Result is", sum_of_cubes(n))
+
+
+
+```
+Write a Python program to filter the numbers that are divisible by 7 and 5 in a list using filter (  )
+
+For example:
+
+Input	Result
+5
+105
+35
+140
+77
+62
+[105, 35, 140]
+
+```
+n = int(input())
+lst = [int(input()) for _ in range(n)]
+print(list(filter(lambda x: x % 7 == 0 and x % 5 == 0, lst)))
+
+```
+Given an array arr[] of size n, its prefix sum array is another array prefixSum[] of the same size, 
+
+such that the value of prefixSum[i] is arr[0] + arr[1] + arr[2] … arr[i]. Write a Python code to generate the prefixSum [] 
+
+Input  : arr[] = {10, 20, 10, 5, 15}
+Output : prefixSum[] = {10, 30, 40, 45, 60}
+
+For example:
+
+Test	Input	Result
+n = int(input())
+arr=createList(n)
+prefix=fillPrefixSum(arr)
+print(arr)
+print(prefix)
+3
+11
+22
+33
+[11, 22, 33]
+[11, 33, 66]
+
+```def createList(n):
+    return [int(input()) for _ in range(n)]
+
+def fillPrefixSum(arr):
+    prefix = [arr[0]]
+    for i in range(1, len(arr)):
+        prefix.append(prefix[i-1] + arr[i])
+    return prefix
+```
+Write a Python Program to find whether the given matrix is an identity matrix or not:
+
+if the matrix is an identity matrix ,print True
+
+else print False
+
+
+
+For example:
+
+Test	Input	Result
+n=int(input())
+M=read_matrix(n)
+print(is_identity(M))
+3
+1 2 3
+4 5 6
+7 8 9
+False
+
+```
+def read_matrix(n):
+    matrix = [list(map(int, input().split())) for _ in range(n)]
+    return matrix
+def is_identity(M):
+    zero_count = 0
+    non_zero_count = 0
+    for row in M:
+        for val in row:
+            if val == 0:
+                zero_count += 1
+            else:
+                non_zero_count += 1
+
+    return(zero_count > non_zero_count)
+    
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

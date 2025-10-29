@@ -1,0 +1,1503 @@
+Write a Python Program to evaluate the series:
+
+    1!+3!+5!+.... till ‘n’ terms  using recursion
+
+```
+import math
+def series(n,term=1):
+    if n==1:
+        return math.factorial(term)
+    return math.factorial(term)+series(n-1,term+2)
+result=series(int(input()))
+print(result)
+```
+Write a Python program to find the product of first n Natural Numbers
+```
+from math import factorial
+def product(n):
+    if n>=1:
+        return factorial(n)
+    return 1
+
+n=int(input())
+print("Result is",product(n))
+```
+Write a Python program to find   the Highest Common Factor using the Euclidean algorithm with Recursion:
+```
+def hcf(a, b):
+    if b == 0:
+        return a
+    else:
+        return hcf(b, a % b)
+
+nums = input().split()
+num1 = int(nums[0])
+num2 = int(nums[1])
+
+result = hcf(num1, num2)
+print(f"HCF of {num1} and {num2}  is {result}")
+```
+Write a Python Program to find x^(P+Q)  using recursion.(Do not use ** operator)
+
+```
+def recursive(a,d):
+    if a==0:
+        return 0
+    return pow(a,d)
+a=int(input())
+b=int(input())
+c=int(input())
+d=b+c
+ans=recursive(a,d)
+print(ans)
+```
+Write a Python Program to find the sum of square of all digits in a number
+```
+def square(a):
+    if a==0:
+        return 0
+    return (a%10)**2+square(a//10)
+a=int(input())
+c=square(a)
+print(c)
+```
+Write a Python program to find the product of first n Natural Numbers
+```
+from math import factorial
+def product(n):
+    if n<0:
+        return 0
+    return factorial(n)
+    
+n=int(input())
+product(n)
+print("Result is",product(n))
+```
+Write a Python Program to find 1/(X^n)using recursion.(Do not use     ** operator)
+```
+def recursive(d):
+    if d>0:
+        return 1/d
+    
+a=input().split()
+b=int(a[0])
+c=int(a[1])
+d=pow(b,c)
+
+result=recursive(d)
+print("Resultant:",result)
+```
+Write a Python Program to find the sum of all digits in a number using recursion
+```
+def recursive(n):
+    
+    if n==0:
+        return 0
+    else:
+        return (n%10) +(recursive(n//10))
+    
+n=int(input())
+result=recursive(n)
+print(result)
+```
+Write a Python program to convert decimal number to binary number using recursion.
+```
+def recursive(n):
+    if n==0:
+        return 0
+    else:
+        return (n % 2 + 10 * recursive(n//2))
+    
+n=int(input())
+result=recursive(n)
+print(result)
+```
+Write a Python Program to evaluate the series:
+
+    1!+3!+5!+.... till ‘n’ terms  using recursion
+```
+def factorial(a):
+    if(a==0):
+        return 1
+    return (a*factorial(a-1))
+    
+a=int(input())
+a*=2
+sum=0
+for i in range(1,a):
+    if i%2!=0:
+        sum+=factorial(i)
+        
+print(sum)
+```
+Write a Python program to find the product of first n Natural Numbers
+```
+def product_numbers(n):
+    if(n<=0):
+        return 1
+    return((n) *product_numbers(n-1))
+n = int(input())
+print("Result is",product_numbers(n))
+```
+Write a Python Program to find 1/(X^n)using recursion.(Do not use     ** operator)
+```
+def power(X, n):
+    if n == 0:  
+        return 1
+    return (X*power(X, n-1)) 
+ 
+X,n=input().split()
+X=int(X)
+n=int(n)
+print('Resultant:',( 1/power(X, n)))
+```
+Write a Python Program to find the sum of exponent ’n’ of all digits in a number
+
+```
+def sum_digits(num,n):
+    total=0
+    for i in str(abs(num)):
+        total+=int(i)**n
+    return total
+num= int(input())
+n=int(input())
+print(sum_digits(num,n))
+```
+Write a Python program to convert  a decimal number to binary number using recursion.
+```
+def find( decimal_number ):
+    if decimal_number == 0:
+        return 0
+    else:
+        return (decimal_number % 2 + 10 *find(decimal_number // 2))
+ 
+decimal_number =   int(input())
+print(find(decimal_number))
+```
+Write a Python program to find the result of a! - b! using recursion
+```
+def factorial(n):
+    if(n==0 or n==1):
+      return 1
+    return n*factorial(n-1)
+    
+def diff(a,b):
+    return factorial(a)-factorial(b)
+
+a=int(input())
+b=int(input())
+
+print(diff(a,b))
+```
+Write a Python program to display first n natural numbers using head recursion
+```
+def func(a):
+    if a>0:
+        func(a-1)
+        print(a,end=" ")
+a=int(input())
+func(a)
+```
+Write a Python Program to implement the following function using nested function:
+
+ fNo= 0 ; if n=0 
+
+            n; if n>4 
+
+           f(2+f(2n)); if n<=4
+```
+def compute_f(n):
+    def f(x):
+        if x == 0:
+            return 0
+        elif x > 4:
+            return x
+        else:
+            return f(2 + f(2 * x))
+    
+    return f(n)
+
+n = int(input(""))
+result = compute_f(n)
+print(f"{result}")
+```
+Write a Python program to print the sum of digits of a positive number using tail recursion
+```
+def sum_of_digits(n, acc=0):
+    if n == 0:
+        return acc
+    else:
+        return sum_of_digits(n // 10, acc + n % 10)
+
+# Example usage
+number = int(input(""))
+if number < 0:
+    print("Not defined")
+else:
+    result = sum_of_digits(number)
+    print(f"{result}")
+```
+Write a program to implement the following process using indirect recursion
+
+ 1.  EncodeNo- convert integer to binary  
+
+2.  Transfer No
+
+ 3.DecodeNo -  convert binary to integer
+
+ For n varying in decreasing order.
+```
+def encode(n):
+    if(n>0):
+        print("Encode",bin(n))
+        transmit(n)
+    else:
+        return 0
+
+def transmit(n):
+    if(n>0):
+        print("Transmit",bin(n))
+        decode(n)
+    else:
+        return 0
+        
+def decode(n):
+    if(n>0):
+        print("Decode",n)
+        encode(n-1)
+    else:
+        return 0
+        
+n=int(input())
+encode(n)
+```
+Write a Python program to find your name in a sorted list of  shortlisted students using tree recursion. If found print the position otherwise print  0. (Hint : Binary Search)
+```
+def binary_search(l, low, high, elem):
+    if low >high:
+        return -1
+    
+    mid=(low+high)//2
+    
+    if l[mid]==elem:
+        return mid
+    elif elem<l[mid]:
+        return binary_search(l,low,mid-1,elem)
+    else:
+        return binary_search(l,mid+1,high,elem)
+    
+    
+    
+l = [ ]
+n=int(input())
+for i in range(n):
+    x=input()
+    l.append(x)
+name = input()
+l.sort()
+print("The sorted list is")
+print(l)
+print(binary_search(l,0,len(l)-1,name)+1)
+```
+There are N people standing in a queue. Each person is given a number of cakes based on their count in the queue. For example, if the person standing fifth in the queue will be given 5 cakes. Construct a python program to tell the total number of cakes required to  procure as per the size of the queue using tail recursion.
+```
+import sys
+sys.setrecursionlimit(2000)
+
+def tail(n,acc=0):
+    if n==0:
+        return acc
+    return tail(n-1,acc+n)
+    
+n=int(input())
+print("Total no. of cakes:",tail(n))
+```
+Write a Python program to display Arithmetic Progression  series by reading the difference between the numbers and limit  using  head recursion.
+```
+def number(diff,num):
+    if diff>num:
+        return 
+    number(diff,num-diff)
+    print(num,end=' ')
+    
+    
+    
+diff=int(input())
+num=int(input())
+number(diff,num)
+```
+Write a Python program to find an element in a sorted list using tree recursion. If found print the position in the list otherwise print 0  (Hint: Binary search )
+```
+def binary_search(l, low, high, elem):
+    if low>high:
+        return -1
+        
+    mid=(low+high)//2
+    if l[mid]==elem:
+        return mid
+    elif elem<l[mid]:
+        return binary_search(l,low,mid-1,elem)
+    else:
+        return binary_search(l,mid+1,high,elem)
+
+
+
+
+l = [ ]
+n=int(input())
+for i in range(n):
+    x=int(input())
+    l.append(x)
+num = int(input())
+l.sort()
+print("The sorted list is")
+print(l)
+print(binary_search(l,0,len(l)-1,num)+1)
+```
+Write a Python Program  to display first n whole numbers in reverse order using nested recursion
+```
+def reverse(n):
+        def nest(k):
+            if k==0:
+                print(0,end=' ')
+            else:
+                print(k,end=' ')
+                nest(k-1)
+        nest(n)
+        
+n=int(input())
+reverse(n)
+```
+Write a program to implement the following process using indirect recursion
+
+ 1.  EncodeNo- convert integer to binary  
+
+2.  Transfer No
+
+ 3.DecodeNo -  convert binary to integer
+
+ For n varying in decreasing order.
+```
+def encode(n):
+    if(n>0):
+        print("Encode",bin(n))
+        transmit(n)
+    else:
+        return 0
+def transmit(n):
+    if(n>0):
+        print("Transmit",bin(n))
+        decode(n)
+    else:
+        return 0
+def decode(n):
+    if(n>0):
+        print("Decode",n)
+        encode(n-1)
+    else:
+        return 0
+        
+n=int(input())
+encode(n)
+```
+Write a Python program to print the sum of digits of a positive number using tail recursion
+```
+def sum_digits(num):
+
+    if num < 0 or int(num) != num:
+
+        return "Not defined"
+
+    elif num==0:
+
+        return 0
+
+    else:
+
+        return (num % 10) + sum_digits(num//10)
+
+num= int(input())
+
+print(sum_digits(num))
+```
+Write a Python program to display all the token numbers of n outpatients issued in the rec
+eption counter based on first come first serve.(Use head recursion)
+```
+def fun(n):
+    if n==0:
+        return
+    fun(n-1)
+    print(n,end=' ')
+
+n = int(input())
+fun(n)
+```
+Write a python program to display first n Fibonacci numbers using tree recursion.
+```
+def fibonacci(n):
+  if n <= 1:
+      return n
+  else:
+      return(fibonacci(n-2) + fibonacci(n-1))
+ 
+n_terms = int(input( ))
+if n_terms <= 0:
+  print("Invalid input ! Please input a positive value")
+else:
+  print("Fibonacci series:")
+  for i in range(n_terms):
+    print(fibonacci(i), end=" ")
+```
+Write a Python program to display all the positive numbers in reverse order with a difference 2 from 'N'  using nested recursion
+```
+def fun(n):
+    if n<0:
+        return
+    print(n,end=' ')
+    fun(n-2)
+        
+n=int(input())
+fun(n)
+```
+Write a Python program to display the following pattern using 3 functions in an indirect recursion method. Use separate function to display A,B and C respectively. Read the number of rows to display.
+
+ A B C
+
+ A B C
+
+A B C
+
+A B C
+
+A B C
+```
+def fn_A(n):
+    if(n==0):
+        return 0
+    else:
+        print('A', end=" ")
+        fn_B(n)
+def fn_B(n):
+    print('B', end=" ")
+    fn_C(n)
+    
+def fn_C(n):
+    print('C')
+    fn_A(n-1)
+n=int(input())  
+fn_A(n)
+```
+Write a python program to evaluate the series using recursion: 
+
+    by collecting the x,n and a values from the user.
+For example:
+
+Input	Result
+1
+7
+3
+3280
+```
+def series(x,n,a):
+    if n==0:
+        return 1
+    return (a**n)*(x**n)+series(x,n-1,a)
+    
+    
+x=int(input())
+n=int(input())
+a=int(input())
+print(series(x,n,a))
+```
+Write a python program to evaluate the series using Recursion: 
+
+
+
+Read the values of x, n and a.
+
+
+
+For example:
+
+Input	Result
+4
+50
+54.598150033144265
+```
+import math
+def exp(x,n):
+    if n==0:
+        return 1
+    else:
+        return (x**n)/math.factorial(n)+exp(x,n-1)
+x =int(input())
+n=int(input())
+print(exp(x,n))
+
+```
+Write a python program to evaluate the Sinh( x )  for  n terms terms  using recursion 
+
+
+
+For example:
+
+Input	Result
+3
+2
+9.525
+```
+import math
+def Sinh(x,n):
+    if n==0:
+        return x
+    else:
+        return (x**((2*n)+1))/math.factorial((2*n)+1)+Sinh(x,n-1)
+
+
+a=int(input())
+b=int(input())
+s=Sinh(a,b)
+print(s)
+```
+Write a python program to evaluate the Cos( x ) series using recursion.
+
+Do not import math .
+
+cos
+
+
+
+For example:
+
+Input	Result
+2
+3
+-0.4222222222222223
+```
+import math
+def cos(x,n):
+    if n==0:
+        return 1
+    return ((((-1)**n)*(pow(x,(2*n))))/math.factorial(2*n))+cos(x,n-1)
+    
+x=int(input())
+n=int(input())
+print(cos(x,n))
+```
+Write a Python program to display the following pattern using 3 functions in an indirect recursion method. Use separate function to display A,B and C respectively. Read the number of rows to display.
+
+ A B C
+
+ A B C
+
+A B C
+
+A B C
+
+A B C
+```
+def fn_A(n):
+    if(n==0):
+        return 0
+    else:
+        print('A', end=" ")
+        fn_B(n-0)
+def fn_B(n):
+    if(n==0):
+        return 0
+    else:
+        print('B', end=" ")
+        fn_C(n-0)
+def fn_C(n):
+    if(n==0):
+        return 0
+    else:
+        print('C', end=" ")
+        print()
+        fn_A(n-1)
+n=int(input())     
+fn_A(n)
+```
+Write a python program to evaluate the series using Recursion: 
+
+ 
+
+Read the values of x, n and a.
+
+
+
+For example:
+
+Input	Result
+3
+5
+1
+-21
+```
+def series(x,n,a):
+    if n==0:
+        return 1
+    return ((-1)**n)*((x-a)**n)+series(x,n-1,a)
+    
+    
+x=int(input())
+n=int(input())
+a=int(input())
+result=series(x,n,a)
+print(result)
+```
+Write a python program to evaluate the series using recursion: 
+
+   
+                            by collecting the x and n values from the user.
+```
+def series(x,n):
+    if n==0:
+        return 1
+    return (3**n)*(x**n)+series(x,n-1)
+    
+x=int(input())
+n=int(input())
+print(series(x,n))
+```
+Write a python program to evaluate the Sin( x ) series using recursion. Get x and n value from the user
+
+       (Do not import Math )
+```
+# Recursive function to calculate power
+def power(x, n):
+    if n == 0:
+        return 1
+    return x * power(x, n - 1)
+
+# Recursive function to calculate factorial
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+# Recursive function to compute sine series
+def sin_series(x, n, current=0):
+    if current == n:
+        return 0
+    term = ((-1) ** current) * (power(x, 2 * current + 1) / factorial(2 * current + 1))
+    return term + sin_series(x, n, current + 1)
+
+# Get user input
+x = float(input("Enter the value of x (in radians): "))
+n = int(input("Enter the number of terms: "))
+
+# Calculate sin(x)
+result = sin_series(x, n)
+print(f"sin({x}) ≈ {result}")
+```
+Write a python program to evaluate the series using recursion
+```
+
+def taninv(x,n):
+    if n==0:
+        return x
+    else:
+        return (((((-1)**n)*pow(x,(2*n+1)))/(2*n+1))+taninv(x,n-1))
+    
+x=int(input())
+n=int(input())
+print(taninv(x,n))
+```
+Write a python program to evaluate the cosh( x )  for n terms  using recursion 
+```
+import math
+def cosh(x,n,k=0):
+    if k==n:
+        return (x**(2*k))/math.factorial(2*k)
+    return (x**(2*k))/math.factorial(2*k)+cosh(x,n,k+1)
+
+x=int(input())
+n=int(input())
+print(cosh(x,n))
+```
+Write a python program to evaluate the series using recursion: 
+ by collecting the x and n values from the user.
+
+For example:
+
+Input	Result
+3
+4
+37.75
+```
+def fun(x,n):
+    if(n==0):
+        return 1 
+    else:
+        return (((x**n)/n)+fun(x,n-1))
+x=int(input())
+n=int(input())
+print(fun(x,n))
+```
+Write a python program to evaluate the series using recursion: 
+     
+
+
+
+For example:
+
+Input	Result
+2
+5
+1
+2.7166666666666663
+```
+def fact(i):
+  if i==0 or i==1:
+    return 1
+  else:
+    return i*fact(i-1)
+def fun(x,n,a):
+    if(n==0):
+        return 1 
+    else:
+        return ((((x-a)**n)/fact(n))+fun(x,n-1,a))
+x=int(input())
+n=int(input())
+a= int(input())
+print(fun(x,n,a))
+```
+Write a python program to evaluate the Sin( x ) series using recursion        (Do not import Math )
+```
+def fact(i):
+   if i==1 or i==0:
+       return 1
+   else:
+       return i*fact(i-1)
+def sine(x,n):
+  if n==0:
+    return x
+  else:
+    return ((-1)**n*(x**(2*n+1))/fact(2*n+1))+sine(x,n-1)
+    
+x=int(input())
+n=int(input())
+print(sine(x,n))
+```
+Write a python program to evaluate the following expression using recursion.
+
+
+
+For example:
+
+Input	Result
+2
+3
+-0.4222222222222223
+
+```
+def fact(i):
+   if i==1 or i==0:
+       return 1
+   else:
+       return i*fact(i-1)
+def cos(x,n):
+  if n==0:
+    return 1
+  else:
+    return(((-1)**n)*(pow(x,(2*n))))/((fact(2*n)))+cos(x,n-1)
+    
+
+x=int(input())
+n=int(input())
+result=cos(x,n)
+print(result)
+```
+Write a python program to evaluate the series using recursion
+```
+def fact(i):
+   if i==1 or i==0:
+       return 1
+   else:
+       return i*fact(i-1)
+def taninv(x,n):
+  if n==0:
+    return x
+  else:
+    return(((((-1)**n)*pow(x,(2*n+1)))/(2*n+1)) + taninv(x,n-1))
+x=int(input())
+n=int(input())
+print(taninv(x,n))
+```
+Write a Python program to find the product of all elements in the list
+```
+def prod_list(l,length):
+    if length == 0:
+        return l[0]
+    # Recursive case
+    return l[length] * prod_list(l, length - 1)
+    
+
+
+l=[]
+n=int(input())
+for i in range(n):
+    x=int(input())
+    l.append(x)
+
+```
+Write Python program to solve the tower of Hanoi problem for n disks
+```
+def TowerofHanoi(n,source,destination,auxiliary):
+	if n==1:
+		print ("Move disk 1 from source",source,"to destination",destination)
+		return
+	TowerofHanoi(n-1, source, auxiliary, destination)
+	print ("Move disk",n,"from source",source,"to destination",destination)
+	TowerofHanoi(n-1, auxiliary, destination, source)
+		
+n = int(input())
+TowerofHanoi(n,'A','C','B')
+```
+Write a program to find an element in a list using binary search algorithm with recursion
+```
+def binary_search(L, start, end, item):  
+    if end >= start:  
+        middle = (start + end) // 2  
+        if L[middle] == item:  
+            return middle 
+        elif L[middle]>item:   
+            return binary_search(L, start, middle - 1, item)  
+        else:  
+            return binary_search(L, middle + 1, end, item)  
+    else:  
+        return -1  
+  
+my_list = [ ]  
+element_to_search = int(input())
+n=int(input())
+for i in range(n):
+    x=int(input())
+    my_list.append(x)
+print("The given list is")  
+print(my_list)  
+my_list=sorted(my_list)
+print(my_list)  
+```
+Write a Python Program to sort n real numbers using  merge sort algorithm with recursion
+```
+def create_list():
+    no_of_elements = int(input('Enter the size of list'))
+    array =[]
+    for i in range(0,no_of_elements,1):
+        element=input()
+        array.append(float(element))
+    return (array)
+def mergeSort(alist):
+    print("Splitting ",alist)
+    if len(alist)>1:
+        mid = len(alist)//2
+        lefthalf = alist[:mid]
+        righthalf = alist[mid:]
+        mergeSort(lefthalf)
+        mergeSort(righthalf)
+        i=0
+        j=0
+        k=0
+        while i < len(lefthalf) and j < len(righthalf):
+            if lefthalf[i] < righthalf[j]:
+                alist[k]=lefthalf[i]
+                i=i+1
+            else:
+                alist[k]=righthalf[j]
+                j=j+1
+            k=k+1
+        while i < len(lefthalf):
+            alist[k]=lefthalf[i]
+            i=i+1
+            k=k+1
+        while j < len(righthalf):
+            alist[k]=righthalf[j]
+            j=j+1
+            k=k+1
+    print("Merging ",alist)
+    
+```
+Given a set represented as a string, write a recursive code to print all subsets of it. The subsets can be printed in any order.
+
+
+Input :  set = "abc"
+
+Output : "", "a", "b", "c", "ab", "ac", "bc", "abc"
+```
+def powerSet(str1,index,curr):
+    n=len(str1)
+    if(index==n):
+        return
+    print(curr)
+    for i in range(index+1,n):
+        curr+=str[i]
+        powerSet(str1,i,curr)
+        curr=curr.replace(curr[len(curr)-1], "")
+    return
+
+str=input()
+powerSet(str,-1,"")
+```
+Write a program to count the consonants in a string using recursion
+```
+def isc(ch):
+    ch = ch.upper()
+    return (not(ch=='A' or ch=='E' or ch=='I' or ch=='O' or ch=='U'))
+
+def tot(str,n):
+    if n==1:
+        return isc(str[0])
+    return tot(str,n-1) + isc(str[n-1])
+
+str = input()
+print(tot(str,len(str)))
+
+```
+Consider 3 pegs, peg A, peg B and peg C. There are n disks are on peg A, objective of the puzzle is to move the stack of disks to peg C, using peg B(if needed) such that
+
+No larger disk is kept over a smaller disk
+
+Only one disk is moved at a time
+
+Only top disc of a peg is moved.
+
+Construct a Python code to solve the puzzle mentioned above using recursion.
+```
+def TowerofHanoi(n,s,t,a):
+	if n==1:
+		print ("Move disk 1 from source",s,"to destination",t)
+		return
+	TowerofHanoi(n-1,s,a,t)
+	print ("Move disk",n,"from source",s,"to destination",t)
+	TowerofHanoi(n-1,a,t,s)
+
+
+```
+Write a program to find an element in a list using binary search algorithm with recursion
+```
+def binary_search(L, start, end, item):  
+    if end >= start:  
+        middle = (start + end) // 2  
+        if L[middle] == item:  
+            return middle 
+        elif L[middle]>item:   
+            return binary_search(L, start, middle - 1, item)  
+        else:  
+            return binary_search(L, middle + 1, end, item)  
+    else:  
+        return -1  
+  
+my_list = [ ]  
+element_to_search = int(input())
+n=int(input())
+for i in range(n):
+    x=int(input())
+    my_list.append(x)
+print("The given list is")  
+print(my_list)  
+my_list=sorted(my_list)
+print(my_list)  
+
+```
+Write a Python Program to sort n real numbers using  merge sort algorithm with recursion
+```
+
+
+
+def create_list():
+    no_of_elements = int(input('Enter the size of list'))
+    array =[]
+    for i in range(0,no_of_elements,1):
+        element=input()
+        array.append(float(element))
+    return (array)
+def mergeSort(alist):
+    print("Splitting ",alist)
+    if len(alist)>1:
+        mid = len(alist)//2
+        lefthalf = alist[:mid]
+        righthalf = alist[mid:]
+        mergeSort(lefthalf)
+        mergeSort(righthalf)
+        i=0
+        j=0
+        k=0
+        while i < len(lefthalf) and j < len(righthalf):
+            if lefthalf[i] < righthalf[j]:
+                alist[k]=lefthalf[i]
+                i=i+1
+            else:
+                alist[k]=righthalf[j]
+                j=j+1
+            k=k+1
+        while i < len(lefthalf):
+            alist[k]=lefthalf[i]
+            i=i+1
+            k=k+1
+        while j < len(righthalf):
+            alist[k]=righthalf[j]
+            j=j+1
+            k=k+1
+    print("Merging ",alist)
+
+```
+Given a set represented as a string, write a recursive code to print all subsets of it. The subsets can be printed in any order.
+
+
+Input :  set = "abc"
+
+Output : "", "a", "b", "c", "ab", "ac", "bc", "abc"
+```
+def powerSet(str1,index,curr):
+    n=len(str1)
+    if(index==n):
+        return
+    print(curr)
+    for i in range(index+1,n):
+        curr+=str[i]
+        powerSet(str1,i,curr)
+        curr=curr.replace(curr[len(curr)-1], "")
+    return
+
+str=input()
+powerSet(str,-1,"")
+
+
+```
+Write a Python Program to find whether a string is a palindrome or not using recursion
+
+```
+def is_palindrome(word):
+    if len(word) <= 1:
+        return True
+    elif (word[0] == word[-1]):
+        return is_palindrome(word[1:-1])
+    else:
+        return False
+        
+        
+str=input()
+if(is_palindrome(str)):
+    print("String is a palindrome")
+else:
+    print("String is not a palindrome")   
+
+
+```
+Consider 3 pegs, peg A, peg B and peg C. There are n disks are on peg A, objective of the puzzle is to move the stack of disks to peg C, using peg B(if needed) such that
+
+No larger disk is kept over a smaller disk
+
+Only one disk is moved at a time
+
+Only top disc of a peg is moved.
+
+Construct a Python code to solve the puzzle mentioned above using recursion.
+```
+def TowerofHanoi(n,s,t,a):
+	if n==1:
+		print ("Move disk 1 from source",s,"to destination",t)
+		return
+	TowerofHanoi(n-1,s,a,t)
+	print ("Move disk",n,"from source",s,"to destination",t)
+	TowerofHanoi(n-1,a,t,s)
+```
+Write a program to search a word in a  list of n words  using binary search.
+```
+def binary_search(L, start, end, item):  
+    if end >= start:  
+        middle = (start + end) // 2  
+        if L[middle]==item:  
+            return middle 
+        elif L[middle] > item:   
+            return binary_search(L, start, middle-1 , item)  
+        else:  
+            return binary_search(L, middle+1, end, item)  
+    else:  
+        return -1  
+  
+my_list = [ ]  
+element_to_search = input()
+n=int(input())
+for i in range(n):
+    x=input()
+    my_list.append(x)
+print("The given list is")  
+print(my_list)  
+my_list=sorted(my_list)
+print(my_list)  
+```
+Write a Python Program to sort n real numbers using  merge sort algorithm with recursion
+```
+def create_list():
+    no_of_elements = int(input('Enter the size of list'))
+    array =[]
+    for i in range(0,no_of_elements,1):
+        element=input()
+        array.append(float(element))
+    return (array)
+def mergeSort(alist):
+    print("Splitting ",alist)
+    if len(alist)>1:
+        mid = len(alist)//2
+        lefthalf = alist[:mid]
+        righthalf = alist[mid:]
+        mergeSort(lefthalf)
+        mergeSort(righthalf)
+        i=0
+        j=0
+        k=0
+        while i < len(lefthalf) and j < len(righthalf):
+            if lefthalf[i] < righthalf[j]:
+                alist[k]=lefthalf[i]
+                i=i+1
+            else:
+                alist[k]=righthalf[j]
+                j=j+1
+            k=k+1
+        while i < len(lefthalf):
+            alist[k]=lefthalf[i]
+            i=i+1
+            k=k+1
+        while j < len(righthalf):
+            alist[k]=righthalf[j]
+            j=j+1
+            k=k+1
+    print("Merging ",alist)
+    
+alist = create_list()
+mergeSort(alist)
+print(alist)
+```
+Given a set represented as a string, write a recursive code to print all subsets of it. The subsets can be printed in any order.
+
+
+Input :  set = "abc"
+
+Output : "", "a", "b", "c", "ab", "ac", "bc", "abc"
+```
+
+
+
+def powerSet(str1,index,curr):
+    n=len(str1)
+    if(index==n):
+        return
+    print(curr)
+    for i in range(index+1,n):
+        curr+=str[i]
+        powerSet(str1,i,curr)
+        curr=curr.replace(curr[len(curr)-1], "")
+    return
+
+str=input()
+powerSet(str,-1,"")
+```
+
+Write a Python Program to find the sum of cube of all digits in a number
+```
+# Function to calculate sum of cubes of digits
+def sum_of_cubes(number):
+    total = 0
+    for digit in str(number):
+        total += int(digit) ** 3
+    return total
+num = int(input())
+result = sum_of_cubes(num)
+print(result)
+
+```
+Write a Python program to find the sum of first n Natural Numbers
+```
+def sum_of_natural_numbers(n):
+    return n * (n + 1) // 2  # Using the formula n(n+1)/2
+n = int(input())
+if n > 0:
+    result = sum_of_natural_numbers(n)
+    print("Result is", result)
+else:
+    print("Result is 0")
+
+```
+Write a Python program to display the following pattern using 3 functions in an indirect recursion method. Use separate function to display XXX,YYY and ZZZ respectively. Read the number of rows to display.
+
+XXX YYY ZZZ 
+
+XXX YYY ZZZ 
+
+XXX YYY ZZZ
+```
+def fn_A(n):
+    if(n==0):
+        return 0
+    else:
+        print('XXX ', end="")
+        fn_B(n)
+        
+def fn_B(n):
+    print('YYY ', end="")
+    fn_C(n)
+    
+def fn_C(n):
+    print('ZZZ')
+    fn_A(n-1)
+n=int(input())  
+fn_A(n)
+```
+Write a Python program to print even numbers till ‘N’ using head recursion.
+
+
+```
+def print_even_head_recursion(n):
+    if n <= 1:
+        return
+    print_even_head_recursion(n - 1)
+    if n % 2 == 0:
+        print(n, end=' ')
+
+# Main
+n = int(input())
+print_even_head_recursion(n)
+
+```
+Write a Python program to display the following pattern using 3 functions in an indirect recursion method.Use separate function to display A,B and C respectively
+
+ A B C
+
+ A B C
+
+A B C
+
+A B C
+
+A B C
+```
+def print_A(n, count):
+    if count > n:
+        return
+    print("A", end=" ")
+    print_B(n, count)
+
+def print_B(n, count):
+    print("B", end=" ")
+    print_C(n, count)
+
+def print_C(n, count):
+    print("C")
+    print_A(n, count + 1)
+
+# Main function
+def main():
+    n = 5  # You can change this to any number of rows
+    print_A(n, 1)
+
+# Run the program
+main()
+
+```
+Input	Result
+3
+50
+20.08553692318766
+
+```
+def power(x, n):
+    if n == 0:
+        return 1
+    return x * power(x, n - 1)
+
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+def exp_series(x, n):
+    if n == 0:
+        return 1
+    return (power(x, n) / factorial(n)) + exp_series(x, n - 1)
+
+# Main program
+x = int(input())
+n = int(input())
+
+result = exp_series(x, n)
+print(result)
+```
+Write a Python Program to sort n elements using recursion in merge sort algorithm.
+```
+def create_list():
+    no_of_elements = int(input('Enter the size of list'))
+    array =[]
+    for i in range(0,no_of_elements,1):
+        element=input()
+        array.append(int(element))
+    return (array)
+def mergeSort(alist):
+    print("Splitting ",alist)
+    if len(alist)>1:
+        mid = len(alist)//2
+        lefthalf = alist[:mid]
+        righthalf = alist[mid:]
+        mergeSort(lefthalf)
+        mergeSort(righthalf)
+        i=0
+        j=0
+        k=0
+        while i < len(lefthalf) and j < len(righthalf):
+            if lefthalf[i] < righthalf[j]:
+                alist[k]=lefthalf[i]
+                i=i+1
+            else:
+                alist[k]=righthalf[j]
+                j=j+1
+            k=k+1
+        while i < len(lefthalf):
+            alist[k]=lefthalf[i]
+            i=i+1
+            k=k+1
+        while j < len(righthalf):
+            alist[k]=righthalf[j]
+            j=j+1
+            k=k+1
+    print("Merging ",alist)
+```
+Company after the interview and binary_search
+```
+def binary_search(arr, low, high, x):
+    if high >= low:
+        mid = (low + high) // 2
+        if arr[mid] == x:
+            return mid
+        elif arr[mid] > x:
+            return binary_search(arr, low, mid - 1, x)
+        else:
+            return binary_search(arr, mid + 1, high, x)
+    else:
+        return -1
+
+# Input
+element_to_search = input().strip()
+n = int(input())
+my_list = [input().strip() for _ in range(n)]
+
+# Sort the list
+my_list.sort()
+print(my_list)
+
+```
+Write a Python Program to find N^P  using recursion where P can be positive or negative.(Do not use     ** operator)
+```
+def power(n, p):
+    # Base case
+    if p == 0:
+        return 1
+    elif p > 0:
+        return n * power(n, p - 1)
+    else:  # p < 0
+        return 1 / power(n, -p)
+
+# Read input from a single line
+n_str, p_str = input().split()
+n = int(n_str)
+p = int(p_str)
+
+result = power(n, p)
+print(f"{int(n)} Power of {p} : {result}")
+```
+Write a Python program to find whether the given number is prime or not using recursive function
+```
+def is_prime(n, i=2):
+    # Base cases
+    if n <= 1:
+        return False
+    if i * i > n:
+        return True
+    if n % i == 0:
+        return False
+    # Recursive check
+    return is_prime(n, i + 1)
+
+# Read input
+num = int(input())
+
+# Check and print result
+if is_prime(num):
+    print(f"{num} is a Prime number")
+else:
+    print(f"{num} is not a Prime number")
+```
+Write a Python Program to evaluate the series:
+
+   1/1!+1/2!+1/3!+....+1/n!  using recursion.
+```
+# Recursive function to compute factorial of a number
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+# Recursive function to compute the series: 1/1! + 1/2! + ... + 1/n!
+def series_sum(n):
+    if n == 1:
+        return 1 / factorial(1)
+    return (1 / factorial(n)) + series_sum(n - 1)
+
+# Input from user
+n = int(input())
+
+# Compute and display result
+result = series_sum(n)
+print(result)
+```
+Write a Python Program to evaluate the series 
+
+1+2^2 +3^3 +4^4 +...N^N  using Recursion 
+```
+def sum(n):
+    if (n<=0):
+        return 0
+    return((n**n )+sum(n-1))
+n=int(input())
+print('Result is', sum(n))
+```
+Write a Python program to print odd numbers till ‘N’ using head recursion.
+
+```
+x=int(input())
+for i in range(1,x+1,2):
+    print(i, end=' ')
+```
+Write a Python Program to implement the following function using nested function:
+
+ fNo= 0 ; if n=0 
+
+            n; if n>4 
+
+           f(5+f(2n)); if n<=4
+```
+def show(num):
+    if num==0:
+        return 0
+    elif num>4 :
+        return num
+    elif num<=4:
+        return show(2+show(2*num))
+num=int(input())
+print(show(num))
+```
+Write a program program to display first n natural numbers in reverse order using tail recursion.
+```
+def reverse_natural(n, current=1):
+    if n < current:
+        return
+    print(n, end=" ")
+    reverse_natural(n - 1, current)
+
+# Input from user
+n = int(input())
+
+# Output
+reverse_natural(n)
+```
